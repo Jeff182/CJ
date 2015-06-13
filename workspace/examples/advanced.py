@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 import sys,os
+sys.path.insert(1,'../../')
 import numpy as np
 import pylab as py
+import lhapdf
 from tools import tex, fill_between
-from composer import COMPOSER
+import matplotlib.gridspec as gridspec
+from  matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text',usetex=True)
+from master import FITPACK, COMPOSER
   
 # define x values
 X=np.linspace(1e-3,0.9,1000)
