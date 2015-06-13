@@ -6,6 +6,7 @@ import fnmatch
 import cPickle 
 from operator import mul
 import pylab as py
+import matplotlib.patches as mpatches
 #from line_profiler import LineProfiler
 
 def timer(f,*args):
@@ -375,6 +376,32 @@ def do_profile(follow=[]):
     return profiled_func
   return inner
 
+def plot_band(args):
+
+  ax=args['ax']
+  x=args['x']
+  central=args['central']
+  lower=args['lower']
+  upper=args['upper']
+  cc=args['central color']
+  cls=args['central line style']
+  bc=args['band color']
+  #bh=args['band hatch']
+  label=args['label']
+  ax.fill_between(
+    x,
+    lower,
+    upper,
+    facecolor=bc,
+    edgecolor=bc,
+    alpha=1.0,
+    hatch=bh,
+    label='band')
+  p1, = ax.plot(x,central,c=cc,ls=cls)
+  p2 = mpatches.Patch(color=bc, alpha=1.0, linewidth=0)
+
+  return {'h':(p2,p1),'l':label}
+  
 def fill_between(x, y1, y2=0, ax=None, **kwargs):
   """Plot filled region between `y1` and `y2`.
   This function works exactly the same as matplotlib's fill_between, except
@@ -388,6 +415,14 @@ def fill_between(x, y1, y2=0, ax=None, **kwargs):
   ax.add_patch(p)
   return p
 
+
+
+
+
+
+
+
+
 def compute(func,X,info,output=True):
   pbar = ProgressBar(X.size,info)
   out=[]
@@ -395,6 +430,10 @@ def compute(func,X,info,output=True):
     pbar.animate(i+1)
     out.append(func(X[i]))
   if output: return np.array(out)
+
+
+
+
 
 
 
