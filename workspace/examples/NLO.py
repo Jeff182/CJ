@@ -27,17 +27,23 @@ pdgmap= {'u':2,'d':1,'ub':-2,'db': -1,'s':3,'g':21}
 # function to access LHAPDF pdfs
 def get_pdfs(flav,x,Q2,iset,grp):
 
-  if flav!='du' and flav!='dbub': grp[iset].xfxQ2(pdgmap[flav],x,Q2)
+  if flav!='du' and flav!='dbub': 
+    return grp[iset].xfxQ2(pdgmap[flav],x,Q2)
+
   elif flav=='du':
+
     if grp[iset].xfxQ2(pdgmap['u'],x,Q2)!=0.0:
       return grp[iset].xfxQ2(pdgmap['d'],x,Q2)/grp[iset].xfxQ2(pdgmap['u'],x,Q2)
     else:
       return 0.0
+
   elif flav=='dbub':
+
     if grp[iset].xfxQ2(pdgmap['ub'],x,Q2)!=0.0:
       return grp[iset].xfxQ2(pdgmap['db'],x,Q2)/grp[iset].xfxQ2(pdgmap['ub'],x,Q2)
     else:
       return 0.0
+
   else:
     print '*** ERROR: flav not defined ***'
     sys.exit()
@@ -86,7 +92,11 @@ ymap['db']={'min':0.0,'max':0.6}
 ymap['s'] ={'min':0.0,'max':0.45}
 ymap['g'] ={'min':0.0,'max':10.0}
 
-# dictionary for plot location 
+# dictionary for plot location
+ncols=2
+nrows=4
+
+py.figure(figsize=(ncols*4,nrows*2)) 
 gs = gridspec.GridSpec(4,2) # specify plotting grid geometry
 gs.update(left=0.1,right=0.98,wspace=0.2,hspace=0.4,top=0.98,bottom=0.1)
 grid = {}
@@ -120,10 +130,10 @@ for flav in ['u','d','ub','db','s','g','du','dbub']:
         error=cj15['Q2'][Q2]['err-x'+flav]*10
       elif flav=='du':
         central=cj15['Q2'][Q2]['d/u']
-	error=cj15['Q2'][Q2]['err-d/u']*1
+        error=cj15['Q2'][Q2]['err-d/u']*1
       elif flav=='dbub':
         central=cj15['Q2'][Q2]['db/ub']
-	error=cj15['Q2'][Q2]['err-db/ub']*1
+        error=cj15['Q2'][Q2]['err-db/ub']*1
 
       #args={} 
       #args['ax']=ax
@@ -155,9 +165,8 @@ for flav in ['u','d','ub','db','s','g','du','dbub']:
     L=[tex('CJ15~av18/fmKP')]
     for h in H_: H.append(h)
     for l in L_: L.append(l)
-    ax.legend(H,L,loc=1,frameon=0,fontsize=15)
-    ax.text(0.1,0.15,tex('NLO'),
-      transform=ax.transAxes,size=15)
+    ax.legend(H,L,loc=1,frameon=0,fontsize=9)
+    ax.text(0.1,0.15,tex('NLO'),transform=ax.transAxes,size=15)
 
 
   # setup axis 
@@ -177,5 +186,5 @@ for flav in ['u','d','ub','db','s','g','du','dbub']:
     ax.text(0.1,0.15,'$Q^2=$'+tex('~10~GeV^2'),
       transform=ax.transAxes,size=15)
 
-py.show()
+#py.show()
 py.savefig('plots/NLOfits.pdf')
