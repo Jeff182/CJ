@@ -121,7 +121,7 @@ for flav in ['u','d','ub','db','s','g']:
   ax.set_xlabel('$x$',size=20)
   ax.set_ylabel(labmap[flav],size=20)
 
-  # write info
+  ## write info
   if flav=='u': 
     ax.text(0.1,0.1,'$Q^2=$'+tex('~10~GeV^2~LO'),
       transform=ax.transAxes,size=15)
