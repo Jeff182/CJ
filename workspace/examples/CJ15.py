@@ -102,7 +102,7 @@ for flav in ['u','d','ub','db','s','g','du','dbub']:
       error=cj15['Q2'][Q2]['err-db/ub']*1
 
     if grp!='fmKP_AV18':
-      p1,=ax.plot(X,central,grpmap[grp]['color'],label=tex(grp.replace('_','-')))
+      ax.plot(X,central,grpmap[grp]['color'],label=tex(grp.replace('_','-')))
     else:
       p1,=ax.plot(X,central,grpmap[grp]['color'])
       p2=fill_between(X,central-error,central+error,ax=ax,
@@ -113,8 +113,8 @@ for flav in ['u','d','ub','db','s','g','du','dbub']:
   # make legend
   if flav=='d':
     H_,L_ = ax.get_legend_handles_labels()
-    H=['']
-    L=['fmKP_AV18']
+    H=[(p2,p1)]
+    L=[tex('fmKP-AV18')]
     for h in H_: H.append(h)
     for l in L_: L.append(l)
     ax.legend(H,L,loc=1,frameon=0,fontsize=8)
