@@ -96,7 +96,7 @@ axR.legend(H,L,loc=1,frameon=0,fontsize=20)
 axL.text(0.1,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=20)
 
 # the end
-py.savefig('plot.pdf')
+py.savefig('xpdf.pdf')
 
   
 
