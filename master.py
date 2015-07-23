@@ -83,6 +83,8 @@ class COMPOSER(object):
     elif flav=='s': return Set.xfxQ2(3,x,Q2)
     elif flav=='db+ub': return Set.xfxQ2(-2,x,Q2)+Set.xfxQ2(-1,x,Q2)
     elif flav=='db-ub': return Set.xfxQ2(-1,x,Q2)-Set.xfxQ2(-2,x,Q2)
+    elif flav=='ub': return Set.xfxQ2(-2,x,Q2)
+    elif flav=='db': return Set.xfxQ2(-1,x,Q2)
 
   def _error(self,message):
     print 'ERR '+message
@@ -119,9 +121,9 @@ class COMPOSER(object):
 
     D={}
     PDFS=[[self._get_xpdf(Set,flav,x,Q2) for x in X] for Set in self.SETS]
-    D['f0']=np.array(PDFS[0])
-    D['df']=self._get_symmetric_errors(PDFS)
-    D['df+'],D['df-']=self._get_asymmetric_errors(PDFS)
+    D['xf0']=np.array(PDFS[0])
+    D['dxf']=self._get_symmetric_errors(PDFS)
+    D['dxf+'],D['dxf-']=self._get_asymmetric_errors(PDFS)
     return D
 
 if __name__=="__main__" :

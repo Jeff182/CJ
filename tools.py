@@ -410,6 +410,7 @@ def fill_between(x, y1, y2=0, ax=None, **kwargs):
   """
   ax = ax if ax is not None else py.gca()
   ax.fill_between(x, y1, y2, **kwargs)
+  if kwargs['edgecolor']=='none': kwargs['edgecolor']=kwargs['facecolor']
   if kwargs['facecolor']=='none': kwargs['facecolor']='w'
   p = py.Rectangle((0, 0), 0, 0, **kwargs)
   ax.add_patch(p)
