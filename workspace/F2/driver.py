@@ -1,7 +1,312 @@
 #!/usr/bin/env python
 import sys,os
+sys.path.insert(1,'../../')
 import numpy as np
 import pylab as py
+import pandas as pd
+from tools import tex
+from  matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text',usetex=True)
+import matplotlib.patches as patches
+import matplotlib.gridspec as gridspec
+
+class StructFunc(object):
+
+  def __init__(self):
+    self.path2exp='../../expdata/'
+    self.D={}
+    self.get_expdata_fnames()
+    self.load_expdata()
+    self.split_data()
+    #self.get_errors()
+
+  def get_expdata_fnames(self):
+    D=self.D
+    D['BCDMS p']={'fname':'BcdF2pCor' ,'color':'r'}
+    D['BCDMS d']={'fname':'BcdF2dCor' ,'color':'g'}
+    D['NMC p']  ={'fname':'NmcF2pCor' ,'color':'m'}
+    D['SLAC p'] ={'fname':'slac_p_reb','color':'b'}
+    D['SLAC d'] ={'fname':'slac_d_reb','color':'y'}
+    D['JLab p'] ={'fname':'jl00106F2p','color':'c'}
+    D['JLab d'] ={'fname':'jl00106F2d','color':'k' }
+
+    D['BCDMS p']['color']='r'
+    D['BCDMS d']['color']='g'
+    D['NMC p']['color']  ='m'
+    D['SLAC p']['color'] ='b'
+    D['SLAC d']['color'] ='y'
+    D['JLab p']['color'] ='c'
+    D['JLab d']['color'] ='k' 
+
+    D['BCDMS p']['symbol']='.'
+    D['BCDMS d']['symbol']='s'
+    D['NMC p']['symbol']  ='x'
+    D['SLAC p']['symbol'] ='>'
+    D['SLAC d']['symbol'] ='<'
+    D['JLab p']['symbol'] ='^'
+    D['JLab d']['symbol'] ='v' 
+
+    # erros
+    D['BCDMS p']['ERR-key']=['STAERR','SYSERT']
+    D['BCDMS d']['ERR-key']=['STAERR','SYSERT']
+    D['NMC p']['ERR-key']=['STAERR','SYSERT']
+    D['SLAC p']['ERR-key']=['STAT.','SYS.']
+    D['SLAC d']['ERR-key']=['STAT','SYS']
+    D['JLab p']['ERR-key']=['STAT','SYST']
+    D['JLab d']['ERR-key']=['STAT','SYST']
+
+    self.ordered_keys=['BCDMS p','BCDMS d','NMC p'\
+    ,'SLAC p','SLAC d','JLab p','JLab d'] 
+
+  def load_expdata(self):  
+    D=self.D
+
+    for k in D.keys():
+      print 'loading ',k
+
+      # open file
+      F=open(self.path2exp+D[k]['fname'])
+      L=F.readlines()
+      F.close()
+      L=[l.strip() for l in L]
+      L=[l.split() for l in L if l!='']
+
+      # construct table
+      table=[]
+      flag=False
+      for i in range(len(L)): 
+        try:
+          l=[float(x) for x in L[i]]
+          if flag==False:
+            ih=i-1
+            flag=True
+        except:
+          continue
+        table.append(l)
+      table=np.transpose(table)
+
+      # construct headers
+      H=[x.upper() for x in L[ih]]
+      for i in range(len(H)): H[i]=H[i].replace('Q**2','Q2')
+      for i in range(len(H)): H[i]=H[i].replace('Q^2','Q2')
+      for i in range(len(H)): H[i]=H[i].replace('F2P','F2')
+      for i in range(len(H)): H[i]=H[i].replace('F2D','F2')
+
+      # construct pandas data frame
+      d={}
+      for i in range(len(H)):
+        d[H[i]]=table[i]
+      d['W2']=0.9389185**2 + d['Q2']/d['X'] - d['Q2']
+
+      ERR=np.zeros(d['W2'].size)
+      for kk in D[k]['ERR-key']:
+        ERR+=d[kk]**2
+      ERR=ERR**0.5
+      d['ERR']=ERR
+
+      DF=pd.DataFrame(d)
+      DF=DF[DF.W2>4.0]
+
+      # store DF in global dic
+      D[k]['DF']=DF
+
+  def get_xbins(self):
+    xbins=[]
+    xbins.append([3.4e-3,3.8e-3])
+    xbins.append([4.8e-3,5.7e-3])
+    xbins.append([7.2e-3,9.3e-3])
+    xbins.append([1.15e-2,1.4e-2])
+    xbins.append([1.65e-2,1.9e-2])
+    xbins.append([2.3e-2,2.9e-2])
+    xbins.append([3.4e-2,3.8e-2])
+    xbins.append([4.65e-2,5.4e-2])
+    xbins.append([6.5e-2,7.3e-2])
+    xbins.append([8.5e-2,9.2e-2])
+    xbins.append([9.8e-2,10.3e-2])
+    xbins.append([10.8e-2,11.3e-2])
+    xbins.append([13.6e-2,14.6e-2])
+    xbins.append([17.1e-2,18.7e-2])
+    xbins.append([19.7e-2,20.7e-2])
+    xbins.append([21.7e-2,23.7e-2])
+    xbins.append([26.0e-2,29.0e-2])
+    xbins.append([33.0e-2,36.0e-2])
+    xbins.append([42.0e-2,48.0e-2])
+
+    #xbins.append([48.1e-2,49.4e-2])
+    #xbins.append([49.4e-2,50.8e-2])
+    #xbins.append([50.8e-2,51.8e-2])
+    #xbins.append([51.8e-2,52.6e-2])
+    #xbins.append([52.6e-2,53.4e-2])
+    #xbins.append([53.4e-2,53.9e-2])
+    #xbins.append([53.9e-2,54.5e-2])
+    #xbins.append([54.5e-2,55.6e-2])
+    #xbins.append([55.6e-2,56.6e-2])
+    #xbins.append([56.6e-2,57.3e-2])
+    #xbins.append([53.0e-2,56.0e-2])
+
+    xbins.append([48.0e-2,63.0e-2])
+
+    xbins.append([63.0e-2,66.0e-2])
+    xbins.append([73.0e-2,76.0e-2])
+    xbins.append([84.0e-2,86.0e-2])
+    return xbins[::-1]
+
+  def split_data(self):
+    xbins=self.get_xbins()
+    D=self.D
+    for k in D.keys():
+      d=D[k]['DF']
+      dbinned={}
+      for i in range(len(xbins)):
+        xmin,xmax=xbins[i]
+        dbinned[i]=d[d.X>xmin]
+        dbinned[i]=dbinned[i][dbinned[i].X<xmax]
+      D[k]['dbinned']=dbinned
+
+  def make_XQ2_plot(self):
+    D=self.D
+    ax=py.subplot(111)
+    for k in self.D.keys():
+      d=D[k]['DF']
+      if 'JLab' in k: color='k'
+      else: color='r'
+      ax.plot(d['X'],d['Q2'],color+'.',markersize=3)
+    ax.semilogy()
+    #ax.semilogx()
+    xbins=np.array(self.get_xbins()).flatten()
+    ax.set_xticks(xbins)
+    ax.grid()
+    py.savefig('XQ2.pdf')
+
+  def add_subplot_axes(self,ax,rect,axisbg='w'):
+    fig = py.gcf()
+    box = ax.get_position()
+    width = box.width
+    height = box.height
+    inax_position  = ax.transAxes.transform(rect[0:2])
+    transFigure = fig.transFigure.inverted()
+    infig_position = transFigure.transform(inax_position)    
+    x = infig_position[0]
+    y = infig_position[1]
+    width *= rect[2]
+    height *= rect[3]  # <= Typo was here
+    subax = fig.add_axes([x,y,width,height],axisbg=axisbg)
+    x_labelsize = subax.get_xticklabels()[0].get_size()
+    y_labelsize = subax.get_yticklabels()[0].get_size()
+    x_labelsize *= rect[2]**0.5
+    y_labelsize *= rect[3]**0.5
+    subax.xaxis.set_tick_params(labelsize=x_labelsize)
+    subax.yaxis.set_tick_params(labelsize=y_labelsize)
+    return subax
+ 
+  def make_F2_plot(self):
+    D=self.D
+    xbins=self.get_xbins()
+    py.figure(figsize=(12,15))
+
+    gs = gridspec.GridSpec(1,1)
+    gs.update(left=0.1,right=0.98,top=0.98,bottom=0.1)
+    ax=py.subplot(gs[0,0])
+
+    for k in self.ordered_keys:
+      dbinned=D[k]['dbinned']
+      color=D[k]['color']
+      sym=D[k]['symbol']
+      flag=False
+      for i in range(len(xbins)):
+        dbin=dbinned[i]
+        if dbin['X'].size!=0:
+          if flag==False:
+            ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
+              ,yerr=dbin['ERR'].values\
+              ,fmt=color+sym\
+              ,mec=color
+              ,label=tex(k.replace(' ','~')))
+            flag=True
+          else:
+            ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
+              ,yerr=dbin['ERR'].values\
+              ,fmt=color+sym\
+              ,mec=color)
+
+    for i in range(len(xbins)):
+      Q2=-100
+      for k in D.keys():
+        dbin=D[k]['dbinned'][i]
+        if dbin['X'].size==0:continue
+        imax=np.argmax(dbin['Q2'].values)
+        if dbin['Q2'].values[imax]>Q2: 
+          Q2=dbin['Q2'].values[imax]
+          F2=dbin['F2'].values[imax]
+
+      if xbins[i][1]<0.01:
+        text='$x\in[%0.4f,%0.4f]$'%(xbins[i][0],xbins[i][1])
+      elif xbins[i][1]<0.12:
+        text='$x\in[%0.3f,%0.3f]$'%(xbins[i][0],xbins[i][1])
+      else:
+        text='$x\in[%0.2f,%0.2f]$'%(xbins[i][0],xbins[i][1])
+      ax.text(Q2*1.2,F2*2**(i+1),text)
+
+    ax.legend(frameon=0,fontsize=20)
+
+    ax.set_xlim(2e-3,2e3)
+    ax.semilogy()
+    ax.semilogx()
+    ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
+    ax.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=30)
+    py.tick_params(axis='both',labelsize=20)
+
+    xsq=0.52
+    ysq=0.27
+    ax.add_patch(patches.Rectangle((xsq,ysq),0.1,0.1\
+      ,fill=False,transform=ax.transAxes))
+    ax.plot([0.36,xsq],[0.07,ysq],'k:'
+      ,transform=ax.transAxes)
+    ax.plot([0.36,xsq],[0.47,ysq+0.1],'k:'
+      ,transform=ax.transAxes)
+
+
+    rect1 = [0.06,0.07,0.3,0.3]
+    ax1 = self.add_subplot_axes(ax,rect1)
+    rect2 = [0.06,0.47,0.3,0.3]
+    ax2 = self.add_subplot_axes(ax,rect2)
+
+    for k in D.keys():
+      if 'JLab' not in k: continue
+      d=D[k]['DF']
+      color=D[k]['color']
+      sym=D[k]['symbol']
+
+      ax1.errorbar(d['Q2'],d['F2']\
+        ,yerr=d['ERR'].values\
+        ,fmt=color+sym\
+        ,mec=color)
+
+      ax2.errorbar(d['X'],d['F2']\
+        ,yerr=d['ERR'].values\
+        ,fmt=color+sym\
+        ,mec=color)
+
+    ax1.locator_params(nbins=5) 
+    ax2.locator_params(nbins=5) 
+
+    ax1.tick_params(axis='both',labelsize=12)
+    ax2.tick_params(axis='both',labelsize=12)
+
+    ax1.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=20)
+    ax2.set_xlabel('$x$',size=20)
+
+    #py.tight_layout()
+    py.savefig('F2.pdf')
+
+if __name__=='__main__':
+
+  SF=StructFunc()
+  #SF.make_XQ2_plot()
+  SF.make_F2_plot()
+
+
 
 
 
