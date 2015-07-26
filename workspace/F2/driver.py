@@ -10,6 +10,7 @@ rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text',usetex=True)
 import matplotlib.patches as patches
 import matplotlib.gridspec as gridspec
+import lhapdf
 
 class StructFunc(object):
 
@@ -23,14 +24,18 @@ class StructFunc(object):
 
   def get_expdata_fnames(self):
     D=self.D
-    D['BCDMS p']={'fname':'BcdF2pCor' ,'color':'r'}
-    D['BCDMS d']={'fname':'BcdF2dCor' ,'color':'g'}
-    D['NMC p']  ={'fname':'NmcF2pCor' ,'color':'m'}
-    D['SLAC p'] ={'fname':'slac_p_reb','color':'b'}
-    D['SLAC d'] ={'fname':'slac_d_reb','color':'y'}
-    D['JLab p'] ={'fname':'jl00106F2p','color':'c'}
-    D['JLab d'] ={'fname':'jl00106F2d','color':'k' }
 
+    D['HERA p']={'fname':'HERA.dat'}
+    D['BCDMS p']={'fname':'BcdF2pCor'}
+    D['BCDMS d']={'fname':'BcdF2dCor'}
+    D['NMC p']  ={'fname':'NmcF2pCor'}
+    D['SLAC p'] ={'fname':'slac_p_reb'}
+    D['SLAC d'] ={'fname':'slac_d_reb'}
+    D['JLab p'] ={'fname':'jl00106F2p'}
+    D['JLab d'] ={'fname':'jl00106F2d'}
+    ##D['BNS d']  ={'fname':'BNS_F2nd'}
+
+    D['HERA p']['color']='r'
     D['BCDMS p']['color']='r'
     D['BCDMS d']['color']='g'
     D['NMC p']['color']  ='m'
@@ -38,7 +43,9 @@ class StructFunc(object):
     D['SLAC d']['color'] ='y'
     D['JLab p']['color'] ='c'
     D['JLab d']['color'] ='k' 
+    ##D['BNS d']['color'] ='r' 
 
+    D['HERA p']['symbol']='*'
     D['BCDMS p']['symbol']='.'
     D['BCDMS d']['symbol']='s'
     D['NMC p']['symbol']  ='x'
@@ -46,8 +53,10 @@ class StructFunc(object):
     D['SLAC d']['symbol'] ='<'
     D['JLab p']['symbol'] ='^'
     D['JLab d']['symbol'] ='v' 
+    ##D['BNS d']['symbol']  ='*' 
 
     # erros
+    D['HERA p']['ERR-key']=['STAT+SYST']
     D['BCDMS p']['ERR-key']=['STAERR','SYSERT']
     D['BCDMS d']['ERR-key']=['STAERR','SYSERT']
     D['NMC p']['ERR-key']=['STAERR','SYSERT']
@@ -56,8 +65,16 @@ class StructFunc(object):
     D['JLab p']['ERR-key']=['STAT','SYST']
     D['JLab d']['ERR-key']=['STAT','SYST']
 
-    self.ordered_keys=['BCDMS p','BCDMS d','NMC p'\
-    ,'SLAC p','SLAC d','JLab p','JLab d'] 
+    keys=[]
+    keys.append('HERA p')
+    keys.append('BCDMS p')
+    keys.append('BCDMS d')
+    keys.append('NMC p')
+    keys.append('SLAC p')
+    keys.append('SLAC d')
+    keys.append('JLab p')
+    keys.append('JLab d')
+    self.ordered_keys=keys
 
   def load_expdata(self):  
     D=self.D
@@ -92,6 +109,7 @@ class StructFunc(object):
       for i in range(len(H)): H[i]=H[i].replace('Q^2','Q2')
       for i in range(len(H)): H[i]=H[i].replace('F2P','F2')
       for i in range(len(H)): H[i]=H[i].replace('F2D','F2')
+      for i in range(len(H)): H[i]=H[i].replace('F2D','F2')
 
       # construct pandas data frame
       d={}
@@ -106,31 +124,62 @@ class StructFunc(object):
       d['ERR']=ERR
 
       DF=pd.DataFrame(d)
-      DF=DF[DF.W2>4.0]
+      #DF=DF[DF.W2>4.0]
 
       # store DF in global dic
       D[k]['DF']=DF
 
   def get_xbins(self):
     xbins=[]
-    xbins.append([3.4e-3,3.8e-3])
+
+
+    xbins.append([3.8e-6,4.5e-6])
+    xbins.append([4.9e-6,5.7e-6])
+    xbins.append([6.3e-6,7.2e-6])
+    xbins.append([7.9e-6,9.0e-6])
+    xbins.append([9.5e-6,11.1e-6])
+    xbins.append([12e-6,13.9e-6])
+    xbins.append([15.2e-6,17.0e-6])
+    xbins.append([19e-6,21e-6])
+    xbins.append([31e-6,33e-6])
+    xbins.append([38e-6,42e-6])
+    xbins.append([48e-6,52e-6])
+    xbins.append([58e-6,67e-6])
+    xbins.append([77e-6,82e-6])
+    xbins.append([96e-6,11e-5])
+    xbins.append([12.5e-5,13.5e-5])
+    xbins.append([19.5e-5,20.5e-5])
+    xbins.append([24.5e-5,25.5e-5])
+    xbins.append([30.5e-5,32.5e-5])
+    xbins.append([47.5e-5,50.5e-5])
+    xbins.append([78.5e-5,82.5e-5])
+    xbins.append([12.5e-4,13.5e-4])
+    xbins.append([19.5e-4,20.5e-4])
+
+    xbins.append([3.1e-3,3.8e-3])
     xbins.append([4.8e-3,5.7e-3])
     xbins.append([7.2e-3,9.3e-3])
     xbins.append([1.15e-2,1.4e-2])
     xbins.append([1.65e-2,1.9e-2])
+    xbins.append([1.95e-2,2.05e-2])
     xbins.append([2.3e-2,2.9e-2])
+    xbins.append([3.15e-2,3.25e-2])
     xbins.append([3.4e-2,3.8e-2])
     xbins.append([4.65e-2,5.4e-2])
     xbins.append([6.5e-2,7.3e-2])
+    xbins.append([7.8e-2,8.2e-2])
     xbins.append([8.5e-2,9.2e-2])
     xbins.append([9.8e-2,10.3e-2])
     xbins.append([10.8e-2,11.3e-2])
+    xbins.append([12.8e-2,13.2e-2])
     xbins.append([13.6e-2,14.6e-2])
     xbins.append([17.1e-2,18.7e-2])
     xbins.append([19.7e-2,20.7e-2])
     xbins.append([21.7e-2,23.7e-2])
+    xbins.append([24.8e-2,25.2e-2])
     xbins.append([26.0e-2,29.0e-2])
     xbins.append([33.0e-2,36.0e-2])
+    xbins.append([39.5e-2,40.5e-2])
     xbins.append([42.0e-2,48.0e-2])
 
     #xbins.append([48.1e-2,49.4e-2])
@@ -169,13 +218,14 @@ class StructFunc(object):
     ax=py.subplot(111)
     for k in self.D.keys():
       d=D[k]['DF']
-      if 'JLab' in k: color='k'
+      if 'HERA' in k: color='k'
       else: color='r'
       ax.plot(d['X'],d['Q2'],color+'.',markersize=3)
+    ax.semilogx()
     ax.semilogy()
-    #ax.semilogx()
     xbins=np.array(self.get_xbins()).flatten()
     ax.set_xticks(xbins)
+    ax.set_xlim(1e-1,1e-0)
     ax.grid()
     py.savefig('XQ2.pdf')
 
@@ -203,7 +253,7 @@ class StructFunc(object):
   def make_F2_plot(self):
     D=self.D
     xbins=self.get_xbins()
-    py.figure(figsize=(12,15))
+    py.figure(figsize=(15,15))
 
     gs = gridspec.GridSpec(1,1)
     gs.update(left=0.1,right=0.98,top=0.98,bottom=0.1)
@@ -240,30 +290,36 @@ class StructFunc(object):
           Q2=dbin['Q2'].values[imax]
           F2=dbin['F2'].values[imax]
 
-      if xbins[i][1]<0.01:
-        text='$x\in[%0.4f,%0.4f]$'%(xbins[i][0],xbins[i][1])
-      elif xbins[i][1]<0.12:
-        text='$x\in[%0.3f,%0.3f]$'%(xbins[i][0],xbins[i][1])
-      else:
-        text='$x\in[%0.2f,%0.2f]$'%(xbins[i][0],xbins[i][1])
-      ax.text(Q2*1.2,F2*2**(i+1),text)
+      if any([i==k for k in [10,34,37,39,41,44,49,47,43,35,32,30,28,26,45]])!=True:
+        if xbins[i][1]<0.0001:
+          text='$x\in[%0.6f,%0.6f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.001:
+          text='$x\in[%0.5f,%0.5f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.01:
+          text='$x\in[%0.4f,%0.4f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.12:
+          text='$x\in[%0.3f,%0.3f]$'%(xbins[i][0],xbins[i][1])
+        else:
+          text='$x\in[%0.2f,%0.2f]$'%(xbins[i][0],xbins[i][1])
+        ax.text(Q2*1.2,F2*2**(i+1),text)
+        #ax.text(Q2*1.2,F2*2**(i+1),text+str(i))
 
     ax.legend(frameon=0,fontsize=20)
 
-    ax.set_xlim(2e-3,2e3)
+    ax.set_xlim(8e-5,3e5)
     ax.semilogy()
     ax.semilogx()
     ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
     ax.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=30)
     py.tick_params(axis='both',labelsize=20)
 
-    xsq=0.52
-    ysq=0.27
-    ax.add_patch(patches.Rectangle((xsq,ysq),0.1,0.1\
+    xsq=0.45
+    ysq=0.07
+    ax.add_patch(patches.Rectangle((xsq,ysq),0.1,0.15\
       ,fill=False,transform=ax.transAxes))
     ax.plot([0.36,xsq],[0.07,ysq],'k:'
       ,transform=ax.transAxes)
-    ax.plot([0.36,xsq],[0.47,ysq+0.1],'k:'
+    ax.plot([0.36,xsq],[0.47,ysq+0.15],'k:'
       ,transform=ax.transAxes)
 
 
@@ -294,9 +350,10 @@ class StructFunc(object):
     ax1.tick_params(axis='both',labelsize=12)
     ax2.tick_params(axis='both',labelsize=12)
 
-    ax1.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=20)
-    ax2.set_xlabel('$x$',size=20)
-
+    ax1.set_xlabel(r'$Q^2$'+tex('(GeV^2)'),size=20)
+    ax2.set_xlabel(r'$x$',size=20)
+    ax1.semilogy()
+    ax2.semilogy()
     #py.tight_layout()
     py.savefig('F2.pdf')
 
@@ -306,8 +363,8 @@ if __name__=='__main__':
   #SF.make_XQ2_plot()
   SF.make_F2_plot()
 
-
-
+  #CJ150=lhapdf.mkPDF('CJ15_NLO',0)
+  #print CJ150.xfxQ2(2,0.5,100)
 
 
 

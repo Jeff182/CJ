@@ -2,7 +2,7 @@
  * comment
  * comment
  0.020 11 : normalization error, #_of_correlated_sys.err
- x        Q2   ratio    i  StaErr SysErT SyErrU Cor-SysD1 SysD2 ... SysD11
+ x        Q2   F2    i  StaErr SysErT SyErrU Cor-SysD1 SysD2 ... SysD11
  0.0078   0.80 0.27200   1 0.0034 0.0080 0.0000  0.5  0.0  0.0  0.0 -0.1  0.0  0.0  0.0  2.3  1.7  0.3
  0.0092   1.09 0.29430   2 0.0082 0.0091 0.0000  0.4  0.0  0.0  0.0  0.1  0.0  0.0  0.0  2.1  2.1  0.5
  0.0120   0.90 0.27630   3 0.0064 0.0054 0.0000  0.7  0.0  0.0  0.0 -0.3  0.0  0.0  0.0  1.6  0.8  0.2
