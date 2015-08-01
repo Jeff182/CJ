@@ -23,6 +23,7 @@ def get_LR(gsL,gsR):
   axL=py.subplot(gsL)
   axL.spines['right'].set_visible(False)
   axL.yaxis.set_ticks_position('left')
+  axL.axvline(0.1,color='k',ls='--',alpha=0.5)
   
   # construct (R)ight panel
   axR=py.subplot(gsR)
@@ -103,34 +104,30 @@ def plot(central,other,flav,color,T=1,hatch=None,alpha=0.4,facecolor='none',edge
   if flav=='db': _flav=r'\bar{d}'
   elif flav=='ub': _flav=r'\bar{u}'
   else: _flav=flav
-  axL.set_ylabel('$%s/%s^{(0)}$'%(_flav,_flav),size=20)
+  axL.set_ylabel(r'$%s/%s_{\rm CJ15}$'%(_flav,_flav),size=20)
   axL.set_xlabel('$x$',size=20)
   axL.xaxis.set_label_coords(1.0,-0.08,transform=axL.transAxes)
 
   return (p2,p1)
 
-CJ=COMPOSER(name='CJ12mid')
+CJ=COMPOSER('CJ15_NLO_KP_AV18')
 HERA15=COMPOSER('HERAPDF15NLO_EIG')
 MMHT14=COMPOSER('MMHT2014nlo68cl')
 
 Q2=100
 for flav in ['u','d','ub','db','s','g']:
   print flav
-  p1=plot(CJ,CJ,flav,'b',T=10,hatch=None,alpha=0.4,facecolor='b',edgecolor='none')
-  p2=plot(CJ,MMHT14,flav,'r',hatch=None,alpha=0.4,facecolor='r',edgecolor='none')
-  p3=plot(CJ,HERA15,flav,'g',hatch='///',alpha=0.4,facecolor='none',edgecolor='g')
+  p1=plot(CJ,CJ,flav,'r',T=5,hatch=None,alpha=0.7,facecolor='r',edgecolor='none')
+  p2=plot(CJ,MMHT14,flav,'y',hatch=None,alpha=0.4,facecolor='y',edgecolor='none')
+  p3=plot(CJ,HERA15,flav,'g',hatch='/////',alpha=0.4,facecolor='none',edgecolor='g')
 
-  if flav=='g':
+  if flav=='u':
     axL,axR=AX[flav]
     H=[p1,p2,p3]
-    L=[tex('CJ'),tex('MMHT14'),tex('HERA15')]
+    L=[tex('CJ15'),tex('MMHT14'),tex('HERA15')]
     axR.legend(H,L,frameon=0,fontsize=15, bbox_to_anchor=(0.1, 1.0))
     axR.text(0.06,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=20)
+  #elif flav=='d':
+    #axL.text(0.06,0.1,'$T=5$',transform=axL.transAxes,size=20)
 
-
-
-
-py.savefig('ratio.pdf')
-
-  
-
+py.savefig('gallery/ratio.pdf')
