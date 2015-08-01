@@ -23,6 +23,7 @@ axL.yaxis.set_ticks_position('left')
 axL.semilogx()
 axL.set_xticks(10**np.linspace(-4,-2,3))
 #axL.set_xlim(1e-5,0.1)
+axL.axvline(0.1,color='k',ls='--',alpha=0.5)
 
 # construct (R)ight panel
 axR=py.subplot(gs[0,1])
@@ -80,10 +81,10 @@ axL.xaxis.set_label_coords(1.0,-0.04,transform=axL.transAxes)
 # legend
 labelmap={}
 labelmap['u']='$u$'
-labelmap['d']='$u$'
+labelmap['d']='$d$'
 labelmap['db+ub']=r'$\bar{d}+\bar{u}$'
 labelmap['db-ub']=r'$\bar{d}-\bar{u}$'
-labelmap['g']='$u$'
+labelmap['g']='$g/10$'
 
 H,L=[],[]
 for k in ['u','d','db+ub','db-ub','g']:
@@ -97,6 +98,4 @@ axL.text(0.1,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=2
 
 # the end
 py.savefig('gallery/xpdf.pdf')
-
-  
 

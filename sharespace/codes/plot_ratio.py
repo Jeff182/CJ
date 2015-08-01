@@ -134,10 +134,3 @@ py.savefig('ratio.pdf')
 
   
 
-
-
-
-
-
-
-
