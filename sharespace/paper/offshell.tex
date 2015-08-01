@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{fullpage}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{mathrsfs}
+\usepackage{wrapfig,paralist,rotating,subfig}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\DeclareGraphicsExtensions{{.pdf},{.jpg},{.png}}
+
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+
+
+
+\title{Off-shell Corrections}
+\author{Lucas T. Brady}
+
+\begin{document}
+\maketitle
+
+\section{mKP Model}
+
+Our old model of off-shell corrections, known as the modified Kulagin-Petti (mKP), was based off a model developed by Kulagin and Petti in \cite{KP}.  Kulagin and Petti started with the off-shell structure function, $F_2(x,Q^2,p^2)$, and did a Taylor expansion around $p^2=M^2$ so that
+\begin{equation}
+\label{eq:taylor}
+F_2(x,Q^2,p^2) = F_2(x,Q^2)+\left(p^2-M^2\right)\left.\pder{F_2}{p^2}\right|_{p^2=M^2}
+\end{equation}
+
+For ease of use, they defined
+\begin{equation}
+\delta f_2 = \left.\pder{\ln{F_2}}{\ln{p^2}}\right|_{p^2=M^2} = \frac{M^2}{F_2}\left.\pder{F_2}{p^2}\right|_{p^2=M^2},
+\end{equation}
+
+so that 
+\begin{equation}
+\label{eq:taylor2}
+F_2(x,Q^2,p^2) = F_2(x,Q^2)\left(1+\left(\frac{p^2-M^2}{M^2}\right)\delta f_2\right).
+\end{equation}
+
+Next, if you define the off-shell corrections to the partons (valence: $q_v$, sea: $q_s$, and gluons: $g$) in a similar way so that
+\begin{subequations}
+\begin{align}
+q_v(x,Q^2,p^2) &= q_v(x,Q^2)\left(1+\left(\frac{p^2-M^2}{M^2}\right)\delta f_{q_v}\right)\\
+q_s(x,Q^2,p^2) &= q_s(x,Q^2)\left(1+\left(\frac{p^2-M^2}{M^2}\right)\delta f_{q_s}\right)\\
+g(x,Q^2,p^2) &= g(x,Q^2)\left(1+\left(\frac{p^2-M^2}{M^2}\right)\delta f_{g}\right),
+\end{align}
+\end{subequations}
+
+where in general
+\begin{equation}
+\delta f_a = \left.\pder{\ln{a}}{\ln{p^2}}\right|_{p^2=M^2} = \frac{M^2}{a}\left.\pder{a}{p^2}\right|_{p^2=M^2},
+\end{equation}
+
+you can work out the relationships between the quark corrections and the structure function corrections.  If you work it out, it turns out that in computing $\delta f_2$ or any other observable can be computed by taking the formula for the observable in terms of pdfs.  You then replace the observable with itself times its correction (i.e. $F_2\to F_2\delta f_2$) and replace the pdfs with themselves times their correction (i.e. $q\to q\delta_q$).  For instance, taking $F_2$ at leading order in $\alpha_s$, the correction to $F_2$ would be expressed as
+\begin{equation}
+\label{eq:quark_expand}
+F_2\delta f_2 = x\sum_{q}e_q^2(q_v\delta f_{q_v}+2q_s\delta f_{q_s})
+\end{equation}
+
+For reference, this is the point where the new model diverges from the mKP model.  Whereas the mKP model focused on just the $F_2$ corrections and specifically the valence contribution to that correction, our new model deals with three different quark corrections separately ($\delta f_{q_v}$, $\delta f_{q_s}$, and $\delta f_{g}$) and allows their combination for any observable and at any order.
+
+Getting back to the old mKP model, Kulagin and Petti made a further simplification by claiming that all quark off-shell corrections were equivalent to the valence correction (i.e. $\delta f_{q_v} = \delta f_{q_s} =\delta f_{g}$).  Alternatively, we could describe their assumption as claiming that the $F_2$ structure function was dominated by the valence quarks.  If we make this assumption, then we can factor out the correction so that
+
+\begin{equation}
+\label{eq:quark_expand2}
+F_2\delta f_2 = \left(x\sum_{q}e_q^2(q_v+2q_s)\right)\delta f_{q_v} = F_2\delta f_{q_v},
+\end{equation}
+
+or in other words, they claimed that $\delta f_2 = \delta f_{q_v}$.  The goal then is to figure out how to determine the off-shell correction for the quarks themselves.
+
+Kulagin and Petti use a simple model for the pdfs in the nucleus that is worked out in Section IV.C of \cite{KP}.  In the end their model gives that (Eqs. (99) and (100) in \cite{KP})
+\begin{subequations}
+\label{eq:fq}
+\begin{align}
+\delta f_{q_v} &= c+\pder{\ln{q_v}}{x}x(1-x)h(x)\\
+h(x)&=\frac{(1-\lambda)(1-x)+\lambda\bar{s}/M^2}{(1-x)^2-\bar{s}/M^2}.
+\end{align}
+\end{subequations}
+
+Here $c$ ends up just being a normalization constant; in $mKP$ we use $c$ to ensure that the off-shell correction does not change the normalization of the pdfs.  $\bar{s}$ is the average spectator mass.  Kulagin and Petti used a simple phenomenological fit to determine the value of $\bar{s}$, and we follow suit.  Finally, $\lambda$ is a constant that can be related to the nuclear wavefunction and swelling.  Wally, worked out a way of determining this constant solely relying on those two factors.
+
+One of the nice features of Eq. \ref{eq:fq} is that it is largely independent of the quark flavor.  The only elements that depend on the flavor are $c$, the pdf itself, and $\bar{s}$.  In our new model, we utilize this relative independence in order to extend this model to the sea and gluons as well.  For now, in the mKP model, Eq. \ref{eq:fq} describes most of what we need.  As an input for $q_v$, mKP used a simple model, $q_v=x^{-1/2}(1-x)^3$ to find the value of $\delta f_{q_v}$ as a function of $x$, which is plotted in Fig. \ref{fig:old_fq}.  With $\delta f_{q_v}$, we can return to Eq. \ref{eq:taylor2}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=4in]{old_fq.pdf}
+\caption{The off-shell correction for the nucleon valence quarks $\delta f_{q_v}$ as a function of x in the old mKP model.  Here we have made assumptions such that $\delta f_{q_v}=\delta f_2$.}
+\label{fig:old_fq}
+\end{figure}
+
+At this point, with this correction we have a form for $F_2(x,Q^2,p^2)$, so we need to use the smearing functions to compute $F_2^D(x,Q^2)$ in the deuteron.  At the moment, I will ignore a lot of the details of the smearing and say that qualitatively the smearing goes as
+
+\begin{subequations}
+\label{eq:smear}
+\begin{align}
+F_2^D(x,Q^2)&=\int_{x}^1 dy \int dp^2 \left(\tilde{g}_2(y,Q^2,p^2) F_2(x/y,Q^2,p^2)\right).
+\end{align}
+\end{subequations}
+
+Here $\tilde{g}_2$\footnote{Traditionally $f$ would be used to denote smearing functions, but since I have so many $f$s, I will use $g$ here.} is related to the normal smearing function through
+\begin{equation}
+g_2(y,Q^2) = \int dp^2 \tilde{g}_2(y,Q^2,p^2).
+\end{equation}
+
+Combining Eqs. \ref{eq:taylor} \& \ref{eq:smear}, we get the following for $F_2$
+\begin{equation}
+\label{eq:F2smear1}
+F_2^D(x,Q^2)=\int_{x}^1 dy \int dp^2 \tilde{g}_2(y,Q^2,p^2) F_2(x/y,Q^2)\left(1+\left(\frac{p^2-M^2}{M^2}\right)\delta f_2\right)
+\end{equation}
+
+We can simplify this by defining
+\begin{equation}
+\label{eq:g_off}
+g^{OFF}_2(y,Q^2)\equiv\int dp^2 \left(\frac{p^2-M^2}{M^2}\right)\tilde{g}_2(y,Q^2,p^2),
+\end{equation}
+which allows us to write Eq. \ref{eq:F2smear1} a little more simply as
+\begin{equation}
+\label{eq:F2smear2}
+F_2^D(x,Q^2)=\int_{x}^1 dy~g_2(y,Q^2) F_2(x/y,Q^2)+\int_x^1 dy~g_2^{OFF}(y,Q^2)F_2(x/y,Q^2)\delta f_2
+\end{equation}
+
+$\int_{x}^1 dy~g_2(y,Q^2) F_2(x/y,Q^2)$ is the normal smearing convolution that would be calculated in the CJ code, so for shorthand, we will refer to it as $F_2^{conv}$.  Since we also have $\delta f_2$ and $g_2^{OFF}$, we can calculate the second integral as well which we will define to be
+\begin{equation}
+\label{eq:DeltaF2}
+\Delta_{F2} \equiv \int_x^1 dy~g_2^{OFF}(y,Q^2)F_2(x/y,Q^2)\delta f_2
+\end{equation}
+
+So that 
+
+\begin{equation}
+\label{eq:F2smear3}
+F_2^D(x,Q^2)=F_2^{conv}+\Delta_{F2}
+\end{equation}
+
+The code could have carried out the calculations in this way and would have been done with it.  To speed up the calculations, the following ratio was precomputed
+
+\begin{equation}
+\label{eq:deltaR}
+\delta R_{F2}\equiv \frac{\Delta_{F2}}{F_2^D}.
+\end{equation}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=5in]{old_rat.pdf}
+\caption{A plot of the ratio of the off-shell correction to the full structure function for $F_2$.  In the current notation, this plots $\delta R_{F2}$.  This plot comes from Elog 321.  The fits are by Eric, and the plot is by Wally.}
+\label{fig:old_rat}
+\end{figure}
+
+This ratio was computed outside the CJ code using CTEQ6 pdfs at $Q^2 = 10 \text{GeV}^2$ and at leading order (i.e. $F_2$ was calculated using a leading order pdf expression).  This ratio was then parameterized and fitted.  The fitted ratio was then coded in \verb+DeuteronSF.new.f+.  I have included a plot of these fitted ratios in Fig. \ref{fig:old_rat}.  In the code, we would take the $F_2^{conv}$ computed using \verb+DIS10+ and smeared using \verb+DeuteronSF.new.f+ and modify it using this ratio to get the off-shell corrected structure function.  If you work it out, in order to construct $F_2^D$, from $F_2^{conv}$ and $\delta R_{F2}$, you need $F_2^D = \frac{F_2^{conv}}{1-\delta R_{F2}}$.  At this point in the code, $F_2^{conv}$ already had any finite $Q^2$ corrections in it, and had every correction applied already except off-shell corrections and nuclear shadowing (which were applied right after this).
+
+At this point, I have described how the off-shell corrections were parameterized and dealt with in the code previously.  CJ12, for instance, used this off-shell correction model by default.
+
+\section{fmKP Model}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=4in]{delta_f_q_v.pdf}
+\caption{The off-shell correction for the nucleon valence quarks $\delta f_{q_v}$ as a function of x}
+\label{fig:f_qv}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=4in]{delta_f_q_s.pdf}
+\caption{The off-shell correction for the nucleon sea quarks $\delta f_{q_s}$ as a function of x}
+\label{fig:f_qs}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=4in]{delta_f_g.pdf}
+\caption{The off-shell correction for the nucleon gluons $\delta f_{g}$ as a function of x}
+\label{fig:f_g}
+\end{figure}
+
+The main difference in the flavor modified Kulagin-Petti (fmKP) model occurs at Eq. \ref{eq:quark_expand}.  Whereas mKP limited itself to just looking at $\delta f_{q_v}$, fmKP keeps the $\delta f_{q_s}$ and $\delta f_g$ corrections separate.  With these separate models, we can then follow the rules described above to calculate $\delta f_i$ for any observable $i$.  As a reminder, for those rules, $F_i \delta f_i$ has the same form as $F_i$ but with each pdf $q$ replaced by $q\delta f_{q}$.  So in these calculations, we need to keep track of all three of the $\delta f_q$ in order to get a more complete calculation.
+
+As a note, at the moment, we calculate $\delta f_{q_v}$ for the valence quarks, $\delta f_{q_s}$ for the up and down sea quarks, and $\delta f_g$ for the gluons.  At the moment, our calculations assume that $\delta f_s$ for the strange as well as the corrections for higher quarks are zero.  The infrastructure is in place to remedy this and input separate corrections for the other quarks, but they have not yet been implemented.  It is possible that these extra flavors will be implemented before the completion of the project.
+
+In calculating $\delta f_{q_v}$, $\delta f_{q_s}$, and $\delta f_g$ in the fmKP model, we moved away from using the simple $q_v=x^{-1/2}(1-x)^3$ model for the quarks.  Going back to Eq. \ref{eq:fq}, the normalization constant $c$ blows up to infinity for quarks that go like $x^{-1}$ at low $x$.  This meant that most pdf parameterizations would give nonsensical normalization constants.  To correct this, we used the GRV pdfs to calculate $\delta f_{q_v}$, $\delta f_{q_s}$, and $\delta f_g$ in the fmKP model.  These pdfs are calculated at very low $Q^2$ where they can impose valence-like behavior on the sea quarks and gluons.  This valence-like behavior allows us to calculate finite normalization constants.  In the future, we may switch to the more recent JR pdf sets, but the switch would be trivial to accomplish in terms of coding.  Since the $\delta f_q = \left.\frac{M^2}{q}\pder{q}{p^2}\right|_{p^2=M^2}$ are themselves ratios, we make the assumption that they are relatively independent of pdf model.
+
+The only other element of Eq. \ref{eq:fq} that needs to be modified to account for the new flavors is $\bar{s}$.  This value was originally determined by Kulagin and Petti through a rough model fit to a preexisting pdf set from Alekhin.  We carried out the same rough fit using the GRV pdfs for consistency.  The model fits themselves are irrelevant except for the extraction of $\bar{s}$, and our values are physically reasonable and consistent with Kulagin and Petti's previous results.
+
+Using these GRV pdfs, we calculated the $\delta f_q$ which I have plotted in Figs. \ref{fig:f_qv}-\ref{fig:f_g}.  Once these corrections are calculated, we stop using the GRV pdfs.  After this point, we work entirely with the current pdf parameterizations being used by the CJ code.  In fact, after this point, everything is carried out within the CJ code with the $\delta f_q$ being input as new subroutines in the CJ code.
+
+At this point, we use the insight that the additive off-shell correction $\Delta_{F2}$ (or $\Delta_{FL}$ or $\Delta_{Fi}$ for any observable) can be calculated in the exact same way as $F_2^{conv}$ except that all the pdfs, $q$, are replaced by themselves times their correction $q\delta f_q$.  Therefore, we could go in and do a minor modification to the code to allow us to calculate the additive correction $\Delta_{F2}$ from our $\delta f_q$ with minimal extra effort.
+
+From a code point of view\footnote{I have coded up everything in a side branch and have tested it extensively to make sure it does not interfere with other calculations.  The coding is solid, but I have not yet merged it back into the main line of the code.}, the modification happened in the subroutine \verb+FSUPDF+ contained in the file \verb+altpar10.f+.  In this subroutine, I have added the following block of code at the very end\\
+\verb~         call get_delta_v(x,dfv) ! valence correction~\\
+\verb~         call get_delta_sq(x,dfsq) ! ubar and dbar correction~\\
+\verb~         call get_delta_g(x,dfg) ! gluon correction~\\
+\verb~         call get_delta_sb(x,dfsb) ! strange correction - not implemented~\\
+\verb~         call get_delta_cb(x,dfcb) ! charm correction - not implemented~\\
+\verb~         call get_delta_bb(x,dfbb) ! bottom correction - not implemented~\\
+\verb~         u = (u-ub)*dfv+ub*dfsq~\\
+\verb~         d = (d-db)*dfv+db*dfsq~\\
+\verb~         ub = ub*dfsq~\\
+\verb~         db = db*dfsq~\\
+\verb~         sb = sb*dfsb~\\
+\verb~         cb = cb*dfcb~\\
+\verb~         bb = bb*dfbb~\\
+\verb~         glue = glue*dfg~\\
+I have built a subroutine \verb+set_offshell+ which sets whether or not we are calculating an off-shell correction.  By default all the \verb+get_delta+ subroutines will output one unless \verb+set_offshell+ is called with the correct flags.  I have tested this extensively, and in ordinary usage, this new modification does not alter the output of the code at all.
+
+When you do want to calculate an additive off-shell correction, $\Delta_{F2}$, all you do is call \verb+set_offshell+ with the proper flags.  At this point, \verb+DIS10.f+ has been switched over to calculating off-shell corrections and will do so until \verb+set_offshell+ is called with a false flag (which is done immediately after any calculations are made).  Using this, \verb+DIS10.f+ will now calculate $F_2\delta f_2$ for us.  This version of $F_2\delta f_2$ will now be calculated using a combination of pdfs that is exactly the same as we would use to calculate $F_2$.  For instance, our $F_2$ calculations are NLO, meaning they include loop corrections and the like.  Since we are using the same code, our $F_2\delta f_2$ will also be calculated with those loop corrections and every other NLO element.  At the moment, I also have the code applying finite $Q^2$ corrections (e.g. TMCs and HTs) to $F_2\delta f_2$.  Since these are controlled by a flag in the code, they would be much easier to turn off in the calculations than NLO versus LO.  By default right now, I am calculating $F_2\delta f_2$ in the exact same way as $F_2^N$.
+
+With this newly calculated version of $F_2\delta f_2$, we can go back to Eq. \ref{eq:F2smear2}.  There, you will notice that we need to use the smearing functions $g_i^{OFF}$ (defined in Eq. \ref{eq:g_off}) instead of $g_i$.  Luckily these are already calculated in the code for the nuclear corrections.  I have checked that everything is in order as I need it, and everything checks out.  Essentially, we just need to call the smearing function code with flags of 10, 11, and 12 to get $g_0^{OFF}$, $g_1^{OFF}$, and $g_2^{OFF}$ respectively whereas 0, 1, and 2 would have gotten us $g_0$, $g_1$, and $g_2$ respectively.  With $F_2\delta f_2$ and $g_2^{OFF}$, we have everything we need to calculate $\Delta_{F2}$ as described in Eq. \ref{eq:DeltaF2}.
+
+Since we have calculated everything using CJ pdfs (after calculating the $\delta f_q$s), there is no reason to calculate a ratio, so I add together the on-shell and off-shell parts directly as in Eq. \ref{eq:F2smear3}.  Thus, we can calculate $F_2^D$.  I have mostly focused on $F_2$ here, but another benefit of this procedure is that it works equally well for all structure functions, not just $F_2$ (which is what the mKP model did).  So long as \verb+DIS10+ is called with the correct flags and the correct combination of $g_i^{OFF}$ structure functions are used, any structure function is as easy to calculate as $F_2$.  With the proper modified smearing functions, this procedure should also be portable to data other than DIS as well.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=6in]{F2_model_comp.pdf}
+\caption{Comparison of different off-shell correction models for $F_2$.  The black curve is the old mKP model, and the colored curves are the new fmKP model.  At low $x$, many of the curves are overlapping, but all the NLO curves follow the blue curve while all the LO curves follow the red curve.  NLO and LO curves were calculated with both $F_2^{conv}$ and $\Delta_{F2}$ calculated at that order, and similarly the finite $Q^2$ effects apply to both $F_2^{conv}$ and $\Delta_{F2}$.}
+\label{fig:f_g}
+\end{figure}
+
+My fmKP does not natively compute $\delta R_{F2}$ from Eq. \ref{eq:deltaR} as the mKP model did.  Since it works directly with the additive correction, such a ratio is unnecessary.  However, for comparison's sake, I went through and made my code calculate this ratio so that we could compare with the mKP model directly.  The results are shown in Fig. \ref{fig:compare}.  The full version of the new calculations is shown in green while the old calculation is shown in black.  For each of the different fmKP curves, I have listed a different set of conditions.  Because I am calculating everything through the CJ code, I needed to apply these conditions to both $F_2^{conv}$ and $\Delta_{F2}$.  Therefore, the LO curves were calculated with both $F_2^{conv}$ and $\Delta_{F2}$ at LO as described above.  Also note that at low $x$, all the LO terms follow the red curve, and all the NLO curves follow the blue curve.  Also, it should be noted that all the fmKP curves here were calculated with CJ12 mid parameters at $Q^2=10 \text{GeV}^2$.
+
+On the associated Elog entry, I have also included more information about the results of fits, including pdf plots and some chi squared analysis.  I will continue to update that Elog entry with more information as it becomes available.  However, this report should provide a description of how I calculate the off-shell corrections in the fmKP model, both theoretically and computationally.
+
+
+
+
+
+
+\begin{thebibliography}{99}
+\bibitem{KP} S. A. Kulagin, R. Petti, ``Global Study of Nuclear Structure Functions,'' \emph{Nuclear Physics} {\bf A765}, 126-183 (2006), \verb+hep-ph/0412425+
+\end{thebibliography}
+
+
+\end{document}
