@@ -25,55 +25,55 @@ class StructFunc(object):
   def get_expdata_fnames(self):
     D=self.D
 
-    D['HERA p']={'fname':'HERA.dat'}
-    D['BCDMS p']={'fname':'BcdF2pCor'}
-    D['BCDMS d']={'fname':'BcdF2dCor'}
-    D['NMC p']  ={'fname':'NmcF2pCor'}
-    D['SLAC p'] ={'fname':'slac_p_reb'}
-    D['SLAC d'] ={'fname':'slac_d_reb'}
-    D['JLab p'] ={'fname':'jl00106F2p'}
-    D['JLab d'] ={'fname':'jl00106F2d'}
+    D['HERA p']={'fname':'HERA.dat', 'label':'HERA'}
+    D['BCDMS p']={'fname':'BcdF2pCor', 'label':'BCDMS'}
+    #D['BCDMS d']={'fname':'BcdF2dCor'}
+    D['NMC p']  ={'fname':'NmcF2pCor', 'label':'NMC'}
+    D['SLAC p'] ={'fname':'slac_p_reb', 'label':'SLAC'}
+    #D['SLAC d'] ={'fname':'slac_d_reb'}
+    D['JLab p'] ={'fname':'jl00106F2p', 'label':'JLab'}
+    #D['JLab d'] ={'fname':'jl00106F2d'}
     ##D['BNS d']  ={'fname':'BNS_F2nd'}
 
-    D['HERA p']['color']='r'
-    D['BCDMS p']['color']='r'
-    D['BCDMS d']['color']='g'
-    D['NMC p']['color']  ='m'
-    D['SLAC p']['color'] ='b'
-    D['SLAC d']['color'] ='y'
-    D['JLab p']['color'] ='c'
-    D['JLab d']['color'] ='k' 
+    D['HERA p']['color']='g'
+    D['BCDMS p']['color']='b'
+    #D['BCDMS d']['color']='g'
+    D['NMC p']['color']  ='c'
+    D['SLAC p']['color'] ='y'
+    #D['SLAC d']['color'] ='y'
+    D['JLab p']['color'] ='r'
+    #D['JLab d']['color'] ='k' 
     ##D['BNS d']['color'] ='r' 
 
     D['HERA p']['symbol']='*'
     D['BCDMS p']['symbol']='.'
-    D['BCDMS d']['symbol']='s'
-    D['NMC p']['symbol']  ='x'
+    #D['BCDMS d']['symbol']='s'
+    D['NMC p']['symbol']  ='*'
     D['SLAC p']['symbol'] ='>'
-    D['SLAC d']['symbol'] ='<'
+    #D['SLAC d']['symbol'] ='<'
     D['JLab p']['symbol'] ='^'
-    D['JLab d']['symbol'] ='v' 
+    #D['JLab d']['symbol'] ='v' 
     ##D['BNS d']['symbol']  ='*' 
 
     # erros
     D['HERA p']['ERR-key']=['STAT+SYST']
     D['BCDMS p']['ERR-key']=['STAERR','SYSERT']
-    D['BCDMS d']['ERR-key']=['STAERR','SYSERT']
+    #D['BCDMS d']['ERR-key']=['STAERR','SYSERT']
     D['NMC p']['ERR-key']=['STAERR','SYSERT']
     D['SLAC p']['ERR-key']=['STAT.','SYS.']
-    D['SLAC d']['ERR-key']=['STAT','SYS']
+    #D['SLAC d']['ERR-key']=['STAT','SYS']
     D['JLab p']['ERR-key']=['STAT','SYST']
-    D['JLab d']['ERR-key']=['STAT','SYST']
+    #D['JLab d']['ERR-key']=['STAT','SYST']
 
     keys=[]
     keys.append('HERA p')
     keys.append('BCDMS p')
-    keys.append('BCDMS d')
+    #keys.append('BCDMS d')
     keys.append('NMC p')
     keys.append('SLAC p')
-    keys.append('SLAC d')
+    #keys.append('SLAC d')
     keys.append('JLab p')
-    keys.append('JLab d')
+    #keys.append('JLab d')
     self.ordered_keys=keys
 
   def load_expdata(self):  
@@ -125,6 +125,7 @@ class StructFunc(object):
 
       DF=pd.DataFrame(d)
       #DF=DF[DF.W2>4.0]
+      DF=DF[DF.Q2>1.0]
 
       # store DF in global dic
       D[k]['DF']=DF
@@ -272,7 +273,7 @@ class StructFunc(object):
               ,yerr=dbin['ERR'].values\
               ,fmt=color+sym\
               ,mec=color
-              ,label=tex(k.replace(' ','~')))
+              ,label=tex(D[k]['label']))
             flag=True
           else:
             ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
@@ -281,7 +282,7 @@ class StructFunc(object):
               ,mec=color)
 
     for i in range(len(xbins)):
-      Q2=-100
+      Q2=1
       for k in D.keys():
         dbin=D[k]['dbinned'][i]
         if dbin['X'].size==0:continue
@@ -290,27 +291,30 @@ class StructFunc(object):
           Q2=dbin['Q2'].values[imax]
           F2=dbin['F2'].values[imax]
 
-      if any([i==k for k in [10,34,37,39,41,44,49,47,43,35,32,30,28,26,45]])!=True:
-        if xbins[i][1]<0.0001:
-          text='$x\in[%0.6f,%0.6f]$'%(xbins[i][0],xbins[i][1])
-        elif xbins[i][1]<0.001:
-          text='$x\in[%0.5f,%0.5f]$'%(xbins[i][0],xbins[i][1])
-        elif xbins[i][1]<0.01:
-          text='$x\in[%0.4f,%0.4f]$'%(xbins[i][0],xbins[i][1])
-        elif xbins[i][1]<0.12:
-          text='$x\in[%0.3f,%0.3f]$'%(xbins[i][0],xbins[i][1])
-        else:
-          text='$x\in[%0.2f,%0.2f]$'%(xbins[i][0],xbins[i][1])
+      if any([i==k for k in [10,34,37,39,41,44,49,47,43,35,32,30,28,26,45,46]])!=True:
+	if i>30:
+          text='$x=%0.1e$'%(np.mean([xbins[i][0],xbins[i][1]]))
+	  exp=int(text.split('-')[1].replace('$',''))
+	  text=text.split('e')[0]+'e'
+          text=text.replace('e',r'\times 10^{-%d}'%exp)+'\ (i=%d)$'%i
+	elif i<16:
+	  text='$x=%0.2f'%(np.mean([xbins[i][0],xbins[i][1]]))+'\ (i=%d)$'%i
+	else:
+	  text='$x=%0.3f'%(np.mean([xbins[i][0],xbins[i][1]]))+'\ (i=%d)$'%i
+
         ax.text(Q2*1.2,F2*2**(i+1),text)
         #ax.text(Q2*1.2,F2*2**(i+1),text+str(i))
 
-    ax.legend(frameon=0,fontsize=20)
+    ax.legend(frameon=0,fontsize=20,numpoints=1)
 
     ax.set_xlim(8e-5,3e5)
+    ax.set_ylim(1e-3,2e13)
     ax.semilogy()
     ax.semilogx()
-    ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
-    ax.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=30)
+    ax.set_xticks([1e-1,1,1e1,1e2,1e3,1e4,1e5])
+    #ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
+    ax.set_ylabel('$F_2^p(x,Q^2)\ * 2^{\ i}$',size=30)
+    ax.set_xlabel('$Q^2$'+tex('\ (GeV^2)'),size=30)
     py.tick_params(axis='both',labelsize=20)
 
     xsq=0.45
@@ -350,12 +354,14 @@ class StructFunc(object):
     ax1.tick_params(axis='both',labelsize=12)
     ax2.tick_params(axis='both',labelsize=12)
 
-    ax1.set_xlabel(r'$Q^2$'+tex('(GeV^2)'),size=20)
+    ax1.set_xlabel(r'$Q^2$'+tex('\ (GeV^2)'),size=20)
     ax2.set_xlabel(r'$x$',size=20)
+    ax1.set_ylim(1e-3,0.25)
+    ax2.set_ylim(1e-3,0.25)
     ax1.semilogy()
     ax2.semilogy()
     #py.tight_layout()
-    py.savefig('F2.pdf')
+    py.savefig('gallery/F2p.pdf')
 
 if __name__=='__main__':
 
@@ -365,8 +371,4 @@ if __name__=='__main__':
 
   #CJ150=lhapdf.mkPDF('CJ15_NLO',0)
   #print CJ150.xfxQ2(2,0.5,100)
-
-
-
-
 

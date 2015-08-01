@@ -32,7 +32,7 @@ axR.axes.get_yaxis().set_ticks([])
 axR.set_xticks(np.arange(0.1,1.1,0.2))
 axR.set_xlim(0.1,1.0)
 
-CJ=COMPOSER(name='CJ12min')
+CJ=COMPOSER(name='CJ15_NLO_KP_AV18')
 def plot(flav,color,factor=1):
   XL=10**np.linspace(-4,-1,100)
   XR=np.linspace(0.1,1,100)
@@ -96,7 +96,7 @@ axR.legend(H,L,loc=1,frameon=0,fontsize=20)
 axL.text(0.1,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=20)
 
 # the end
-py.savefig('xpdf.pdf')
+py.savefig('gallery/xpdf.pdf')
 
   
 
