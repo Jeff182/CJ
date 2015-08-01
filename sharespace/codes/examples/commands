@@ -1,0 +1,6 @@
+git status                        - check if there are any modifications
+
+git pull                          - get others' changes
+git add FILENAME                  - set up for staging
+git commit -m "modified FILENAME" - commit changes
+git push                          - upload your new changes
