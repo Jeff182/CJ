@@ -62,10 +62,14 @@ class FITPACK(object):
 
 class COMPOSER(object):
 
-  def __init__(self,name,X=[None]):
+  def __init__(self,name,X=[None],central_only=False):
 
     self.name=name
-    self.SETS=lhapdf.mkPDFs(name)
+    self.central_only=central_only
+    if central_only==True:
+      self.central=lhapdf.mkPDF(name,0)
+    else:
+      self.SETS=lhapdf.mkPDFs(name)
     if X[0]==None: self.X=np.linspace(1e-3,0.99,100)
     else: self.X=X
 
@@ -85,6 +89,16 @@ class COMPOSER(object):
     elif flav=='db-ub': return Set.xfxQ2(-1,x,Q2)-Set.xfxQ2(-2,x,Q2)
     elif flav=='ub': return Set.xfxQ2(-2,x,Q2)
     elif flav=='db': return Set.xfxQ2(-1,x,Q2)
+
+  def _get_xpdf_central(self,flav,x,Q2):
+    if   flav=='g': return self.central.xfxQ2(21,x,Q2)
+    elif flav=='u': return self.central.xfxQ2(2,x,Q2)
+    elif flav=='d': return self.central.xfxQ2(1,x,Q2)
+    elif flav=='s': return self.central.xfxQ2(3,x,Q2)
+    elif flav=='db+ub': return self.central.xfxQ2(-2,x,Q2)+self.central.xfxQ2(-1,x,Q2)
+    elif flav=='db-ub': return self.central.xfxQ2(-1,x,Q2)-self.central.xfxQ2(-2,x,Q2)
+    elif flav=='ub': return self.central.xfxQ2(-2,x,Q2)
+    elif flav=='db': return self.central.xfxQ2(-1,x,Q2)
 
   def _error(self,message):
     print 'ERR '+message
@@ -118,12 +132,17 @@ class COMPOSER(object):
     if flav==None: self._error('specify flav')
     if X==None: X=self.X
     if Q2==None: self._error('specify Q2')
-
     D={}
-    PDFS=[[self._get_xpdf(Set,flav,x,Q2) for x in X] for Set in self.SETS]
-    D['xf0']=np.array(PDFS[0])
-    D['dxf']=self._get_symmetric_errors(PDFS)
-    D['dxf+'],D['dxf-']=self._get_asymmetric_errors(PDFS)
+    if self.central_only:
+      D['xf0']=np.array([self._get_xpdf_central(flav,x,Q2) for x in X])
+      D['dxf']=np.zeros(X.size)
+      D['dxf+']=np.zeros(X.size)
+      D['dxf-']=np.zeros(X.size)
+    else:
+      PDFS=[[self._get_xpdf(Set,flav,x,Q2) for x in X] for Set in self.SETS]
+      D['xf0']=np.array(PDFS[0])
+      D['dxf']=self._get_symmetric_errors(PDFS)
+      D['dxf+'],D['dxf-']=self._get_asymmetric_errors(PDFS)
     return D
 
 if __name__=="__main__" :

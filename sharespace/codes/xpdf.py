@@ -14,7 +14,7 @@ from master import COMPOSER,FITPACK
 
 # prepare grid 
 gs = gridspec.GridSpec(1,2) 
-gs.update(left=0.1,right=0.98,wspace=0,hspace=0.0,top=0.98,bottom=0.1)
+gs.update(left=0.11,right=0.98,wspace=0,hspace=0.0,top=0.98,bottom=0.1)
 
 # construct (L)eft panel
 axL=py.subplot(gs[0,0])
@@ -24,6 +24,7 @@ axL.semilogx()
 axL.set_xticks(10**np.linspace(-4,-2,3))
 #axL.set_xlim(1e-5,0.1)
 axL.axvline(0.1,color='k',ls='--',alpha=0.5)
+axL.tick_params(axis='both', which='major', labelsize=20)
 
 # construct (R)ight panel
 axR=py.subplot(gs[0,1])
@@ -32,6 +33,7 @@ axR.axes.yaxis.set_ticklabels([])
 axR.axes.get_yaxis().set_ticks([])
 axR.set_xticks(np.arange(0.1,1.1,0.2))
 axR.set_xlim(0.1,1.0)
+axR.tick_params(axis='both', which='major', labelsize=17)
 
 CJ=COMPOSER(name='CJ15_NLO_KP_AV18')
 def plot(flav,color,factor=1):
@@ -63,7 +65,7 @@ LH['u']=plot('u','r')
 LH['d']=plot('d','b')
 LH['db+ub']=plot('db+ub','g')
 LH['db-ub']=plot('db-ub','m')
-LH['g']=plot('g','k',factor=1e-1)
+LH['g']=plot('g','y',factor=1e-1)
 
 # set limits
 ylimL = axL.get_ylim()
@@ -74,8 +76,8 @@ axL.set_ylim(ymin,ymax)
 axR.set_ylim(ymin,ymax)
 
 # axis labels
-axL.set_ylabel('$xf(x,Q^2)$',size=20)
-axL.set_xlabel('$x$',size=20)
+axL.set_ylabel('$xf(x,Q^2)$',size=25)
+axL.set_xlabel('$x$',size=25)
 axL.xaxis.set_label_coords(1.0,-0.04,transform=axL.transAxes)
 
 # legend
