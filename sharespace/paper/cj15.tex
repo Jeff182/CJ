@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% August 1, 2015		first draft
+%% August 5, 2015		first draft
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,9 +35,9 @@
 	L.~T.~Brady$^{2,3}$,
 	P.~J.~Ehlers$^{2,4}$,
 	C.~E.~Keppel$^2$,
-	W. Melnitchouk$^2$
+	W.~Melnitchouk$^2$
 	J.~F.~Owens$^5$,
-	Nobuo~Sato$^2$}
+	Nobuo~Sato$^2$, ... ...}
 
 \affiliation{
 $^1$\mbox{Hampton University, Hampton, Virginia 23668} \\
@@ -54,28 +54,14 @@ $^5$\mbox{Florida State University, Tallahassee, Florida 32306, USA} \\
 \begin{abstract}
 We present a new set of leading twist parton distribution functions
 (PDFs), which take advantage of developments in the theoretical
-treatment of nuclear corrections and new data.
+treatment of nuclear corrections as well as new data.
 The analysis includes for the first time data on the free neutron
 structure function from the BONuS experiment at Jefferson Lab,
 and new $W$-boson asymmetry data from Fermilab, both of which
 significantly reduce the uncertainty on the $d/u$ ratio at large
 values of $x$.
-We also review evidence for a sign change in $\bar d-\bar u$
-at large $x$ that has been claimed in recent phenomenological
-analyses.
-%
-% We present three new sets of next-to-leading order parton distribution
-% functions (PDFs) determined by global fits to a wide variety of data
-% for hard scattering processes. The analysis includes target mass and
-% higher twist corrections needed for the description of deep inelastic
-% scattering data at large $x$ and low $Q^2$, and nuclear corrections
-% for deuterium targets.
-% The PDF sets correspond to three different models for the nuclear
-% effects, and provide a more realistic uncertainty range for the $d$
-% quark PDF, in particular, compared with previous fits.  We describe
-% the PDF error sets for each choice of the nuclear corrections, and
-% provide a user interface for utilizing the distributions.
-%
+We also review evidence for a sign change in $\bar d-\bar u$ at
+large $x$ that has been claimed in recent phenomenological analyses.
 \end{abstract}
 
 \maketitle
@@ -400,7 +386,7 @@ Same off-shell functions in DIS and DY.
 $\bullet$
 The off-shell nucleon correction $\delta^{(\rm off)} q^d$ is somewhat
 more model dependent, but several quark model based estimates of this
-have been made in the literature \cite{KP06, GL92, MSTplb, MSS97}.
+have been made in the literature \cite{KP06, GL92, MSTplb}.
 
 
 $\bullet$
@@ -540,17 +526,29 @@ $\gamma$+jet& D\O\ 1           &\cite{D0gamjet}& 16 & 6  & 6  & 6  \\
 \section{Results} 
 \label{sec:results}
 
-The results for the CJ15 PDFs are displayed in Fig.~\ref{}
+
+% .......................................................................
+\subsection{CJ15 PDFs}
+\label{ssec:CJ15pdfs}
+
+
+The CJ15 PDFs are displayed in Fig.~\ref{fig:pdf} at a scale of
+$Q^2=10$~GeV$^2$, for the $u$, $d$, $\bar d + \bar u$ and
+$\bar d - \bar u$ distributions, and the gluon distribution
+scaled by a factor 1/10.
 
 
 % .......................................................................
 \subsection{$d/u$ ratio}
+\label{ssec:du}
+
 
 
 
 
 % .......................................................................
 \subsection{$\bar d - \bar u$ asymmetry}
+\label{ssec:dubar}
 
 
 ... Connection with Gottfried sum ... Peng et al. paper ...
@@ -563,10 +561,11 @@ The results for the CJ15 PDFs are displayed in Fig.~\ref{}
 \label{sec:conclusion}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments
 
-We thank ... for helpful discussions ...
+We thank E.~Christy and P.~Monaghan for for helpful discussions.
 This work was supported by the DOE contract No.~DE-AC05-06OR23177,
 under which Jefferson Science Associates, LLC operates Jefferson Lab.
 The work of J.F.O. and A.A. was supported in part by DOE contracts
@@ -651,6 +650,39 @@ Phys. Rev. D {\bf 87}, 094012 (2013).
 \bibitem{CJweb}
 The CTEQ-Jefferson Lab (CJ) collaboration website,
 \url{http://www.jlab.org/cj}.
+
+\bibitem{MMHT14}
+L.~A.~Harland-Lang, A.~D.~Martin, P.~Motylinski and R.~S.~Thorne,
+Eur. Phys. J. C {\bf 75}, 204 (2015).
+
+% \bibitem{CT10}
+% H.-L.~Lai, M.~Guzzi, J.~Huston, Z.~Li, P.~M.~Nadolsky, J.~Pumplin
+% and C.-P.~Yuan,
+% Phys. Rev. D {\bf 82}, 074024 (2010).
+
+\bibitem{CT14} 
+S.~Dulat {\it et al.},
+arXiv:1506.07443 [hep-ph].
+
+% \bibitem{NNPDF10}
+% R.~D.~Ball, L.~Del Debbio, S.~Forte, A.~Guffanti, J.~I.~Latorre,
+% J.~Rojo and M.~Ubiali,
+% Nucl. Phys. B {\bf 838}, 136 (2010).
+%
+% \bibitem{NNPDF13}
+% R.~D.~Ball {\it et al.},
+% Nucl. Phys. B {\bf 867}, 244 (2013).
+
+\bibitem{NNPDF3.0}
+R.~D.~Ball {\it et al.},
+JHEP {\bf 1504}, 040 (2015).
+
+\bibitem{HERAPDF10}
+F.~D.~Aaron {\it et al.},
+JHEP {\bf 1001}, 109 (2010).
+
+\bibitem{HERA15}
+V.~Radescu, arXiv:1308.0374.
 
 \bibitem{BCDMS}
 A.~C.~Benvenuti {\it et al.},
@@ -747,40 +779,35 @@ Phys. Rev. Lett. {\bf 99}, 192001 (2007).
 G.~Aad {\it et al.},
 Phys. Rev. Lett. {\bf 109}, 012001 (2012).
 
-\bibitem{nCTEQ09}
-I.~Schienbein, J.~Y.~Yu, K.~Kovarik, C.~Keppel, J.~G.~Morfin, F.~Olness
-and J.~F.~Owens,
-Phys. Rev. D {\bf 80}, 094004 (2009).
-
-\bibitem{nCTEQ11}
-K.~Kovarik, I.~Schienbein, F.~I.~Olness, J.~Y.~Yu, C.~Keppel, 
-J.~G.~Morfin, J.~F.~Owens and T.~Stavreva,
-Phys. Rev. Lett. {\bf 106}, 122301 (2011).
-
-\bibitem{Eskola}
-K.~J.~Eskola, H.~Paukkunen and C.~A.~Salgado,
-JHEP {\bf 0904}, 065 (2009),
-
-\bibitem{DSZS}
-D.~de Florian, R.~Sassot, P.~Zurita and M.~Stratmann,
-Phys. Rev. D {\bf 85}, 074028 (2012).
-
-\bibitem{Kumano}
-M.~Hirai, S.~Kumano and T.~-H.~Nagai,
-Phys. Rev. C {\bf 76}, 065207 (2007).
-
-\bibitem{Acc10}
-A.~Accardi, F.~Arleo, W.~K.~Brooks, D.~D'Enterria and V.~Muccifora,
-Riv. Nuovo Cim. {\bf 32}, 439 (2010).
-
-\bibitem{E605}
-G.~Moreno {\it et al.},  
-Phys. Rev. D {\bf 43}, 2815 (1991).
-
-\bibitem{NNPDF10}
-R.~D.~Ball, L.~Del Debbio, S.~Forte, A.~Guffanti, J.~I.~Latorre,
-J.~Rojo and M.~Ubiali,
-Nucl. Phys. B {\bf 838}, 136 (2010).
+% \bibitem{nCTEQ09}
+% I.~Schienbein, J.~Y.~Yu, K.~Kovarik, C.~Keppel, J.~G.~Morfin, F.~Olness
+% and J.~F.~Owens,
+% Phys. Rev. D {\bf 80}, 094004 (2009).
+%
+% \bibitem{nCTEQ11}
+% K.~Kovarik, I.~Schienbein, F.~I.~Olness, J.~Y.~Yu, C.~Keppel, 
+% J.~G.~Morfin, J.~F.~Owens and T.~Stavreva,
+% Phys. Rev. Lett. {\bf 106}, 122301 (2011).
+%
+% \bibitem{Eskola}
+% K.~J.~Eskola, H.~Paukkunen and C.~A.~Salgado,
+% JHEP {\bf 0904}, 065 (2009),
+%
+% \bibitem{DSZS}
+% D.~de Florian, R.~Sassot, P.~Zurita and M.~Stratmann,
+% Phys. Rev. D {\bf 85}, 074028 (2012).
+%
+% \bibitem{Kumano}
+% M.~Hirai, S.~Kumano and T.~-H.~Nagai,
+% Phys. Rev. C {\bf 76}, 065207 (2007).
+%
+% \bibitem{Acc10}
+% A.~Accardi, F.~Arleo, W.~K.~Brooks, D.~D'Enterria and V.~Muccifora,
+% Riv. Nuovo Cim. {\bf 32}, 439 (2010).
+%
+% \bibitem{E605}
+% G.~Moreno {\it et al.},  
+% Phys. Rev. D {\bf 43}, 2815 (1991).
 
 \bibitem{ABKM09} 
 S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
@@ -794,35 +821,14 @@ Phys. Rev. D {\bf 86}, 054009 (2012).
 A.~D.~Martin, W.~J.~Stirling, R.~S.~Thorne and G.~Watt,
 Eur. Phys. J. C {\bf 63}, 189 (2009).
 
-\bibitem{CT10}
-H.-L.~Lai, M.~Guzzi, J.~Huston, Z.~Li, P.~M.~Nadolsky, J.~Pumplin
-and C.-P.~Yuan,
-Phys. Rev. D {\bf 82}, 074024 (2010).
-
 \bibitem{JR09}
 P.~Jimenez-Delgado and E.~Reya,
 Phys. Rev. D {\bf 80}, 114011 (2009);
 {\it ibid.} D {\bf 79}, 074023 (2009).
 
-\bibitem{HERAPDF10}
-F.~D.~Aaron {\it et al.},
-JHEP {\bf 1001}, 109 (2010).
-
-\bibitem{NNPDF13}
-R.~D.~Ball {\it et al.},
-Nucl. Phys. B {\bf 867}, 244 (2013).
-
 \bibitem{JMO13}
 P.~Jimenez-Delgado, W.~Melnitchouk and J.~F.~Owens,
 J. Phys. G: Nucl. Part. Phys. {\bf 40}, 093102 (2013).
-
-% \bibitem{Sig87} 
-% A.~I.~Signal and A.~W.~Thomas,
-% Phys. Lett. B {\bf 191}, 205 (1987).
-%
-% \bibitem{MM96} 
-% W.~Melnitchouk and M.~Malheiro,
-% Phys. Rev. C {\bf 55}, 431 (1997).
 
 \bibitem{PDG}
 J.~Beringer {\it et al.} [Particle Data Group Collaboration],
@@ -836,10 +842,6 @@ Phys. Rev. D {\bf 14}, 1829 (1976).
 \bibitem{EFP}
 R.~K.~Ellis, R.~Petronzio and G.~Parisi,
 Phys. Lett. B {\bf 64}, 97 (1976).
-
-\bibitem{Kre04}
-S.~Kretzer and M.~H.~Reno,
-Phys. Rev. D {\bf 69}, 034002 (2004).
 
 \bibitem{AQ08} 
 A.~Accardi and J.-W.~Qiu,
@@ -857,14 +859,6 @@ J. Phys. G {\bf 35}, 053101 (2008).
 L.~T.~Brady, A.~Accardi, T.~J.~Hobbs and W.~Melnitchouk,
 Phys. Rev. D {\bf 84}, 074008 (2011)
 [Erratum-ibid.\ D {\bf 85}, 039902 (2012)].
-
-\bibitem{TungTMC}
-K.~Bitar, P.~W.~Johnson and W.~K.~Tung,
-Phys. Lett. B {\bf 83}, 114 (1979);
-%
-P.~W.~Johnson and W.~K.~Tung,
-Print-79-1018 (Illinois Tech),
-{\it Contribution to Neutrino '79, Bergen, Norway} (1979).
 
 \bibitem{Ste06} 
 F.~M.~Steffens and W.~Melnitchouk,
@@ -939,19 +933,6 @@ Phys. Rev. C {\bf 45}, 1374 (1992).
 W.~Melnitchouk, A.~W.~Schreiber and A.~W.~Thomas,
 Phys. Lett. B {\bf 335}, 11 (1994).
 
-\bibitem{MSS97}
-W.~Melnitchouk, M.~Sargsian and M.~I.~Strikman,
-Z. Phys. A {\bf 359}, 99 (1997).
-
-% \bibitem{Marquardt}
-% D.~W.~Marquardt,
-% J. Soc. Ind. Appl. Math. {\bf 11}, 431 (1963).
-%
-% \bibitem{Bevington}
-% P.~R.~Bevington,
-% ``Data Reduction and Error Analysis for the Physical Sciences''
-% (McGraw-Hill, 1969).
-
 \bibitem{Cteq6}
 J.~Pumplin {\it et al.},
 JHEP {\bf 0207}, 012 (2003).
@@ -1019,59 +1000,101 @@ P.~Souder, spokesperson.
 \end{thebibliography}
 
 
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
-\includegraphics[width=12cm]{xpdf.pdf}
+\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf}
 \caption{Comparison of CJ15 PDFs for different flavors
 	($u, d, \bar d + \bar u, \bar d - \bar u$ and $g/10$)
-	at a scale $Q^2=100$~GeV$^2$.
-	Note the combined logarithim/linear scale for the $x$-axis.}
+	at a scale $Q^2=10$~GeV$^2$.
+	Note the combined logarithim/linear scale along the $x$-axis.}
 \label{fig:pdf}
 \end{figure} 
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{ratio.pdf}
-\caption{...[PLACEHOLDER]...
-	Ratio of PDFs to their central values for the CJ (blue),
-	MMHT14 (red), HERA15 (green), NNPDF (?)... fits.}
-\label{fig:pdfratio}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf}
+\caption{Ratio of PDFs to the CJ15 central values for various PDF sets:
+	CJ15 for tolerance $T=1$ (red) and $T=10$ (yellow),
+	MMHT14 \cite{MMHT14} (blue), and
+	HERA15 \cite{HERA15} (green).
+	Note the different scales on the vertical axes used for
+	different flavors.}
+\label{fig:ratio_other}
 \end{figure} 
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{ratio_wfn.pdf}
-\caption{...[PLACEHOLDER]...}
-\label{fig:...}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf}
+\caption{Comparison of some of the proton $F_2^p$ structure function
+	data used in this analysis with the CJ15 fit.}
+\label{fig:F2p}
 \end{figure} 
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{NLOfits.pdf}
-\caption{...[PLACEHOLDER]...}
-\label{fig:...}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf}
+\caption{Ratio of CJ15 PDFs for various deuteron wave function models:
+	AV18 (red band), CD-Bonn (blue solid lines),
+	WJC-1 (green lines), WJC-2 (yellow lines),
+	for the KP off-shell parametrization (\ref{eq:delffit}).
+	The PDF ratios are taken with respect to those for the
+	AV18 wave function.
+	Note the different scale on the vertical axes for the
+	$d$-quark distribution.}
+\label{fig:ratio_wfn}
 \end{figure} 
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{fig_BONUS_impact_pdfs.pdf}
-\vspace*{-12cm}
-\caption{Impact of BONuS \cite{BONuS} and $W$ asymmetry data
-	on the $u$, $d$ and $g$ distributions.}
-\label{fig:pdf_BONuS}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf}
+\caption{Ratio of CJ15 PDFs for various nucleon off-shell models
+	and deuteron wave functions:
+	KP fit with AV18 (red band),
+	fmKP model with AV18 (black),
+	fmKP model with CD-Bonn (blue),
+	fmKP model with WJC-1 (green),
+	fmKP model with WJC-2 (magenta).
+	The PDF ratios are taken with respect to those for the
+	KP fit (\ref{eq:delffit}) AV18 wave function.}
+\label{fig:ratio_off}
 \end{figure} 
+
+
+% \begin{figure}[t]
+% \includegraphics[width=15cm]{fig_BONUS_impact_pdfs.pdf}
+% \vspace*{-12cm}
+% \caption{Impact of BONuS \cite{BONuS} and $W$ asymmetry data
+%	on the $u$, $d$ and $g$ distributions.}
+% \label{fig:pdf_BONuS}
+% \end{figure} 
 
   
 \begin{figure}[t]
 \includegraphics[width=12cm]{fig_BONUS_impact_du.pdf}
 \vspace*{-5cm}
-\caption{Impact of BONuS \cite{BONuS} and $W$ asymmetry data
+\caption{...[OLD FIGURE]...
+	Impact of BONuS \cite{BONuS} and $W$ asymmetry data
 	on the $d/u$ ratio.}
 \label{fig:du_BONuS}
 \end{figure} 
 
-  
 
+\begin{figure}[t]
+\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf}
+\caption{Impact of BONuS \cite{BONuS} and $W$ asymmetry data
+	on the $d/u$ ratio.}
+\label{fig:du}
+\end{figure} 
+
+
+\begin{figure}[t]
+\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf}
+\caption{Impact of BONuS \cite{BONuS} and $W$ asymmetry data
+	on the $d/u$ ratio, for the case of no nuclear corrections
+	applied to the deuterium data.}
+\label{fig:du1}
+\end{figure} 
 
 
 \end{document}

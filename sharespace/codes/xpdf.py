@@ -59,7 +59,7 @@ def plot(flav,color,factor=1):
     alpha=0.5)#,hatch=None)
   return (p2,p1)
 
-Q2=100
+Q2=10
 LH={}
 LH['u']=plot('u','r')
 LH['d']=plot('d','b')
@@ -100,4 +100,3 @@ axL.text(0.1,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=2
 
 # the end
 py.savefig('gallery/xpdf.pdf')
-

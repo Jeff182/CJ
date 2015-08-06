@@ -130,43 +130,55 @@ def ratio():
   CJ=COMPOSER('CJ15_NLO_KP_AV18')
   HERA15=COMPOSER('HERAPDF15NLO_EIG')
   MMHT14=COMPOSER('MMHT2014nlo68cl')
+  #CT10=COMPOSER('CT10nlo')
   
-  Q2=100
+  Q2=10
   for flav in ['u','d','ub','db','s','g']:
     print 'plotting '+flav
 
     # the output of plot used to construct specialized 
     # legend marker
-    p1=plotI(AX,Q2,CJ,CJ,flav,'#FFFF00',T=10,\
-      hatch=None,alpha=1.0,facecolor='#FFFF00',edgecolor='none')
+    p1=plotI(AX,Q2,CJ,CJ,flav,'yellow',T=10,\
+      hatch=None,alpha=0.4,facecolor='yellow',edgecolor='yellow')
     p2=plotI(AX,Q2,CJ,CJ,flav,'r',T=1,\
-      hatch=None,alpha=0.4,facecolor='r',edgecolor='none')
+      hatch=None,alpha=1.0,facecolor='r',edgecolor='none')
     p3=plotI(AX,Q2,CJ,MMHT14,flav,'b',\
-      hatch='xxx',alpha=0.4,facecolor='none',edgecolor='b')
-    p4=plotI(AX,Q2,CJ,HERA15,flav,'m',\
-      hatch=None,alpha=0.4,facecolor='m',edgecolor='none')
+      hatch='.....',alpha=0.4,facecolor='none',edgecolor='b')
+    p4=plotI(AX,Q2,CJ,HERA15,flav,'g',\
+      hatch='.....',alpha=0.4,facecolor='none',edgecolor='g')
+    #p5=plotI(AX,Q2,CJ,CT10,flav,'k',\
+    #  hatch='\\',alpha=0.4,facecolor='none',edgecolor='k')
   
     #retrieve LR ax for further proccesing 
     axL,axR=AX[flav]
 
     # plot specialized legend marker at the specific flav panel
-    if flav=='u':
+    if flav=='d':
       H=[p1,p2,p3,p4]
       L=[tex('CJ15')+'\ ($T=10$)'\
         ,tex('CJ15')+'\ ($T=1$)'\
-        ,tex('MMHT14')+'\ (CL=68\%)'\
+        ,tex('MMHT14')\
         ,tex('HERA15')]
+      #  ,tex('CT10')]
       axR.legend(H,L,frameon=0,fontsize=11,\
-        bbox_to_anchor=(0.05, 1.0))
-      axR.text(0.06,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),\
-        transform=axL.transAxes,size=20)
+        bbox_to_anchor=(0.1, 1.0))
+    if flav=='u':
+      axR.text(0.1,0.85,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),\
+        transform=axL.transAxes,size=15)
 
     # plot some text at specific flav panel
     #if flav=='d':
     #  axL.text(0.06,0.1,'$T=10$',transform=axL.transAxes,size=20)
 
     # set ylims
-    ymin,ymax=0.8,1.2
+    if flav=='u':
+      ymin,ymax=0.795,1.205
+    if flav=='d':
+      ymin,ymax=0.6,1.6
+    if flav=='s':
+      ymin,ymax=0.6,1.9
+    if flav=='g' or flav=='ub' or flav=='db':
+      ymin,ymax=0.7,1.3
     #axL.set_yticks(np.arange(0.2,2.0,0.4))
     axL.set_ylim(ymin,ymax)
     axR.set_ylim(ymin,ymax)
@@ -176,7 +188,7 @@ def ratio():
     axL.set_xticks(10**np.linspace(-4,-2,3))
     if flav=='u' or flav=='d':
       axR.set_xticks(np.arange(0.1,1.1,0.2))
-      axR.set_xlim(0.1,1.0)
+      axR.set_xlim(0.1,0.95)
     else:
       axR.set_xticks(np.arange(0.1,0.4,0.1))
       axR.set_xlim(0.1,0.4)
@@ -222,9 +234,9 @@ def ratio_wfn():
   ###############################
   # plot content 
   ###############################
-  CJ12={}
-  CJ12['min']=COMPOSER('CJ12min')
-  CJ12['mid']=COMPOSER('CJ12mid')
+  #CJ12={}
+  #CJ12['min']=COMPOSER('CJ12min')
+  #CJ12['mid']=COMPOSER('CJ12mid')
   
   CJ15={'KP':{},'fmKP':{}}
   CJ15['KP']['AV18' ]   =COMPOSER('CJ15_NLO_KP_AV18')
@@ -236,7 +248,7 @@ def ratio_wfn():
   CJ15['fmKP']['WJC1']  =COMPOSER('CJ15_NLO_fmKP_WJC1',central_only=True)
   CJ15['fmKP']['WJC2']  =COMPOSER('CJ15_NLO_fmKP_WJC2',central_only=True)
   
-  Q2=100
+  Q2=10
   for flav in ['u','d','ub','db','s','g']:
     print flav
     p1=plotI(AX,Q2,CJ15['KP']['AV18'],CJ15['KP']['AV18'],flav,'r',
@@ -245,24 +257,26 @@ def ratio_wfn():
       T=1,hatch=None,alpha=0.4,facecolor='b',edgecolor='none')
     p3=plotII(AX,Q2,CJ15['KP']['AV18'],CJ15['KP']['WJC1'],flav,'g',
       T=1,hatch=None,alpha=0.4,facecolor='g',edgecolor='none')
-    p4=plotII(AX,Q2,CJ15['KP']['AV18'],CJ15['KP']['WJC2'],flav,'m',
-      T=1,hatch=None,alpha=0.4,facecolor='m',edgecolor='none')
+    p4=plotII(AX,Q2,CJ15['KP']['AV18'],CJ15['KP']['WJC2'],flav,'y',
+      T=1,hatch=None,alpha=0.4,facecolor='y',edgecolor='none')
   
     axL,axR=AX[flav]
 
     if flav=='u':
       H=[p1,p2,p3,p4]
-      L=[tex('CJ15'),tex('KP\ CDBONN'),tex('KP\ WJC1'),tex('KP\ WJC2')]
+      L=[tex('CJ15\ (AV18)'),tex('CDBONN'),tex('WJC1'),tex('WJC2')]
       axR.legend(H,L,frameon=0,fontsize=10, bbox_to_anchor=(0.9, 1.0))
-      axR.text(0.06,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=20)
+      axR.text(0.06,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),transform=axL.transAxes,size=15)
 
     # set ylims
     if flav=='d':
       ymin,ymax=0.85,1.15
     elif flav=='u':
       ymin,ymax=0.95,1.05
-    else:
+    elif flav=='g':
       ymin,ymax=0.9,1.1
+    else:
+      ymin,ymax=0.95,1.05
     #axL.set_yticks(np.arange(0.2,2.0,0.4))
     axL.set_ylim(ymin,ymax)
     axR.set_ylim(ymin,ymax)
@@ -318,9 +332,9 @@ def ratio_off():
   ###############################
   # plot content 
   ###############################
-  CJ12={}
-  CJ12['min']=COMPOSER('CJ12min')
-  CJ12['mid']=COMPOSER('CJ12mid')
+  #CJ12={}
+  #CJ12['min']=COMPOSER('CJ12min')
+  #CJ12['mid']=COMPOSER('CJ12mid')
   
   CJ15={'KP':{},'fmKP':{}}
   CJ15['KP']['AV18' ]   =COMPOSER('CJ15_NLO_KP_AV18')
@@ -332,7 +346,7 @@ def ratio_off():
   CJ15['fmKP']['WJC1']  =COMPOSER('CJ15_NLO_fmKP_WJC1',central_only=True)
   CJ15['fmKP']['WJC2']  =COMPOSER('CJ15_NLO_fmKP_WJC2',central_only=True)
   
-  Q2=100
+  Q2=10
   for flav in ['u','d','ub','db','s','g']:
     print flav
     p1=plotI(AX,Q2,CJ15['KP']['AV18'],CJ15['KP']['AV18'],flav,'r',
@@ -386,13 +400,12 @@ def ratio_off():
     axL.set_xlabel('$x$',size=20)
     axL.xaxis.set_label_coords(1.0,-0.08,transform=axL.transAxes)
   
-  py.savefig('gallery/ratio_off.pdf')
+  #py.savefig('gallery/ratio.pdf')
+  py.savefig('gallery/ratio_wfn.pdf')
+  #py.savefig('gallery/ratio_off.pdf')
 
 
 if __name__=='__main__':
   #ratio()
-  #ratio_wfn()
-  ratio_off()
-
-
-
+  ratio_wfn()
+  #ratio_off()
