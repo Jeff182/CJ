@@ -257,14 +257,16 @@ class StructFunc(object):
               ,yerr=dbin['ERR'].values*2**(i+1)\
               ,fmt=color+sym\
               ,mec=color\
-	      ,markersize=markersize\
+              ,mfc='none'\
+              ,markersize=markersize\
               ,label=tex(D[k]['label']))
             flag=True
           else:
             ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
               ,yerr=dbin['ERR'].values*2**(i+1)\
               ,fmt=color+sym\
-	      ,markersize=markersize\
+              ,mfc='none'\
+              ,markersize=markersize\
               ,mec=color)
 
     for i in range(len(xbins)):
