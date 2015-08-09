@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% August 5, 2015		first draft
+%% August 7, 2015
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +37,7 @@
 	C.~E.~Keppel$^2$,
 	W.~Melnitchouk$^2$
 	J.~F.~Owens$^5$,
-	Nobuo~Sato$^2$, ... ...}
+	Nobuo~Sato$^2$}
 
 \affiliation{
 $^1$\mbox{Hampton University, Hampton, Virginia 23668} \\
@@ -463,87 +463,238 @@ number of valence quarks in the nucleon provides the constraint
 \section{Data}
 \label{sec:data}
 
-$\bullet$
-The CJ15 PDFs are obtained by fitting to a global database of
-4037 data points from a variety of high energy scattering processes.
-...which new data sets have been included (which haven't?)
-
-$\bullet$
-In Table~\ref{tab:datasets} ...
+The CJ15 PDFs are obtained by fitting to a global database of 4035
+data points from a variety of high energy scattering processes,
+listed in Table~\ref{tab:chi2}.
+These include
+  deep-inelastic scattering data from BCDMS, NMC, SLAC, HERA and
+Jefferson Lab;
+  Drell-Yan $p$ and $d$ cross sections from fixed target experiments
+at Fermilab;
+  $W$ and $Z$ asymmetries, as well as jet and $\gamma+$jet cross
+sections from the CDF and D\O collaborations at the Tevatron.
+%
+The table also lists the corresponding $\chi^2$ values for each
+data set.  The overall $\chi^2/{\rm dof}$ is 0.98.
+The fit is slightly better than in our previous CJ12 analysis
+\cite{CJ12}, partly because of the greater flexibility which
+we have allowed in the current fit for the nucleon off-shell
+corrections.
 
 
 \begin{table}[tb]
-\caption{Data sets and number of data points used in the CJ15
-	global fit, and the $\chi^2$ values for each data set.\\}
+\caption{Data sets used in the CJ15 global analysis, with the
+	corresponding number of data points and the respective
+	$\chi^2$ values for each set.\\}
 \centering
 {\scriptsize  
-\begin{tabular}[c]{llcc|ccc}  \hline
-           &&&&\multicolumn{3}{c}{$\chi^2$} \\
-           & Experiment & Ref. & \# points\ \
-                &\ CJ12min &  CJ12mid & CJ12max\\
-           \hline
-DIS $F_2$  & BCDMS $(p)$ &\cite{BCDMS}      & 351 & 434 & 436 & 437 \\
-           & BCDMS $(d)$ &\cite{BCDMS}      & 254 & 294 & 297 & 302 \\
-           & NMC $(p)$   &\cite{NMCp}       & 275 & 434 & 432 & 430 \\
-           & NMC $(d/p)$ &\cite{NMCdop}     & 189 & 179 & 177 & 182 \\
-           & SLAC $(p)$  &\cite{SLAC}       & 565 & 456 & 455 & 456 \\
-           & SLAC $(d)$  &\cite{SLAC}       & 582 & 394 & 388 & 396 \\
-           & JLab $(p)$  &\cite{Malace}     & 136 & 170 & 169 & 170 \\
-           & JLab $(d)$  &\cite{Malace}     & 136 & 124 & 125 & 126 \\
-           & JLab $(n) BONuS$  &\cite{BONuS} & xxx & xxx & xxx & xxx \\
-DIS $\sigma$&HERA (NC $e^-$) &\cite{HERA1}  & 145 & 117 & 117 & 118 \\
-           & HERA (NC $e^+$) &\cite{HERA1}  & 384 & 595 & 596 & 596 \\
-           & HERA (CC $e^-$) &\cite{HERA1}  & 34  & 19  & 19  & 19  \\
-           & HERA (CC $e^+$) &\cite{HERA1}  & 34  & 32  & 32  & 32  \\
-Drell-Yan  & E866 $(p)$ &\cite{E866}        & 184 & 220 & 221 & 221 \\
-           & E866 $(d)$ &\cite{E866}        & 191 & 297 & 307 & 306 \\
-$W$ asymmetry& CDF 1998 ($\ell$) &\cite{CDF98} & 11 & 14 & 16 & 18 \\
-           & CDF 2005 ($\ell$) &\cite{CDF05}   & 11 & 11 & 11 & 10 \\
-           & D\O\ 2008 ($\ell$)&\cite{D008}    & 10 & 4  & 4  & 4  \\  
-           & D\O\ 2008 ($e$)   &\cite{D0_e08}  & 12 & 40 & 36 & 34 \\
-           & CDF 2009 ($W$)    &\cite{CDF09}   & 13 & 20 & 25 & 41 \\
-$Z$ rapidity & CDF ($Z$)       &\cite{CDFZ}    & 28 & 29 & 27 & 27 \\ 
-           & D\O\ ($Z$)        &\cite{D0Z}     & 28 & 16 & 16 & 16 \\
-jet        & CDF run 1         &\cite{CDFjet1} & 33 & 52 & 52 & 52 \\
-           & CDF run 2         &\cite{CDFjet2} & 72 & 14 & 14 & 14 \\
-           & D\O\ run 1        &\cite{D0jet1}  & 90 & 21 & 20 & 19 \\  
-           & D\O\ run 2        &\cite{D0jet2}  & 90 & 19 & 19 & 20 \\
-$\gamma$+jet& D\O\ 1           &\cite{D0gamjet}& 16 & 6  & 6  & 6  \\    
-            & D\O\ 2           &\cite{D0gamjet}& 16 & 13 & 13 & 12 \\
-            & D\O\ 3           &\cite{D0gamjet}& 12 & 17 & 17 & 17 \\
-            & D\O\ 4           &\cite{D0gamjet}& 12 & 17 & 16 & 17 \\
-\hline
-\multicolumn{3}{c}{TOTAL}                      &3958&4059&4055&4096 \\
-\multicolumn{3}{c}{TOTAL + norm}               &    &4075&4074&4117 \\
-\hline\\
+\begin{tabular}[c]{llrr}  \hline
+  & experiment       			& \# points\!\!\!\!
+					&\ \ \ \ $\chi^2$ \\ \hline
+DIS $F_2$
+  & BCDMS $(p)$ 	\cite{BCDMS}    & 351 & 437 \\
+  & BCDMS $(d)$ 	\cite{BCDMS}    & 254 & 294 \\
+  & NMC   $(p)$   	\cite{NMCp}     & 275 & 407 \\
+  & NMC   $(d/p)$ 	\cite{NMCdop}   & 189 & 172 \\
+  & SLAC  $(p)$  	\cite{SLAC}     & 564 & 435 \\
+  & SLAC  $(d)$  	\cite{SLAC}     & 582 & 372 \\
+  & JLab  $(p)$  	\cite{Malace}   & 136 & 166 \\
+  & JLab  $(d)$  	\cite{Malace}   & 136 & 124 \\
+  & JLab  $(n/d)$	\cite{BONuS}  	& 191 & 217 \\
+DIS $\sigma$
+  & HERA (NC $e^-$) 	\cite{HERA1}    & 145 & 112 \\
+  & HERA (NC $e^+$) 	\cite{HERA1}    & 408 & 541 \\
+  & HERA (CC $e^-$) 	\cite{HERA1}    &  34 &  19 \\
+  & HERA (CC $e^+$) 	\cite{HERA1}    &  34 &  31 \\
+Drell-Yan
+  & E605 $(p{\rm Cu})$	\cite{E605}     & 119 &   9 \\
+  & E866 $(pp)$		\cite{E866}     & 121 & 139 \\
+  & E866 $(pd)$ 	\cite{E866}     & 129 & 144 \\
+  & E866 $(pd/pp)$ 	\cite{E866rat}  &  12 &   9 \\
+$W$ asymmetry
+  & CDF  ($\ell$)	\cite{CDF05}    &  11 &  12 \\
+  & D\O\ ($\mu$)  	\cite{D0_mu13}  &  10 &  20 \\  
+  & D\O\ ($\ell$) 	\cite{D0_l15}   &  13 &  27 \\
+  & CDF  ($W$)    	\cite{CDF09}    &  13 &  15 \\
+  & D\O\ ($W$)    	\cite{D0_W}     &  14 &  16 \\
+$Z$ rapidity
+  & CDF  ($Z$)		\cite{CDFZ}     &  28 &  27 \\ 
+  & D\O\ ($Z$)		\cite{D0Z}      &  28 &  16 \\
+jet
+  & CDF  (run 2)       	\cite{CDFjet2}  &  72 &  15 \\
+  & D\O\ (run 2)       	\cite{D0jet2}   & 110 &  21 \\
+$\gamma$+jet
+  & D\O\ 1           	\cite{D0gamjet} &  16 &   6 \\    
+  & D\O\ 2           	\cite{D0gamjet} &  16 &  15 \\
+  & D\O\ 3           	\cite{D0gamjet} &  12 &  25 \\
+  & D\O\ 4           	\cite{D0gamjet} &  12 &  13 \\ \hline
+%
+Total        		&		& 4035 &\ \ \ \ 3941 \\
+Total + norm 		&		&      &\ \ \ \ 3950 \\ \hline
+$\chi^2/{\rm dof}$	&		&      & 0.979 \\  \hline\\
+%
 \end{tabular}
 }
-\label{tab:datasets}
+\label{tab:chi2}
 \end{table}
+
+
+The quality of the fit to the data is illustrated in Fig.~\ref{fig:F2p},
+where a subset of the world's proton $F_2^p$ structure function data
+(from BCDMS, NMC, SLAC and Jefferson Lab) is shown over several decades
+of $Q^2$ for various fixed values of $x$.  Cuts on the kinematical
+coverage of the data have been made for $Q^2 > 1.69$~GeV$^2$ and
+$W^2 > 3.5$~GeV$^2$.
+
+* JLab data are at varying $x$ and $Q^2$ values
+
+* Similar agreement for $F_2^d$
+
+* Show HERA data separately??
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results} 
 \label{sec:results}
 
+In this section we present the results of the global analysis for
+the CJ15 PDFs.  After discussing the general features of the
+distributions, we focus our attention to the effects of nuclear
+corrections on the PDFs, and particular the $d$-quark distribution,
+and on the $\bar d-\bar u$ asymmetry.
+
 
 % .......................................................................
 \subsection{CJ15 PDFs}
 \label{ssec:CJ15pdfs}
 
+The CJ15 PDFs are displayed in Fig.~\ref{fig:pdf} on a log-linear
+plot a function of $x$ at a scale of $Q^2=10$~GeV$^2$, for the
+$u$, $d$, $\bar d + \bar u$ and $\bar d - \bar u$ distributions,
+and the gluon distribution scaled by a factor 1/10.
+Unless stated otherwise, the CJ15 PDFs are determined using the
+AV18 deuteron wave function and the nucleon off-shell parametrization
+in Eq.~(\ref{eq:delffit}).  In the following we will explore the
+dependence of the PDFs on the choice of nuclear model.
 
-The CJ15 PDFs are displayed in Fig.~\ref{fig:pdf} at a scale of
-$Q^2=10$~GeV$^2$, for the $u$, $d$, $\bar d + \bar u$ and
-$\bar d - \bar u$ distributions, and the gluon distribution
-scaled by a factor 1/10.
+
+These PDFs are compared in Fig.~\ref{fig:ratio_other} with PDFs from
+several other global parametrizations and their uncertainties, in the
+form of ratios to the central CJ15 distributions.  Since different
+PDF analyses typically utilize different criteria for estimating
+the PDF errors, we display the CJ15 errors for the standard
+$\Delta\chi^2=1$, or tolerance $T=1$, as well as with errors
+inflated by a tolerance of $T=10$.
+HERAPDF15 for instance uses $\Delta\chi^2=1$, while the recent
+MMHT14 analysis uses a ... ... method.
+
+
+* uncertainty on $d$ much larger at high $x$ than on $u$
+
+
+* since HERAPDF15 uses only HERA data on inclusive cross sections,
+these PDFs are not well constrained at high $x$; $\bar d-\bar u$
+is not constrained.
+
+
+* MMHT14 uncertainties are typical of other modern global fits,
+such as CT14 \cite{CT14} or NNPDF3.0 \cite{NNPDF3.0}.
+
+
+* other features worth discussing?
+
+
+
+% .......................................................................
+\subsection{PDFs at large $x$}
+\label{ssec:largex}
+
+The effects of nuclear corrections on the PDFs are illustrated in
+Fig.~\ref{fig:ratio_wfn}, where several different deuteron wave
+function models have been used in the fits.  The distributions are
+displayed relative to the central CJ15 PDFs which use the AV18
+deuteron wave function.  The results using the CD-Bonn or WJC-2
+wave function are very similar to those for the AV18 wave function,
+while using the WJC-1 model leads to larger differences.
+This suggests that, for the most part, the nucleon off-shell
+parametrization in Eq.~(\ref{eq:delffit}) is sufficiently flexible
+so as to be able compensate for changes induced by the different
+wave functions.  For the WJC-1 wave function, which has the hardest
+momentum distribution, it is more difficult for the off-shell
+correction to compensate.
+Recall from Table~\ref{tab:chi2} that the AV18, CD-Bonn and WJC-2
+models give the lowest values of $\chi^2$/dof (...),
+while the WJC-1 model gives the largest value.
+
+
+As expected, the variations due to the nuclear models have the
+largest effects in the $d$-quark distribution, which is less
+constrained by proton data and hence more sensitive to uncertainties
+in the extracted neutron structure function.
+The spread in the $d$ PDF at $x=0.8$ is $\approx 20\%$ for the
+various wave functions.
+The variations for the AV18, CD-Bonn and WJC-2 wave functions are
+generally within the $\Delta\chi^2=1$ confidence limit, while the
+WJC-1 results lie outside the band for the $u$ and $d$ PDFs.
+Interestingly, one observes an anti-correlation between the
+behavior of the $d$-quark distribution at large $x$ and the
+gluon distribution.  In fact, using the WJC-1 wave functions
+leads to slight decreases in all the quark PDFs at high $x$,
+while the gluon PDF has the opposite trend.
+The spread in the gluon PDF is $\lesssim 10\%$ for $x<0.8$,
+although beyond $x \approx 0.3$ the gluon distribution has
+a very large uncertainty.
+
+
+Using the 1-parameter off-shell rescaling model (ORM) for the
+nucleon off-shell corrections, the corresponding PDF ratios
+are displayed in Fig.~\ref{fig:ratio_off}.
+For the AV18, CD-Bonn and WJC-2 wave functions, the effects of
+using the more flexible off-shell parametrization (\ref{eq:delffit})
+and the more restrictive ORM form are very small, and within the
+$\Delta\chi^2=1$ bands.
+For the WJC-1 wave function, the results for the $d$-quark PDF
+show significantly greater deviation at large $x$, again
+suggesting that the off-shell rescaling model is not able to
+compensate for the hard tail of its momentum distribution.
+
 
 
 % .......................................................................
 \subsection{$d/u$ ratio}
 \label{ssec:du}
 
+The impact of the nuclear corrections and data constraints on
+the $d/u$ ratio are illustrated in ...
+
+$\bullet$
+BONuS data shrink error on $d/u$ slightly in the
+$x \approx 0.5-0.6$ range
 
 
+$\bullet$
+significant reduction in error once $W$ asymmetry data added
+
+
+$\bullet$
+For other deuteron wave function models, the total $\chi^2$ values
+are very similar, with
+$\chi^2/{\rm dof} = 0.979$ for the CD-Bonn wave function,
+0.983 for the WJC-1 wave function, and
+0.980 for the WJC-2 model.
+The AV18, CD-Bonn and WJC-2 model fits are therefore essentially
+indistinguishable, while the WJC-1 model, with its significantly
+harder deuteron wave function, has a slightly worse overall fit.
+
+$\bullet$
+With the off-shell covariant spectator (OCS) model
+...[WHAT WE HAD BEEN CALLING ``fmKP'']...,
+the $\chi^2$ values for the various wave functions are marginally higher,
+with $\chi^2/{\rm dof} = 0.982, 0.982, 0.989$ and 0.984 for the
+AV18, CD-Bonn, WJC-1 and WJC-2 models.  Here again the WJC-1 gives
+the worst fit.
+...[MORE DISCUSSION]...
 
 
 % .......................................................................
@@ -565,7 +716,7 @@ scaled by a factor 1/10.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments
 
-We thank E.~Christy and P.~Monaghan for for helpful discussions.
+We thank E.~Christy ,and P.~Monaghan for for helpful discussions.
 This work was supported by the DOE contract No.~DE-AC05-06OR23177,
 under which Jefferson Science Associates, LLC operates Jefferson Lab.
 The work of J.F.O. and A.A. was supported in part by DOE contracts
@@ -579,7 +730,74 @@ No.~DE-FG02-97ER41922 and No.~DE-SC0008791, respectively.
 \label{app:param}
 
 In this appendix we list the initial parameter values and their errors
-for the three sets of PDFs discussed in the text.....
+for the CJ15 PDFs, for the leading twist, off-shell and higher twist
+parameters, as discussed in the text.  The parameters without errors
+have been fixed by sum rules or other constraints.
+
+
+\begin{table}[htb]
+\begin{center}
+\caption{Parameter values for the CJ15 PDF sets at the initial scale
+	$Q_0 = 1.3$~GeV.  The parameters without errors have been
+	fixed. \\}
+{\scriptsize
+\begin{tabular}{c|c}\hline
+Parameter	& CJ15 value \\ \hline
+%
+$a_0^{u_v}$	& 2.3585                        \\
+$a_1^{u_v}$	& 0.60985 $\pm$ 0.020299        \\
+$a_2^{u_v}$	& 3.5377 $\pm$ 0.011405         \\
+$a_3^{u_v}$	& 0                             \\
+$a_4^{u_v}$	& 3.5169 $\pm$ 0.42791          \\
+$a_5^{u_v}$	& 0				\\ \hline
+%
+$a_0^{d_v}$	& 23.233                        \\
+$a_1^{d_v}$	& 1.1387 $\pm$ 0.034586         \\
+$a_2^{d_v}$   	& 6.6180 $\pm$ 0.15977          \\
+$a_3^{d_v}$ 	& $-3.5743 \pm 0.090782$        \\
+$a_4^{d_v}$	& 4.9133 $\pm$ 0.14586          \\
+$a_5^{d_v}$     & 0                             \\
+$a_6^{d_v}$     & $-0.0042424 \pm 0.00070691$	\\
+$a_7^{d_v}$     & 2                             \\ \hline
+%
+$a_0^{\bar u+\bar d}$ & 0.14121 $\pm$ 0.0050459 \\
+$a_1^{\bar u+\bar d}$ & $-0.21785 \pm 0.0039454$\\
+$a_2^{\bar u+\bar d}$ & 8.4003 $\pm$ 0.14833   	\\
+$a_3^{\bar u+\bar d}$ & 0                       \\
+$a_4^{\bar u+\bar d}$ & 16.055 $\pm$ 1.1403	\\
+$a_5^{\bar u+\bar d}$ & 0			\\ \hline
+%
+$a_0^{\bar d-\bar u}$ & 35712			\\
+$a_1^{\bar d-\bar u}$ & 3.9867 $\pm$ 0.049301	\\
+$a_2^{\bar d-\bar u}$ & 20.289 $\pm$ 0.66322	\\    
+$a_3^{\bar d-\bar u}$ & 17			\\
+$a_4^{\bar d-\bar u}$ & 49.881 $\pm$ 7.1398	\\ \hline
+%
+$a_0^g$		& 46.706                        \\
+$a_1^g$		& 0.61586 $\pm$ 0.038277	\\
+$a_2^g$		& 6.2335 $\pm$ 1.1222           \\
+$a_3^g$		& $-3.2703 \pm 0.16746$         \\
+$a_4^g$		& 3.0338 $\pm$ 0.31300          \\
+$a_5^g$		& 0				\\ \hline
+%
+$\kappa$	& 0.4                           \\ \hline
+%
+$C_0$ & 0.098222 $\pm$ 0.028518			\\
+$x_0$ & 0.34487  $\pm$ 0.91982			\\
+$x_1$ & 0.048					\\ \hline
+%
+$h_1$ & $-3.0094 \pm 0.24080$			\\    
+$h_2$ & $ 1.7526 \pm 0.10135$           	\\       
+$h_3$ & $-2.0895 \pm 0.026853$           	\\ \hline
+%
+$\Lambda_{\rm QCD}^{(4)}$ & 0.2268~GeV          \\
+$m_c$		& 1.3~GeV			\\
+$m_b$		& 4.5~GeV			\\ \hline
+\end{tabular}
+}
+\label{tab:parameters}
+\end{center}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -718,7 +936,14 @@ Ph.D. Thesis, New Mexico State University (2002),
 arXiv:hep-ex/0301031;
 % 
 P.~Reimer,
-private communication.
+private communication,
+%
+{\tt
+http://p25ext.lanl.gov/e866/papers/e866dyabs/E866$\_$Drell-Yan$\_$Cross$\_$Sections/E866$\_$Drell-Yan$\_$Cross$\_$Sections.html}
+
+\bibitem{E866rat}
+R.~S.~Towell {\it et al.},
+Phys. Rev. D {\bf 64}, 052002 (2001).
 
 \bibitem{CDF98}
 F.~Abe {\it et al.},
@@ -726,19 +951,32 @@ Phys. Rev. Lett. {\bf 81}, 5754 (1998).
 
 \bibitem{CDF05}
 D.~Acosta {\it et al.},
-Phys. Rev. D {\bf71}, 051104(R) (2005).
+Phys. Rev. D {\bf 71}, 051104(R) (2005).
 
 \bibitem{D008}   
 V.~M.~Abazov {\it et al.},
 Phys. Rev. D {\bf 77}, 011106(R) (2008).
 
-\bibitem{D0_e08} 
+\bibitem{D0_mu13} 
 V.~M.~Abazov {\it et al.},
-Phys. Rev. Lett. {\bf 101}, 211801 (2008).
+Phys. Rev. D {\bf 88}, 091102 (2013).
+
+\bibitem{D0_l15} 
+V.~M.~Abazov {\it et al.},
+Phys. Rev. D {\bf 91}, 032007 (2015).
+
+% \bibitem{D0_e08} 
+% V.~M.~Abazov {\it et al.},
+% Phys. Rev. Lett. {\bf 101}, 211801 (2008).
 
 \bibitem{CDF09}
 T.~Aaltonen {\it et al.},
 Phys. Rev. Lett. {\bf 102}, 181801 (2009).
+
+\bibitem{D0_W} 
+V.~M.~Abazov {\it et al.},
+Phys. Rev. Lett. {\bf 112}, 151803 (2014)
+[Phys. Rev. Lett. {\bf 114}, 049901 (2015)].
 
 \bibitem{CDFZ}
 T.~Aaltonen {\it et al.}, 
@@ -804,10 +1042,11 @@ Phys. Rev. Lett. {\bf 109}, 012001 (2012).
 % \bibitem{Acc10}
 % A.~Accardi, F.~Arleo, W.~K.~Brooks, D.~D'Enterria and V.~Muccifora,
 % Riv. Nuovo Cim. {\bf 32}, 439 (2010).
-%
-% \bibitem{E605}
-% G.~Moreno {\it et al.},  
-% Phys. Rev. D {\bf 43}, 2815 (1991).
+
+\bibitem{E605}
+G.~Moreno {\it et al.},  
+Phys. Rev. D {\bf 43}, 2815 (1991).
+{\color{red}...[IS THIS CORRECT REFERENCE??]...}
 
 \bibitem{ABKM09} 
 S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
@@ -1003,6 +1242,14 @@ P.~Souder, spokesperson.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf}
+\caption{Comparison of proton $F_2^p$ structure function data
+	used in this analysis with the CJ15 fit.}
+\label{fig:F2p}
+\end{figure} 
+
+
+\begin{figure}[t]
 \includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf}
 \caption{Comparison of CJ15 PDFs for different flavors
 	($u, d, \bar d + \bar u, \bar d - \bar u$ and $g/10$)
@@ -1025,38 +1272,35 @@ P.~Souder, spokesperson.
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf}
-\caption{Comparison of some of the proton $F_2^p$ structure function
-	data used in this analysis with the CJ15 fit.}
-\label{fig:F2p}
-\end{figure} 
-
-
-\begin{figure}[t]
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf}
-\caption{Ratio of CJ15 PDFs for various deuteron wave function models:
-	AV18 (red band), CD-Bonn (blue solid lines),
-	WJC-1 (green lines), WJC-2 (yellow lines),
+\caption{Ratio of CJ15 PDFs (with $T=1$) for various deuteron
+	wave function models:
+	AV18 (yellow band),
+	CD-Bonn (red solid lines),
+	WJC-1 (green dashed lines),
+	WJC-2 (blue solid lines),
 	for the KP off-shell parametrization (\ref{eq:delffit}).
 	The PDF ratios are taken with respect to those for the
 	AV18 wave function.
 	Note the different scale on the vertical axes for the
-	$d$-quark distribution.}
+	$d$-quark and gluon distributions.}
 \label{fig:ratio_wfn}
 \end{figure} 
 
 
 \begin{figure}[t]
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf}
-\caption{Ratio of CJ15 PDFs for various nucleon off-shell models
-	and deuteron wave functions:
-	KP fit with AV18 (red band),
-	fmKP model with AV18 (black),
-	fmKP model with CD-Bonn (blue),
-	fmKP model with WJC-1 (green),
-	fmKP model with WJC-2 (magenta).
-	The PDF ratios are taken with respect to those for the
-	KP fit (\ref{eq:delffit}) AV18 wave function.}
+\caption{Ratio of PDFs for the off-shell covariant spectator (OCS)
+	model with different deuteron wave functions to the CJ15 PDFs
+	(which uses the off-shell parametrization (\ref{eq:delffit})
+	and the AV18 deuteron wave function):
+	OCS model with AV18 (black dotted lines),
+	CD-Bonn (red solid lines),
+	WJC-1 (green dashed lines), and
+	WJC-2 (blue solid lines).
+	Note the different scale on the vertical axes for the
+	$d$-quark and gluon distributions.
+	...[CHANGE LABELS ``ORM'' $\to$ ``OCS'']...}
 \label{fig:ratio_off}
 \end{figure} 
 
@@ -1070,14 +1314,14 @@ P.~Souder, spokesperson.
 % \end{figure} 
 
   
-\begin{figure}[t]
-\includegraphics[width=12cm]{fig_BONUS_impact_du.pdf}
-\vspace*{-5cm}
-\caption{...[OLD FIGURE]...
-	Impact of BONuS \cite{BONuS} and $W$ asymmetry data
-	on the $d/u$ ratio.}
-\label{fig:du_BONuS}
-\end{figure} 
+% \begin{figure}[t]
+% \includegraphics[width=12cm]{fig_BONUS_impact_du.pdf}
+% \vspace*{-5cm}
+% \caption{...[OLD FIGURE]...
+%	Impact of BONuS \cite{BONuS} and $W$ asymmetry data
+%	on the $d/u$ ratio.}
+% \label{fig:du_BONuS}
+% \end{figure} 
 
 
 \begin{figure}[t]
