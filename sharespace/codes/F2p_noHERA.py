@@ -32,6 +32,7 @@ class StructFunc(object):
 
     D['BCDMS p']['color']='b'
     D['NMC p']['color']  ='g'
+    #D['SLAC p']['color'] ='#FF3399'
     D['SLAC p']['color'] ='y'
     D['JLab p']['color'] ='r'
 
@@ -47,7 +48,6 @@ class StructFunc(object):
     D['JLab p']['ERR-key']=['STAT','SYST']
 
     keys=[]
-    #keys.append('HERA p')
     keys.append('BCDMS p')
     keys.append('NMC p')
     keys.append('SLAC p')
@@ -257,7 +257,7 @@ class StructFunc(object):
               ,yerr=dbin['ERR'].values*2**(i+1)\
               ,fmt=color+sym\
               ,mec=color\
-              ,mfc='none'\
+              #,mfc='none'\
               ,markersize=markersize\
               ,label=tex(D[k]['label']))
             flag=True
@@ -265,7 +265,7 @@ class StructFunc(object):
             ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
               ,yerr=dbin['ERR'].values*2**(i+1)\
               ,fmt=color+sym\
-              ,mfc='none'\
+              #,mfc='none'\
               ,markersize=markersize\
               ,mec=color)
 

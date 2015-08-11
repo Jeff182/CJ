@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.11.19)  6 AUG 2015 00:08
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.11.19)  11 AUG 2015 12:50
 entering extended mode
  %&-line parsing enabled.
 **cj15
@@ -538,135 +538,197 @@ Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
 (hyperref)                removing `math shift' on input line 204.
 
 [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+
+ []
+
+[7] [8]
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 613.
+
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 613.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 668.
+
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 668.
+
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 705.
+
+
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 705.
+
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 542.
+LaTeX Warning: Float too large for page by 14.50345pt on input line 804.
+
+[12]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 914.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 542.
+Overfull \hbox (171.98251pt too wide) in paragraph at lines 935--947
+\OT1/cmtt/m/n/10.95 http://p25ext.lanl.gov/e866/papers/e866dyabs/E866$[]$Drell-
+Yan$[]$Cross$[]$Sections/E866$[]$Drell-Yan$[]$Cross$[]$Sections.html 
+ []
+
+[13]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 1063.
+
+[14]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 1183.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 550.
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf, id=329, 1084.0
+5pt x 1084.05pt>
+File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf Graphic fi
+le (type pdf)
+
+<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf> [15]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 1242.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 550.
-
-[7] [8] [9] [10] [11]
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf, id=301, 578.1
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf, id=344, 578.1
 6pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf Graphic f
 ile (type pdf)
 
-<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf> [12]
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf, id=312, 578.
+<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf>
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf, id=345, 578.
 16pt x 650.43pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf Graphic 
 file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf, id=317, 1084.0
-5pt x 1084.05pt>
-File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf Graphic fi
-le (type pdf)
-
-<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf, id=318, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf, id=350, 
 578.16pt x 650.43pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf Grap
 hic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf, id=321, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf, id=353, 
 578.16pt x 650.43pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf Grap
 hic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf>
-<fig_BONUS_impact_du.pdf, id=324, 614.295pt x 794.97pt>
-File: fig_BONUS_impact_du.pdf Graphic file (type pdf)
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf, id=356, 289.0
+8pt x 289.08pt>
+File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf Graphic f
+ile (type pdf)
 
-<use fig_BONUS_impact_du.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf, id=326, 5
+<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf>
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf, id=363, 289.0
+8pt x 72.27pt>
+File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf Graphic f
+ile (type pdf)
+
+<use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf>
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf, id=368, 5
 78.16pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf Graph
 ic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf, id=328, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf, id=370, 
 578.16pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf Grap
 hic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf>
-[13 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf
-
-pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
-allery/xpdf.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
- Ignoring it.
->] [14 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf
-
-pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
-allery/ratio.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle
-. Ignoring it.
->] [15 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf
+[16 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2p.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/F2p.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle. 
 Ignoring it.
->] [16 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf
+>] [17] [18 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf
+
+pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
+allery/xpdf.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
+ Ignoring it.
+>] [19 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf
+
+pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
+allery/ratio.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle
+. Ignoring it.
+>] [20 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/ratio_wfn.pdf): PDF inclusion: Page Group detected which pdfTeX can't ha
 ndle. Ignoring it.
->] [17 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf
+>] [21 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/ratio_off.pdf): PDF inclusion: Page Group detected which pdfTeX can't ha
 ndle. Ignoring it.
->] [18 <./fig_BONUS_impact_du.pdf> </u/group/cteqX/wmelnitc/CJgit/sharespace/co
-des/gallery/d_over_u.pdf
+>] [22 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf
+
+pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
+allery/Lasy.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
+ Ignoring it.
+> </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf
+
+pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
+allery/Wasy.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
+ Ignoring it.
+>] [23 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/d_over_u.pdf): PDF inclusion: Page Group detected which pdfTeX can't han
 dle. Ignoring it.
->] [19 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf
+> </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/d_over_u1.pdf): PDF inclusion: Page Group detected which pdfTeX can't ha
 ndle. Ignoring it.
 >] (./cj15.aux) ) 
 Here is how much of TeX's memory you used:
- 5521 strings out of 256216
- 70833 string characters out of 1917071
- 146835 words of memory out of 1500000
- 8566 multiletter control sequences out of 10000+200000
- 21314 words of font info for 79 fonts, out of 1200000 for 2000
+ 5546 strings out of 256216
+ 71449 string characters out of 1917071
+ 149174 words of memory out of 1500000
+ 8580 multiletter control sequences out of 10000+200000
+ 21650 words of font info for 81 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 32i,9n,32p,477b,593s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 32i,11n,32p,597b,591s stack positions out of 5000i,500n,6000p,200000b,15000s
 </usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/shar
 e/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky
 /cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/
 texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/c
-m/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texm
-f/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
-12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb></usr/share/texmf/fon
-ts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb>
-</usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/typ
-e1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></us
-r/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/b
-luesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmtt10.pfb></usr/
-share/texmf/fonts/type1/bluesky/ams/msam10.pfb></usr/share/texmf/fonts/type1/ur
-w/helvetic/uhvr8a.pfb>
-Output written on cj15.pdf (19 pages, 1416953 bytes).
+m/cmmi5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmm
+i8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fon
+ts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pf
+b></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/sh
+are/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/bluesky/ams/msam10.pfb></usr/sha
+re/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on cj15.pdf (23 pages, 1422422 bytes).
 PDF statistics:
- 1513 PDF objects out of 1728 (max. 8388607)
- 145 named destinations out of 1000 (max. 131072)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1655 PDF objects out of 1728 (max. 8388607)
+ 154 named destinations out of 1000 (max. 131072)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
