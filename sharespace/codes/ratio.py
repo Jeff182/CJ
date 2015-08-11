@@ -17,7 +17,7 @@ rc('text',usetex=True)
 #  ]}
 #py.rcParams.update(params)
 
-from master import COMPOSER,FITPACK
+from master import COMPOSER,FITPACK,COMPOSER4NNPDF
 
 # plotting functions with LR capabilities
 
@@ -184,6 +184,7 @@ def ratio():
   CJ=COMPOSER('CJ15_NLO_KP_AV18')
   HERA15=COMPOSER('HERAPDF15NLO_EIG')
   MMHT14=COMPOSER('MMHT2014nlo68cl')
+  NNPDF=COMPOSER4NNPDF('NNPDF30_nlo_as_0118')
   #CT10=COMPOSER('CT10nlo')
   
   Q2=10
@@ -200,6 +201,8 @@ def ratio():
       hatch='.....',alpha=0.4,facecolor='none',edgecolor='b')
     p4=plotI(AX,Q2,CJ,HERA15,flav,'g','-',T=1,\
       hatch='.....',alpha=0.4,facecolor='none',edgecolor='g')
+    p5=plotI(AX,Q2,CJ,NNPDF,flav,'k','-',T=1,\
+      hatch='.....',alpha=0.4,facecolor='none',edgecolor='k')
     #p5=plotI(AX,Q2,CJ,CT10,flav,'k','-',T=1,\
     #  hatch='\\',alpha=0.4,facecolor='none',edgecolor='k')
   
@@ -208,11 +211,12 @@ def ratio():
 
     # plot specialized legend marker at the specific flav panel
     if flav=='d':
-      H=[p1,p2,p3,p4]
+      H=[p1,p2,p3,p4,p5]
       L=[tex('CJ15')+'\ ($T=10$)'\
         ,tex('CJ15')+'\ ($T=1$)'\
         ,tex('MMHT14')\
-        ,tex('HERA15')]
+        ,tex('HERA15')\
+        ,tex('NNPDF30')]
       #  ,tex('CT10')]
       axR.legend(H,L,frameon=0,fontsize=11,\
         bbox_to_anchor=(0.1, 1.0))
@@ -447,6 +451,6 @@ def ratio_off():
 
 
 if __name__=='__main__':
-  #ratio()
+  ratio()
   #ratio_wfn()
-  ratio_off()
+  #ratio_off()

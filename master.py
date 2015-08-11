@@ -145,6 +145,40 @@ class COMPOSER(object):
       D['dxf+'],D['dxf-']=self._get_asymmetric_errors(PDFS)
     return D
 
+class COMPOSER4NNPDF(object):
+
+  def __init__(self,name):
+
+    self.name=name
+    self.SETS=lhapdf.mkPDFs(name)
+
+  def _get_xpdf(self,Set,flav,x,Q2):
+    if   flav=='g': return Set.xfxQ2(21,x,Q2)
+    elif flav=='u': return Set.xfxQ2(2,x,Q2)
+    elif flav=='d': return Set.xfxQ2(1,x,Q2)
+    elif flav=='s': return Set.xfxQ2(3,x,Q2)
+    elif flav=='db+ub': return Set.xfxQ2(-2,x,Q2)+Set.xfxQ2(-1,x,Q2)
+    elif flav=='db-ub': return Set.xfxQ2(-1,x,Q2)-Set.xfxQ2(-2,x,Q2)
+    elif flav=='ub': return Set.xfxQ2(-2,x,Q2)
+    elif flav=='db': return Set.xfxQ2(-1,x,Q2)
+
+  def _error(self,message):
+    print 'ERR '+message
+    sys.exit()
+
+  def get_xpdf(self,flav=None,X=None,Q2=None):
+    if flav==None: self._error('specify flav')
+    if X==None: X=self.X
+    if Q2==None: self._error('specify Q2')
+    D={}
+    PDFS=[[self._get_xpdf(Set,flav,x,Q2) for x in X] for Set in self.SETS]
+    D['xf0']=np.mean(PDFS,axis=0)
+    D['dxf+']=np.var(PDFS,axis=0)**0.5
+    D['dxf-']=np.var(PDFS,axis=0)**0.5
+    return D
+
+  
+
 if __name__=="__main__" :
 
   CJ=COMPOSER(name='CJ12min')
