@@ -16,7 +16,6 @@ class WASY(object):
 
   def __init__(self):
     self.load_data()
-    self.define_plotter_geometry()
     self.make_plot()
 
   def load_data(self):
@@ -31,28 +30,20 @@ class WASY(object):
     DF=DF.convert_objects(convert_numeric=True)
 
     D={}
-    D['CDF_Wasy']  = DF[DF.ITYPE=='CDF_Wasy']
-    D['D0_Wasy']   = DF[DF.ITYPE=='D0_Wasy']
+    D['CDF_Wasy'] = DF[DF.ITYPE=='CDF_Wasy']
+    D['D0_Wasy']  = DF[DF.ITYPE=='D0_Wasy']
     self.D=D
 
-  def define_plotter_geometry(self):
+    D['CDF_Wasy']['symbol'] ='*'
+    D['D0_Wasy']['symbol']  ='s'
 
-    ncols=2
-    nrows=1
-    py.figure(figsize=(ncols*2,nrows*1))
-    gs = gridspec.GridSpec(nrows,ncols)
-    gs.update(left=0.13,right=0.98,wspace=0.4,hspace=0.3,\
-      top=0.98,bottom=0.12)
-    
-    AX={}
-    AX['CDF_Wasy'] = py.subplot(gs[0,0])
-    AX['D0_Wasy']  = py.subplot(gs[0,1])
-    self.AX=AX
+    D['CDF_Wasy']['color'] ='k'
+    D['D0_Wasy']['color']  ='b'
 
-  def plot_dataset(self,dataset,T=10):
+
+  def plot_dataset(self,ax,dataset,T=10):
     k=dataset
     D=self.D
-    ax=self.AX[k]
     data=D[k]['DATA']
     derr=D[k]['DERROR']
     theory=D[k]['THEORY']
@@ -67,18 +58,20 @@ class WASY(object):
     return (p2,p1),p3
 
   def make_plot(self):
-    AX=self.AX
-    for k in AX.keys():    
-      p21,p3=self.plot_dataset(k)
-      AX[k].set_xlabel(r'$y_{\ell}$',size=10)
-      AX[k].set_ylabel(tex(k.replace('_','')),size=10)
+    ax=py.subplot(111)
+    for k in self.D.keys():    
+      p21,p3=self.plot_dataset(ax,k)
+      ax.set_xlabel(r'$y_W$',size=20)
+      #ax.set_ylabel(tex(k.replace('_','')),size=20)
+      ax.set_ylabel(r'$A_W$',size=20)
 
-    ax=AX['CDF_Wasy']
     ax.legend([p21,p3],[tex('CJ15'),tex('data')]\
-      ,frameon=0,loc=3,fontsize=10,numpoints=1)
-    ax.
-    
-    #ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
+      ,frameon=0,loc=3,fontsize=20,numpoints=1,bbox_to_anchor=(0.05, 0.7))
+
+   
+    ##ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
+    #py.tight_layout()
+    py.tick_params(axis='both',labelsize=20)
     py.savefig('gallery/Wasy.pdf')
     py.close()
 

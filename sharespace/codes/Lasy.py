@@ -13,7 +13,6 @@ rc('text',usetex=True)
 import pandas as pd
 from  scipy.interpolate import  interp1d
 
-
 class LASY(object):
 
   def __init__(self):
@@ -36,7 +35,6 @@ class LASY(object):
     D['d0Lasy_e15']= DF[DF.ITYPE=='d0Lasy_e15']
     D['d0Lasy13']  = DF[DF.ITYPE=='d0Lasy13']
     self.D=D
-
 
   def make_plot(self):
     D=self.D
