@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.11.19)  11 AUG 2015 12:50
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.11.19)  12 AUG 2015 17:41
 entering extended mode
  %&-line parsing enabled.
 **cj15
@@ -621,37 +621,37 @@ File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf Graphic
 file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf, id=350, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf, id=352, 
 578.16pt x 650.43pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf Grap
 hic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_wfn.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf, id=353, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf, id=355, 
 578.16pt x 650.43pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf Grap
 hic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio_off.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf, id=356, 289.0
-8pt x 289.08pt>
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf, id=358, 578.1
+6pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf Graphic f
 ile (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf, id=363, 289.0
-8pt x 72.27pt>
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf, id=365, 578.1
+6pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf Graphic f
 ile (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf, id=368, 5
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf, id=370, 5
 78.16pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf Graph
 ic file (type pdf)
 
 <use /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf>
-</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf, id=370, 
+</u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf, id=372, 
 578.16pt x 433.62pt>
 File: /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u1.pdf Grap
 hic file (type pdf)
@@ -687,12 +687,12 @@ ndle. Ignoring it.
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/Lasy.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
  Ignoring it.
-> </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf
+>] [23 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/Wasy.pdf): PDF inclusion: Page Group detected which pdfTeX can't handle.
  Ignoring it.
->] [23 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf
+>] [24 </u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/d_over_u.pdf
 
 pdfTeX warning: pdflatex (file /u/group/cteqX/wmelnitc/CJgit/sharespace/codes/g
 allery/d_over_u.pdf): PDF inclusion: Page Group detected which pdfTeX can't han
@@ -704,31 +704,30 @@ allery/d_over_u1.pdf): PDF inclusion: Page Group detected which pdfTeX can't ha
 ndle. Ignoring it.
 >] (./cj15.aux) ) 
 Here is how much of TeX's memory you used:
- 5546 strings out of 256216
- 71449 string characters out of 1917071
- 149174 words of memory out of 1500000
+ 5547 strings out of 256216
+ 71456 string characters out of 1917071
+ 149341 words of memory out of 1500000
  8580 multiletter control sequences out of 10000+200000
  21650 words of font info for 81 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 32i,11n,32p,597b,591s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 32i,11n,32p,552b,591s stack positions out of 5000i,500n,6000p,200000b,15000s
 </usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/shar
 e/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky
 /cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/
 texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/c
 m/cmmi5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/texm
-f/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmm
-i8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fon
-ts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pf
-b></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/typ
-e1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></us
-r/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bl
-uesky/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/sh
-are/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/blues
-ky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/bluesky/ams/msam10.pfb></usr/sha
-re/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on cj15.pdf (23 pages, 1422422 bytes).
+f/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
+10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fon
+ts/type1/bluesky/cm/cmr17.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type
+1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/s
+hare/texmf/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/blue
+sky/ams/msam10.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on cj15.pdf (24 pages, 1254174 bytes).
 PDF statistics:
- 1655 PDF objects out of 1728 (max. 8388607)
- 154 named destinations out of 1000 (max. 131072)
+ 1648 PDF objects out of 1728 (max. 8388607)
+ 155 named destinations out of 1000 (max. 131072)
  214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

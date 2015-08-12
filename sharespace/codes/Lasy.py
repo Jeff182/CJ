@@ -8,7 +8,8 @@ from tools import tex,plot_band,fill_between
 import lhapdf
 import matplotlib.gridspec as gridspec
 from  matplotlib import rc
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('font',**{'family':'sans-serif','sans-serif':['Times-Roman']})
 rc('text',usetex=True)
 import pandas as pd
 from  scipy.interpolate import  interp1d
@@ -58,26 +59,29 @@ class LASY(object):
     L=[tex('CJ15')]
 
     dmap={}
-    dmap['cdfLasy05']  = {'color':'r','marker':'d'}
+    dmap['cdfLasy05']  = {'color':'g','marker':'d'}
     dmap['d0Lasy_e15'] = {'color':'b','marker':'o'}
-    dmap['d0Lasy13']   = {'color':'g','marker':'^'}
+    dmap['d0Lasy13']   = {'color':'c','marker':'^'}
 
     for k in D.keys():
       color=dmap[k]['color']
       marker=dmap[k]['marker']
+      markersize=4
       p3=ax.errorbar(D[k]['Y'],D[k]['DATA'],\
-        yerr=D[k]['DERROR'],fmt=color+marker,mfc=color,mec=color,zorder=1,alpha=0.5)
+        yerr=D[k]['DERROR'],fmt=color+marker,mfc=color,mec=color,\
+        markersize=markersize,zorder=1,alpha=0.9)
       H.append(p3)
-      L.append(tex(k.replace('_','')))
+      #L.append(tex(k.replace('_','')))
+      L=[tex('CJ15'),tex('CDF')+r'$\ e$',tex('D\O')+r'$\ \mu$',tex('D\O')+r'$\ e$']
 
-    ax.set_xlabel(r'$y_l$',size=20)
-    ax.set_ylabel(tex('Lasy'),size=20)
+    ax.set_xlabel(r'$\eta_{\ell}$',size=25)
+    ax.set_ylabel(r'$A_{\ell}$',size=25)
 
-    ax.legend(H,L,frameon=0,loc=3,fontsize=20,numpoints=1)
+    ax.legend(H,L,frameon=0,loc=3,fontsize=22,numpoints=1)
    
     ###ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
     py.tight_layout()
-    py.tick_params(axis='both',labelsize=15)
+    py.tick_params(axis='both',labelsize=20)
     py.savefig('gallery/Lasy.pdf')
     py.close()
 

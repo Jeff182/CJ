@@ -507,14 +507,14 @@ DIS $\sigma$
   & HERA (CC $e^-$) 	\cite{HERA1}    &  34 &  19 \\
   & HERA (CC $e^+$) 	\cite{HERA1}    &  34 &  31 \\
 Drell-Yan
-  & E605 $(p{\rm Cu})$	\cite{E605}     & 119 &   9 \\
+  & E605 $(pCu/N??)$	\cite{E605}     & 119 &   9 \\ % p-Cu data!
   & E866 $(pp)$		\cite{E866}     & 121 & 139 \\
   & E866 $(pd)$ 	\cite{E866}     & 129 & 144 \\
   & E866 $(pd/pp)$ 	\cite{E866rat}  &  12 &   9 \\
 $W$/lepton asymmetry
-  & CDF  ($\ell$)	\cite{CDF_l}    &  11 &  12 \\
+  & CDF  ($e$)		\cite{CDF_e}    &  11 &  12 \\
   & D\O\ ($\mu$)  	\cite{D0_mu}    &  10 &  20 \\  
-  & D\O\ ($\ell$) 	\cite{D0_l}     &  13 &  27 \\
+  & D\O\ ($e$) 		\cite{D0_e}     &  13 &  27 \\
   & CDF  ($W$)    	\cite{CDF_W}    &  13 &  15 \\
   & D\O\ ($W$)    	\cite{D0_W}     &  14 &  16 \\
 $Z$ rapidity
@@ -949,7 +949,7 @@ http://p25ext.lanl.gov/e866/papers/e866dyabs/E866$\_$Drell-Yan$\_$Cross$\_$Secti
 R.~S.~Towell {\it et al.},
 Phys. Rev. D {\bf 64}, 052002 (2001).
 
-\bibitem{CDF_l}
+\bibitem{CDF_e}
 D.~Acosta {\it et al.},
 Phys. Rev. D {\bf 71}, 051104(R) (2005).
 
@@ -957,7 +957,7 @@ Phys. Rev. D {\bf 71}, 051104(R) (2005).
 V.~M.~Abazov {\it et al.},
 Phys. Rev. D {\bf 88}, 091102 (2013).
 
-\bibitem{D0_l} 
+\bibitem{D0_e} 
 V.~M.~Abazov {\it et al.},
 Phys. Rev. D {\bf 91}, 032007 (2015).
 
@@ -1255,8 +1255,9 @@ P.~Souder, spokesperson.
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ratio.pdf}
 \caption{Ratio of PDFs to the CJ15 central values for various PDF sets:
 	CJ15 for tolerance $T=1$ (red) and $T=10$ (yellow),
-	MMHT14 \cite{MMHT14} (blue), and
-	HERA15 \cite{HERA15} (green).
+	MMHT14 \cite{MMHT14} (blue),
+	HERA15 \cite{HERA15} (green), and
+	NNPDF3.0 \cite{NNPDF3.0} (magenta).
 	Note the different scales on the vertical axes used for
 	different flavors.}
 \label{fig:ratio_other}
@@ -1271,7 +1272,7 @@ P.~Souder, spokesperson.
 	CD-Bonn (red solid lines),
 	WJC-1 (green dashed lines),
 	WJC-2 (blue solid lines),
-	for the KP off-shell parametrization (\ref{eq:delffit}).
+	for the off-shell parametrization (\ref{eq:delffit}).
 	The PDF ratios are taken with respect to those for the
 	AV18 wave function.
 	Note the different scale on the vertical axes for the
@@ -1291,26 +1292,30 @@ P.~Souder, spokesperson.
 	WJC-1 (green dashed lines), and
 	WJC-2 (blue solid lines).
 	Note the different scale on the vertical axes for the
-	$d$-quark and gluon distributions.
-	...[CHANGE LABELS ``ORM'' $\to$ ``OCS'']...}
+	$d$-quark and gluon distributions.}
 \label{fig:ratio_off}
 \end{figure} 
 
 
 \begin{figure}[t]
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Lasy.pdf}
-\caption{Lepton charge asymmetries from $p\bar p \to W X \to \ell \nu X$
-	from CDF \cite{CDF_l} and D\O\ \cite{D0_mu, D0_l} data compared
-	with the CJ15 fits.}
+\caption{Lepton charge asymmetry $A_{\ell}$ from
+	$p\bar p \to W X \to \ell \nu X$ as a function of the
+	lepton pseudorapidity $\eta_{\ell}$ from
+	CDF electron (diamonds) \cite{CDF_e} and
+	D\O\ muon (circles) \cite{D0_mu} and
+	electron (triangles) \cite{D0_e} data
+	compared with the CJ15 fit.}
 \label{fig:Lasy}
 \end{figure} 
 
   
 \begin{figure}[t]
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/Wasy.pdf}
-\caption{$W$ boson charge asymmetries in $p\bar p \to W X$ reactions
-	from CDF \cite{CDF_W} and D\O\ \cite{D0_W} data compared with
-	the CJ15 fits.}
+\caption{$W$ boson charge asymmetry $A_W$ from $p\bar p \to W X$
+	as a function of the $W$ boson rapidity $y_W$ for
+	CDF (circles) \cite{CDF_W} and D\O\ (triangles) \cite{D0_W} data
+	compared with the CJ15 fit.}
 \label{fig:Wasy}
 \end{figure} 
 

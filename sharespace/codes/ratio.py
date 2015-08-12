@@ -198,14 +198,35 @@ def ratio():
     p2=plotI(AX,Q2,CJ,CJ,flav,'r','-',T=1,\
       hatch=None,alpha=1.0,facecolor='r',edgecolor='none')
     p3=plotI(AX,Q2,CJ,MMHT14,flav,'b','-',T=1,\
-      hatch='.....',alpha=0.4,facecolor='none',edgecolor='b')
+      hatch='...',alpha=0.4,facecolor='none',edgecolor='b')
     p4=plotI(AX,Q2,CJ,HERA15,flav,'g','-',T=1,\
-      hatch='.....',alpha=0.4,facecolor='none',edgecolor='g')
-    p5=plotI(AX,Q2,CJ,NNPDF,flav,'k','-',T=1,\
-      hatch='.....',alpha=0.4,facecolor='none',edgecolor='k')
+      hatch='...',alpha=0.4,facecolor='none',edgecolor='g')
+    p5=plotI(AX,Q2,CJ,NNPDF,flav,'m','-',T=1,\
+      hatch='...',alpha=0.4,facecolor='none',edgecolor='m')
     #p5=plotI(AX,Q2,CJ,CT10,flav,'k','-',T=1,\
     #  hatch='\\',alpha=0.4,facecolor='none',edgecolor='k')
   
+
+    if flav=='d':
+      X=np.linspace(0.01,1.0,100)    
+      mm=NNPDF.get_xpdf(flav,X=X,Q2=1.0)
+      t=1
+      for i in range(X.size):
+        l='%0.2f %0.2e %0.2e %0.2e'       
+        print l%(X[i],X[i]*mm['xf0'][i],X[i]*mm['dxf-'][i]*t,X[i]*mm['dxf+'][i]*t)
+        #l='%0.2f %0.2e %0.2e'
+        #print l%(X[i],X[i]*mm['xf0'][i],X[i]*mm['dxf'][i]*t)
+      ax=py.subplot(111)
+      ax.plot(X,X*mm['xf0'],'r-')
+      ax.plot(X,X*mm['xf0']-X*mm['dxf-']*t,'r:')
+      ax.plot(X,X*mm['xf0']+X*mm['dxf+']*t,'r:')
+      #ax.plot(X,X*mm['xf0']-mm['dxf']*t,'r:')
+      #ax.plot(X,X*mm['xf0']+mm['dxf']*t,'r:') 
+      py.show()
+      sys.exit()
+
+
+
     #retrieve LR ax for further proccesing 
     axL,axR=AX[flav]
 
@@ -216,10 +237,10 @@ def ratio():
         ,tex('CJ15')+'\ ($T=1$)'\
         ,tex('MMHT14')\
         ,tex('HERA15')\
-        ,tex('NNPDF30')]
+        ,tex('NNPDF3.0')]
       #  ,tex('CT10')]
       axR.legend(H,L,frameon=0,fontsize=11,\
-        bbox_to_anchor=(0.1, 1.0))
+        bbox_to_anchor=(0.05, 1.0))
     if flav=='u':
       axR.text(0.1,0.85,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),\
         transform=axL.transAxes,size=15)
@@ -232,7 +253,7 @@ def ratio():
     if flav=='u':
       ymin,ymax=0.795,1.205
     if flav=='d':
-      ymin,ymax=0.6,1.6
+      ymin,ymax=0.6,1.7
     if flav=='s':
       ymin,ymax=0.6,1.9
     if flav=='g' or flav=='ub' or flav=='db':
@@ -313,8 +334,8 @@ def ratio_wfn():
 
     if flav=='u':
       H=[p1,p2,p3,p4]
-      L=[tex('CJ15\ (AV18)'),tex('CDBonn'),tex('WJC1'),tex('WJC2')]
-      ax.legend(H,L,frameon=0,fontsize=10, bbox_to_anchor=(0.5, 1.0))
+      L=[tex('CJ15\ (AV18)')+r'$\ \ \ T=1$',tex('CDBonn'),tex('WJC1'),tex('WJC2')]
+      ax.legend(H,L,frameon=0,fontsize=10, bbox_to_anchor=(0.65, 1.0))
       ax.text(0.06,0.1,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),\
         transform=ax.transAxes,size=15)
 
@@ -404,7 +425,7 @@ def ratio_off():
 
     if flav=='d':
       H=[p1,p2,p3,p4,p5]
-      L=[tex('CJ15\ (AV18)'),tex('AV18+ORM'),tex('CDBonn+ORM'),tex('WJC1+ORM'),tex('WJC2+ORM')]
+      L=[tex('CJ15\ (AV18)'),tex('AV18+OCS'),tex('CDBonn+OCS'),tex('WJC1+OCS'),tex('WJC2+OCS')]
       ax.legend(H,L,frameon=0,fontsize=10, bbox_to_anchor=(0.55, 0.55))
     if flav=='u':
       ax.text(0.06,0.85,'$Q^2=%0.0f$'%(Q2)+tex('~GeV^2'),\
@@ -451,6 +472,6 @@ def ratio_off():
 
 
 if __name__=='__main__':
-  ratio()
-  #ratio_wfn()
+  #ratio()
+  ratio_wfn()
   #ratio_off()
