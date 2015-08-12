@@ -35,6 +35,15 @@ class LASY(object):
     D['d0Lasy13']  = DF[DF.ITYPE=='d0Lasy13']
     self.D=D
 
+    D['cdfLasy05']['symbol'] ='*'
+    D['d0Lasy_e15']['symbol']='o'
+    D['d0Lasy13']['symbol']  ='s'
+
+    D['cdfLasy05']['color'] ='k'
+    D['d0Lasy_e15']['color']='b'
+    D['d0Lasy13']['color']  ='g'
+
+
   def plot_dataset(self,ax,dataset,T=10):
     k=dataset
     D=self.D
@@ -55,11 +64,12 @@ class LASY(object):
     ax=py.subplot(111)
     for k in self.D.keys():    
       p21,p3=self.plot_dataset(ax,k)
-      ax.set_xlabel(r'$y_l$',size=10)
-      ax.set_ylabel(tex(k.replace('_','')),size=10)
+      ax.set_xlabel(r'$y_{\ell}$',size=20)
+      #ax.set_ylabel(tex(k.replace('_','')),size=20)
+      ax.set_ylabel(r'$A_{\ell}$',size=20)
 
-    #ax.legend([p21,p3],[tex('CJ15'),tex('data')]\
-    #  ,frameon=0,loc=3,fontsize=10,numpoints=1)
+    ax.legend([p21,p3],[tex('CJ15'),tex('data')]\
+      ,frameon=0,loc=3,fontsize=20,numpoints=1)
    
     ##ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
     #py.tight_layout()
