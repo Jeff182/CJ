@@ -11,6 +11,8 @@ from  matplotlib import rc
 rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text',usetex=True)
 import pandas as pd
+from  scipy.interpolate import  interp1d
+
 
 class LASY(object):
 
@@ -35,35 +37,49 @@ class LASY(object):
     D['d0Lasy13']  = DF[DF.ITYPE=='d0Lasy13']
     self.D=D
 
-  def plot_dataset(self,ax,dataset,T=10):
-    k=dataset
+
+  def make_plot(self):
     D=self.D
-    data=D[k]['DATA']
-    derr=D[k]['DERROR']
-    theory=D[k]['THEORY']
-    terr=D[k]['ERROR']
-    y=D[k]['Y']
-    p1,=ax.plot(y,theory,'r-')
-    p2=fill_between(y,theory-terr*T,theory+terr*T,
+    ax=py.subplot(111)
+
+    Y=D['d0Lasy_e15']['Y']
+    T=D['d0Lasy_e15']['THEORY']
+    ET=D['d0Lasy_e15']['ERROR']
+
+    iT= interp1d(Y,T,kind='cubic')
+    iET= interp1d(Y,ET, kind='cubic')
+    Y=np.linspace(np.amin(Y),np.amax(Y),100)
+
+    T=10
+    p2=fill_between(Y,iT(Y)-iET(Y)*T,iT(Y)+iET(Y)*T,
       ax=ax,
       facecolor='yellow',
       edgecolor='yellow')
-    p3=ax.errorbar(y,data,yerr=derr,fmt='k.')
-    return (p2,p1),p3
+    p1,=ax.plot(Y,iT(Y),'r-')
+    H=[(p2,p1)]
+    L=[tex('CJ15')]
 
-  def make_plot(self):
-    ax=py.subplot(111)
-    for k in self.D.keys():    
-      p21,p3=self.plot_dataset(ax,k)
-      ax.set_xlabel(r'$y_l$',size=10)
-      ax.set_ylabel(tex(k.replace('_','')),size=10)
+    dmap={}
+    dmap['cdfLasy05']  = {'color':'r','marker':'d'}
+    dmap['d0Lasy_e15'] = {'color':'b','marker':'o'}
+    dmap['d0Lasy13']   = {'color':'g','marker':'^'}
 
-    #ax.legend([p21,p3],[tex('CJ15'),tex('data')]\
-    #  ,frameon=0,loc=3,fontsize=10,numpoints=1)
+    for k in D.keys():
+      color=dmap[k]['color']
+      marker=dmap[k]['marker']
+      p3=ax.errorbar(D[k]['Y'],D[k]['DATA'],\
+        yerr=D[k]['DERROR'],fmt=color+marker,mfc=color,mec=color,zorder=1,alpha=0.5)
+      H.append(p3)
+      L.append(tex(k.replace('_','')))
+
+    ax.set_xlabel(r'$y_l$',size=20)
+    ax.set_ylabel(tex('Lasy'),size=20)
+
+    ax.legend(H,L,frameon=0,loc=3,fontsize=20,numpoints=1)
    
-    ##ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
-    #py.tight_layout()
-    py.tick_params(axis='both',labelsize=20)
+    ###ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
+    py.tight_layout()
+    py.tick_params(axis='both',labelsize=15)
     py.savefig('gallery/Lasy.pdf')
     py.close()
 

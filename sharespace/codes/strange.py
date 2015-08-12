@@ -13,11 +13,13 @@ rc('text',usetex=True)
 from master import COMPOSER,FITPACK,COMPOSER4NNPDF
 ##################################################
 
-NNPDF=COMPOSER4NNPDF('NNPDF30_nlo_as_0118')
+#NNPDF=COMPOSER4NNPDF('NNPDF30_nlo_as_0118')
+NNPDF=COMPOSER4NNPDF('NNPDF30_nlo_as_0118_nolhc_1000')
+
 MMHT14=COMPOSER('MMHT2014nlo68cl')
 
 ax=py.subplot(111)
-Q2=10
+Q2=1
 #X=np.linspace(1e-3,1,100)
 X=10**np.linspace(-3,0,100)
 D=NNPDF.get_xpdf('s',X=X,Q2=Q2)
