@@ -8,7 +8,7 @@ from tools import tex,plot_band,fill_between
 import lhapdf
 import matplotlib.gridspec as gridspec
 from  matplotlib import rc
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('font',**{'family':'sans-serif','sans-serif':['Times-Roman']})
 rc('text',usetex=True)
 from master import COMPOSER,FITPACK
 

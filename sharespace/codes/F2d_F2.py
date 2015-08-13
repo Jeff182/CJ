@@ -8,7 +8,7 @@ from tools import tex,plot_band,fill_between
 import lhapdf
 import matplotlib.gridspec as gridspec
 from  matplotlib import rc
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('font',**{'family':'sans-serif','sans-serif':['Times-Roman']})
 rc('text',usetex=True)
 import pandas as pd
 
@@ -47,24 +47,28 @@ class F2ratio(object):
 
     kmap={}
     kmap['AV18']   = {'c':'r','ls':'-'}
-    kmap['CDBONN'] = {'c':'g','ls':'--'}  
-    kmap['WJC1']   = {'c':'b','ls':'-.'}
-    kmap['WJC2']   = {'c':'k','ls':':'}
+    kmap['CDBONN'] = {'c':'g','ls':'--'}
+    kmap['WJC1']   = {'c':'k','ls':'-.'}
+    kmap['WJC2']   = {'c':'b','ls':':'}
 
     ax=py.subplot(111)
-    for k in D.keys():
+    for k in ['AV18','CDBONN','WJC1','WJC2']:
       DF=D[k]
       DF=DF[DF.Q2==10]
+      if k=='CDBONN':
+        label='CDBonn'
+      else:
+        label=k
       cls=kmap[k]['c']+kmap[k]['ls']
-      ax.plot(DF.X,DF.THEORY,cls,label=tex(k))
+      ax.plot(DF.X,DF.THEORY,cls,lw=2.0,label=tex(label))
 
     ax.set_xlabel('$x$',size=25)
-    ax.set_ylabel(r'$F_2(D)/F_2(n+p)$',size=20)
-    ax.set_ylim(0.95,1.1)
-    ax.axhline(1,color='k',ls=':',alpha=0.5)
+    ax.set_ylabel(r'$F_2^d\, /\, F_2^N$',size=25)
+    ax.set_ylim(0.97,1.08)
+    ax.axhline(1,color='k',ls='-',alpha=0.2)
 
-    ax.legend(frameon=0,loc=2,fontsize=20)
-    py.tick_params(axis='both',labelsize=20)
+    ax.legend(frameon=0,loc=2,fontsize=22)
+    py.tick_params(axis='both',labelsize=22)
     py.tight_layout()
     py.savefig('gallery/F2d_F2_I.pdf')
     py.close()
@@ -77,32 +81,28 @@ class F2ratio(object):
     kmap['Q2 = 2']   = {'c':'r','ls':'-'}
     kmap['Q2 = 5']   = {'c':'g','ls':'--'}
     kmap['Q2 = 10']  = {'c':'b','ls':'-.'}
-    kmap['Q2 = 50']  = {'c':'k','ls':':'}
-    kmap['Q2 = 100'] = {'c':'k','ls':'-'}
-
+    kmap['Q2 = 100'] = {'c':'k','ls':':'}
 
 
     ax=py.subplot(111)
     DF=D['AV18']
-    for Q2 in [2,5,10,50,100]:
+    for Q2 in [2,5,10,100]:
       k='Q2 = %d'%Q2
       Q2=float(k.split('=')[1])
       DF=D['AV18'][D['AV18'].Q2==Q2]
       cls=kmap[k]['c']+kmap[k]['ls']
-      ax.plot(DF.X,DF.THEORY,cls,label=tex('AV18~')+r'$Q^2=%0.0f~GeV^2$'%Q2)
+      ax.plot(DF.X,DF.THEORY,cls,lw=2.0,label=r'$Q^2=%0.0f~{\rm GeV}^2$'%Q2)
 
     ax.set_xlabel('$x$',size=25)
-    ax.set_ylabel(r'$F_2(D)/F_2(n+p)$',size=20)
-    ax.set_ylim(0.95,1.1)
-    ax.axhline(1,color='k',ls=':',alpha=0.5)
+    ax.set_ylabel(r'$F_2^d\, /\, F_2^N$',size=25)
+    ax.set_ylim(0.97,1.08)
+    ax.axhline(1,color='k',ls='-',alpha=0.2)
 
-    ax.legend(frameon=0,loc=2,fontsize=20)
-    py.tick_params(axis='both',labelsize=20)
+    ax.legend(frameon=0,loc=2,fontsize=22)
+    py.tick_params(axis='both',labelsize=22)
     py.tight_layout()
     py.savefig('gallery/F2d_F2_II.pdf')
 
 if __name__=='__main__':
 
   F2ratio()
-
-
