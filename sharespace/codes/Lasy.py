@@ -80,8 +80,8 @@ class LASY(object):
     ax.legend(H,L,frameon=0,loc=3,fontsize=22,numpoints=1)
    
     ###ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
-    py.tight_layout()
     py.tick_params(axis='both',labelsize=20)
+    py.tight_layout()
     py.savefig('gallery/Lasy.pdf')
     py.close()
 

@@ -77,8 +77,8 @@ class WASY(object):
       bbox_to_anchor=(0.02, 0.65))
    
     ##ax.text(0.5,0.8,tex('nrep=%d'%nrows),transform=ax.transAxes,size=20)
-    #py.tight_layout()
     py.tick_params(axis='both',labelsize=20)
+    py.tight_layout()
     py.savefig('gallery/Wasy.pdf')
     py.close()
 
