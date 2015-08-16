@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% August 15, 2015
+%% August 16, 2015
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -563,10 +563,12 @@ $W^2 > 3.5$~GeV$^2$.
 In this section we present the results of the global analysis for
 the CJ15 PDFs.  After discussing the general features of the
 distributions, we focus our attention on the effects of nuclear
-corrections on the PDFs, and particular the $d$-quark distribution.
-We also discuss the $\bar d-\bar u$ asymmetry and examine evidence
-of whether existing data suggest a sign change at intermediate $x$
-values.
+corrections on the PDFs, and particular the ratio of $d$- to $u$-quark
+distributions.
+%
+% We also discuss the $\bar d-\bar u$ asymmetry and examine evidence
+% of whether existing data suggest a sign change at intermediate $x$
+% values.
 
 
 % .......................................................................
@@ -730,7 +732,7 @@ $x \gtrsim 0.6$
 The effects of deuterium data and the nuclear corrections in the
 deuterium data are illustrated in Fig.~\ref{fig:du2}:
 
-- with no nuclear corrections the $d/u$ ratio is larger at $x \gtr 0.6$
+- with no nuclear corrections the $d/u$ ratio is larger at $x \gtrsim 0.6$
 than with the nuclear corrections. This can be understood from the
 shape of the $F_2^d/F_2^N$ ratio Fig.~\ref{fig:F2dN} at large $x$,
 where the effect of the nuclear corrections is to increase the ratio
@@ -745,6 +747,24 @@ once the smearing and off-shell effects are included.
 uncertainty band for $x \gtrsim 0.7$. Interestingly, the deuteron
 data also reduce the $d/u$ uncertainties slightly at smaller $x$,
 $x \lesssim 0.1$.
+
+
+The final CJ15 $d/u$ results and uncertainties (for $T=10$) can be
+compared with ratios obtained in other recent global PDF analyses.
+These are shown in Fig.~\ref{fig:du0} for the MMHT14 \cite{MMHT14},
+CT14 \cite{CT14} and JR14 \cite{JR14} PDFs.
+
+- JR14 uses similar experimental data sets and treatment of nuclear
+and finite-$Q^2$ corrections at large $x$;
+
+- JR14 has largest uncertainty in the intermediate-$x$ region,
+which may result from the recent $W$ and lepton asymmetry data
+from CDF and D\O\ not being used;
+
+- at large $x$ the JR14 $d/u$ ratio $\to 0$ from the form of
+their parametrization;
+
+- CT14 range is similar 
 
 
 
@@ -1090,9 +1110,9 @@ G.~Moreno {\it et al.},
 Phys. Rev. D {\bf 43}, 2815 (1991).
 {\color{red}...[IS THIS CORRECT REFERENCE??]...}
 
-\bibitem{ABKM09} 
-S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
-Phys. Rev. D {\bf 81}, 014032 (2010).
+% \bibitem{ABKM09} 
+% S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
+% Phys. Rev. D {\bf 81}, 014032 (2010).
 
 \bibitem{ABM11}
 S.~Alekhin, J.~Bl\"umlein and S.-O.~Moch,
@@ -1102,10 +1122,14 @@ Phys. Rev. D {\bf 86}, 054009 (2012).
 A.~D.~Martin, W.~J.~Stirling, R.~S.~Thorne and G.~Watt,
 Eur. Phys. J. C {\bf 63}, 189 (2009).
 
-\bibitem{JR09}
+% \bibitem{JR09}
+% P.~Jimenez-Delgado and E.~Reya,
+% Phys. Rev. D {\bf 80}, 114011 (2009);
+% {\it ibid.} D {\bf 79}, 074023 (2009).
+
+\bibitem{JR14}
 P.~Jimenez-Delgado and E.~Reya,
-Phys. Rev. D {\bf 80}, 114011 (2009);
-{\it ibid.} D {\bf 79}, 074023 (2009).
+Phys. Rev. D {\bf 89}, 074049 (2014).
 
 \bibitem{JMO13}
 P.~Jimenez-Delgado, W.~Melnitchouk and J.~F.~Owens,
@@ -1292,7 +1316,7 @@ P.~Souder, spokesperson.
 
 
 \begin{figure}[t]
-\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/xpdf.pdf}
 \caption{Comparison of CJ15 PDFs for different flavors
 	($u, d, \bar d + \bar u, \bar d - \bar u$ and $g/10$)
 	at a scale $Q^2=10$~GeV$^2$.
@@ -1393,7 +1417,19 @@ P.~Souder, spokesperson.
 
 
 \begin{figure}[t]
-\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du1.pdf}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du0.pdf}
+\caption{Comparison of the $d/u$ ratio at $Q^2=10$~GeV$^2$ for different
+	PDF parametrizations:
+	CJ15 (red band),
+	MMHT14 \cite{MMHT14} (yellow band),
+	CT14 \cite{CT14} (green band), and
+	JR14 \cite{JR14} (blue dotted band).}
+\label{fig:du0}
+\end{figure} 
+
+
+\begin{figure}[t]
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du1.pdf}
 \caption{Impact of various data sets on the $d/u$ ratio at
 	$Q^2=10$~GeV$^2$. The uncertainty band is largest for the
 	DIS only data (yellow band), and decreases with the successive
@@ -1407,7 +1443,7 @@ P.~Souder, spokesperson.
 
 
 \begin{figure}[t]
-\includegraphics[width=12cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du2.pdf}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du2.pdf}
 \caption{Impact on the full CJ15 fit (red band) of removing the
 	deuterium nuclear corrections (yellow hatched band),
 	and omitting the deuterium data (green band).}

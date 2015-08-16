@@ -57,7 +57,7 @@ def main():
   pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=1.0)
 
 # plot d/u fig. 2
-  #pg6=plot(g6,ax,Q2,T,color='y',hatch='...',edgecolor='g',alpha=0.7)
+  #pg6=plot(g6,ax,Q2,T,color='y',hatch='...',edgecolor='y',alpha=0.7)
   #ph1=plot(h1,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=0.5)
   #pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=0.7)
 

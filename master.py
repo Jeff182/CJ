@@ -70,7 +70,7 @@ class COMPOSER(object):
       self.central=lhapdf.mkPDF(name,0)
     else:
       self.SETS=lhapdf.mkPDFs(name)
-    if X[0]==None: self.X=np.linspace(1e-3,0.99,100)
+    if X[0]==None: self.X=np.linspace(1e-3,0.99,1000)
     else: self.X=X
 
   def map_X(self):
@@ -207,11 +207,3 @@ if __name__=="__main__" :
   CJ=COMPOSER(name='CJ12min')
   CJ.map_X() # optional
   print CJ.get_xpdf('g',Q2=10.0)
-
-
-
-
-
-
-
-
