@@ -50,41 +50,45 @@ def main():
   g6='ddat_nonuk_D_BNS_Zrap_Lasy_Wasy.pdf'
   h1='ddat_noD.pdf'
 
-  #pf1=plot(f1,ax,Q2,T,color='y',hatch=None,edgecolor='y',alpha=1.0)
-  #pf2=plot(f2,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=1.0)
-  #pf3=plot(f3,ax,Q2,T,color='k',hatch='///',edgecolor='k',alpha=0.5)
-  #pf4=plot(f4,ax,Q2,T,color='b',hatch=None,edgecolor='b',alpha=1.0)
-  #pf5=plot(f5,ax,Q2,T,color='k',hatch=None,edgecolor='k',alpha=0.5)
-  #pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor=None,alpha=0.5)
-  #pg1=plot(g1,ax,Q2,T,color='y',hatch=None,edgecolor='y',alpha=1.0)
-  #pg2=plot(g2,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=0.4)
-  #pg3=plot(g3,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=0.5)
-  #pg4=plot(g4,ax,Q2,T,color='b',hatch=None,edgecolor='b',alpha=0.5)
-  #pg5=plot(g5,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=0.5)
-  #pg6=plot(g6,ax,Q2,T,color='b',hatch=None,edgecolor=None,alpha=0.5)
-  #ph1=plot(h1,ax,Q2,T,color='g',hatch=None,edgecolor=None,alpha=0.5)
+# plot d/u fig. 1
+  pf1=plot(f1,ax,Q2,T,color='y',hatch=None,edgecolor='y',alpha=1.0)
+  pf2=plot(f2,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=1.0)
+  pf4=plot(f4,ax,Q2,T,color='b',hatch=None,edgecolor='b',alpha=1.0)
+  pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=1.0)
 
-  pg6=plot(g6,ax,Q2,T,color='y',hatch='...',edgecolor='g',alpha=0.7)
-  ph1=plot(h1,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=0.5)
-  pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=0.7)
+# plot d/u fig. 2
+  #pg6=plot(g6,ax,Q2,T,color='y',hatch='...',edgecolor='g',alpha=0.7)
+  #ph1=plot(h1,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=0.5)
+  #pf6=plot(f6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=0.7)
+
+# plot d/u fig. ?
+  #pf1=plot(g1,ax,Q2,T,color='y',hatch=None,edgecolor='y',alpha=0.5)
+  #pf2=plot(g2,ax,Q2,T,color='g',hatch=None,edgecolor='g',alpha=0.5)
+  #pf3=plot(g3,ax,Q2,T,color='m',hatch=None,edgecolor='m',alpha=1.0)
+  #pf4=plot(g4,ax,Q2,T,color='b',hatch=None,edgecolor='b',alpha=1.0)
+  #pf5=plot(g5,ax,Q2,T,color='k',hatch=None,edgecolor='k',alpha=1.0)
+  #pf6=plot(g6,ax,Q2,T,color='r',hatch=None,edgecolor='r',alpha=1.0)
 
 
   H,L=[],[]
+# legend fig. 1
+  H.append(pf1);L.append(tex('DIS\ only'))
+  H.append(pf2);L.append(tex('+\ BONuS'))
+  H.append(pf4);L.append(r'$+\ \ell\ {\rm asym}\ (\&\ Z\ {\rm rap})$')
+  H.append(pf6);L.append(r'$+\ W\ {\rm asym}$')
+
+# legend fig. 2
+  #H.append(pg6);L.append(tex('no\ nuclear'))
+  #H.append(ph1);L.append(tex('no\ deuteron'))
+  #H.append(pf6);L.append(tex('CJ15'))
+
+# legend fig. ?
   #H.append(pf1);L.append(tex('DIS\ only'))
   #H.append(pf2);L.append(tex('+\ BONuS'))
-  #H.append(pf3);L.append(tex('+\ Zrap'))
-  #H.append(pf4);L.append(r'$+\ \ell\ {\rm asym}\ (\&\ Z\ {\rm rap})$')
-  #H.append(pf5);L.append(tex('+ W CDF'))
+  #H.append(pf3);L.append(r'$+\ Z\ {\rm rap})$')
+  #H.append(pf4);L.append(r'$+\ \ell\ {\rm asym}$')
+  #H.append(pf5);L.append(r'$+\ W\ {\rm CDF}$')
   #H.append(pf6);L.append(r'$+\ W\ {\rm asym}$')
-  #H.append(pg1);L.append(tex('DIS\ only'))
-  #H.append(pg2);L.append(tex('+\ BONuS'))
-  #H.append(pg3);L.append(tex('+\ Zrap'))
-  #H.append(pg4);L.append(r'$+\ \ell\ {\rm asym}\ (\&\ Z\ {\rm rap})$')
-  #H.append(pg5);L.append(tex('+ W CDF'))
-
-  H.append(pg6);L.append(tex('no\ nuclear'))
-  H.append(ph1);L.append(tex('no\ deuteron'))
-  H.append(pf6);L.append(tex('CJ15'))
 
   ax.legend(H,L,loc=1,frameon=0,fontsize=20,bbox_to_anchor=(0.95,1))
   ax.set_ylim(0.0,1.0)
@@ -92,7 +96,7 @@ def main():
   ax.set_xlabel('$x$',size=25)
   ax.set_ylabel('$d/u$',size=25)
   py.tick_params(axis='both',labelsize=20)
-  py.savefig('gallery/du2.pdf')
+  py.savefig('gallery/du1.pdf')
 
 if __name__=='__main__':
 
