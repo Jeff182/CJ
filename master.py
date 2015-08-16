@@ -104,20 +104,20 @@ class COMPOSER(object):
     print 'ERR '+message
     sys.exit()
 
-  def _get_symmetric_errors(self,PDFS):
-    n=len(PDFS)-1
-    feven=np.array([PDFS[2*i] for i in range(1,n/2)])
-    fodd=np.array([PDFS[2*i-1] for i in range(1,n/2)])
+  def _get_symmetric_errors(self,OBS):
+    n=len(OBS)-1
+    feven=np.array([OBS[2*i] for i in range(1,n/2)])
+    fodd=np.array([OBS[2*i-1] for i in range(1,n/2)])
     df=np.zeros(feven[0].size)
     for i in range(n/2-1):
       df+=(fodd[i]-feven[i])**2
     return df**0.5/2
 
-  def _get_asymmetric_errors(self,PDFS):
-    n=len(PDFS)-1
-    f0=np.array(PDFS[0])
-    feven=np.array([PDFS[2*i] for i in range(1,n/2)])
-    fodd=np.array([PDFS[2*i-1] for i in range(1,n/2)])
+  def _get_asymmetric_errors(self,OBS):
+    n=len(OBS)-1
+    f0=np.array(OBS[0])
+    feven=np.array([OBS[2*i] for i in range(1,n/2)])
+    fodd=np.array([OBS[2*i-1] for i in range(1,n/2)])
     dfeven=feven-f0
     dfodd=fodd-f0
     zeros=np.zeros(f0.size)
@@ -143,6 +143,18 @@ class COMPOSER(object):
       D['xf0']=np.array(PDFS[0])
       D['dxf']=self._get_symmetric_errors(PDFS)
       D['dxf+'],D['dxf-']=self._get_asymmetric_errors(PDFS)
+    return D
+
+  def get_dou(self,X=None,Q2=None):
+    if X==None: X=self.X
+    if Q2==None: self._error('specify Q2')
+    D={}
+    d=lambda Set,x,Q2: self._get_xpdf(Set,'d',x,Q2) 
+    u=lambda Set,x,Q2: self._get_xpdf(Set,'u',x,Q2) 
+    OBS=[[d(Set,x,Q2)/u(Set,x,Q2) for x in X] for Set in self.SETS]
+    D['central']=np.array(OBS[0])
+    D['sym err']=self._get_symmetric_errors(OBS)
+    D['asym err +'],D['asym err -']=self._get_asymmetric_errors(OBS)
     return D
 
 class COMPOSER4NNPDF(object):
@@ -177,7 +189,18 @@ class COMPOSER4NNPDF(object):
     D['dxf-']=np.var(PDFS,axis=0)**0.5
     return D
 
-  
+  def get_dou(self,X=None,Q2=None):
+    if X==None: X=self.X
+    if Q2==None: self._error('specify Q2')
+    D={}
+    d=lambda Set,x,Q2: self._get_xpdf(Set,'d',x,Q2) 
+    u=lambda Set,x,Q2: self._get_xpdf(Set,'u',x,Q2) 
+    OBS=[[d(Set,x,Q2)/u(Set,x,Q2) for x in X] for Set in self.SETS]
+    D['central']=np.mean(OBS,axis=0)
+    D['asym err +']=np.var(OBS,axis=0)**0.5
+    D['asym err -']=np.var(OBS,axis=0)**0.5
+    return D
+
 
 if __name__=="__main__" :
 
