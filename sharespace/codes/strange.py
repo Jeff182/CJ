@@ -36,13 +36,3 @@ ax.legend(frameon=0)
 ax.semilogx()
 ax.set_ylim(0,1)
 py.savefig('gallery/strange.pdf')
-
-
-
-
-
-
-
-
-
-

@@ -207,9 +207,10 @@ def ratio():
     #  hatch='\\',alpha=0.4,facecolor='none',edgecolor='k')
   
 
-    if flav=='d':
+# print single PDF as a function of x (grafted onto ratio.py code)
+    if flav=='db':
       X=np.linspace(0.01,1.0,100)    
-      mm=NNPDF.get_xpdf(flav,X=X,Q2=1.0)
+      mm=MMHT14.get_xpdf(flav,X=X,Q2=4.0)
       t=1
       for i in range(X.size):
         l='%0.2f %0.2e %0.2e %0.2e'       
@@ -472,6 +473,6 @@ def ratio_off():
 
 
 if __name__=='__main__':
-  #ratio()
-  ratio_wfn()
+  ratio()
+  #ratio_wfn()
   #ratio_off()
