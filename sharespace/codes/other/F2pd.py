@@ -25,33 +25,55 @@ class StructFunc(object):
   def get_expdata_fnames(self):
     D=self.D
 
-    D['BCDMS p']={'fname':'BcdF2pCor', 'label':'BCDMS'}
-    D['NMC p']  ={'fname':'NmcF2pCor', 'label':'NMC'}
-    D['SLAC p'] ={'fname':'slac_p_reb', 'label':'SLAC'}
-    D['JLab p'] ={'fname':'jl00106F2p', 'label':'JLab'}
+    D['HERA p']={'fname':'HERA.dat'}
+    D['BCDMS p']={'fname':'BcdF2pCor'}
+    D['BCDMS d']={'fname':'BcdF2dCor'}
+    D['NMC p']  ={'fname':'NmcF2pCor'}
+    D['SLAC p'] ={'fname':'slac_p_reb'}
+    D['SLAC d'] ={'fname':'slac_d_reb'}
+    D['JLab p'] ={'fname':'jl00106F2p'}
+    D['JLab d'] ={'fname':'jl00106F2d'}
+    ##D['BNS d']  ={'fname':'BNS_F2nd'}
 
-    D['BCDMS p']['color']='b'
-    D['NMC p']['color']  ='g'
-    #D['SLAC p']['color'] ='#FF3399'
-    D['SLAC p']['color'] ='y'
-    D['JLab p']['color'] ='r'
+    D['HERA p']['color']='r'
+    D['BCDMS p']['color']='r'
+    D['BCDMS d']['color']='g'
+    D['NMC p']['color']  ='m'
+    D['SLAC p']['color'] ='b'
+    D['SLAC d']['color'] ='y'
+    D['JLab p']['color'] ='c'
+    D['JLab d']['color'] ='k' 
+    ##D['BNS d']['color'] ='r' 
 
-    D['BCDMS p']['symbol']='s'
-    D['NMC p']['symbol']  ='*'
-    D['SLAC p']['symbol'] ='^'
-    D['JLab p']['symbol'] ='.'
+    D['HERA p']['symbol']='*'
+    D['BCDMS p']['symbol']='.'
+    D['BCDMS d']['symbol']='s'
+    D['NMC p']['symbol']  ='x'
+    D['SLAC p']['symbol'] ='>'
+    D['SLAC d']['symbol'] ='<'
+    D['JLab p']['symbol'] ='^'
+    D['JLab d']['symbol'] ='v' 
+    ##D['BNS d']['symbol']  ='*' 
 
     # erros
+    D['HERA p']['ERR-key']=['STAT+SYST']
     D['BCDMS p']['ERR-key']=['STAERR','SYSERT']
+    D['BCDMS d']['ERR-key']=['STAERR','SYSERT']
     D['NMC p']['ERR-key']=['STAERR','SYSERT']
     D['SLAC p']['ERR-key']=['STAT.','SYS.']
+    D['SLAC d']['ERR-key']=['STAT','SYS']
     D['JLab p']['ERR-key']=['STAT','SYST']
+    D['JLab d']['ERR-key']=['STAT','SYST']
 
     keys=[]
+    keys.append('HERA p')
     keys.append('BCDMS p')
+    keys.append('BCDMS d')
     keys.append('NMC p')
     keys.append('SLAC p')
+    keys.append('SLAC d')
     keys.append('JLab p')
+    keys.append('JLab d')
     self.ordered_keys=keys
 
   def load_expdata(self):  
@@ -102,8 +124,7 @@ class StructFunc(object):
       d['ERR']=ERR
 
       DF=pd.DataFrame(d)
-      DF=DF[DF.W2>3.5]
-      DF=DF[DF.Q2>1.69]
+      #DF=DF[DF.W2>4.0]
 
       # store DF in global dic
       D[k]['DF']=DF
@@ -132,33 +153,33 @@ class StructFunc(object):
     xbins.append([30.5e-5,32.5e-5])
     xbins.append([47.5e-5,50.5e-5])
     xbins.append([78.5e-5,82.5e-5])
-    #xbins.append([12.5e-4,13.5e-4])
-    #xbins.append([19.5e-4,20.5e-4])
+    xbins.append([12.5e-4,13.5e-4])
+    xbins.append([19.5e-4,20.5e-4])
 
-    #xbins.append([3.1e-3,3.8e-3])
+    xbins.append([3.1e-3,3.8e-3])
     xbins.append([4.8e-3,5.7e-3])
     xbins.append([7.2e-3,9.3e-3])
     xbins.append([1.15e-2,1.4e-2])
     xbins.append([1.65e-2,1.9e-2])
-    #xbins.append([1.95e-2,2.05e-2])
+    xbins.append([1.95e-2,2.05e-2])
     xbins.append([2.3e-2,2.9e-2])
-    #xbins.append([3.15e-2,3.25e-2])
+    xbins.append([3.15e-2,3.25e-2])
     xbins.append([3.4e-2,3.8e-2])
     xbins.append([4.65e-2,5.4e-2])
     xbins.append([6.5e-2,7.3e-2])
-    #xbins.append([7.8e-2,8.2e-2])
+    xbins.append([7.8e-2,8.2e-2])
     xbins.append([8.5e-2,9.2e-2])
     xbins.append([9.8e-2,10.3e-2])
     xbins.append([10.8e-2,11.3e-2])
-    #xbins.append([12.8e-2,13.2e-2])
+    xbins.append([12.8e-2,13.2e-2])
     xbins.append([13.6e-2,14.6e-2])
     xbins.append([17.1e-2,18.7e-2])
-    #xbins.append([19.7e-2,20.7e-2])
+    xbins.append([19.7e-2,20.7e-2])
     xbins.append([21.7e-2,23.7e-2])
-    #xbins.append([24.8e-2,25.2e-2])
+    xbins.append([24.8e-2,25.2e-2])
     xbins.append([26.0e-2,29.0e-2])
     xbins.append([33.0e-2,36.0e-2])
-    #xbins.append([39.5e-2,40.5e-2])
+    xbins.append([39.5e-2,40.5e-2])
     xbins.append([42.0e-2,48.0e-2])
 
     #xbins.append([48.1e-2,49.4e-2])
@@ -204,12 +225,9 @@ class StructFunc(object):
     ax.semilogy()
     xbins=np.array(self.get_xbins()).flatten()
     ax.set_xticks(xbins)
-    ax.set_xticklabels(xbins)
     ax.set_xlim(1e-1,1e-0)
-    ax.tick_params(axis='both', which='major', labelsize=4)
-    ax.tick_params(axis='both', which='minor', labelsize=4)
     ax.grid()
-    py.savefig('gallery/XQ2.pdf')
+    py.savefig('XQ2.pdf')
 
   def add_subplot_axes(self,ax,rect,axisbg='w'):
     fig = py.gcf()
@@ -245,32 +263,25 @@ class StructFunc(object):
       dbinned=D[k]['dbinned']
       color=D[k]['color']
       sym=D[k]['symbol']
-      markersize=10
-      if k=='SLAC p': markersize=8
-      if k=='BCDMS p': markersize=5
       flag=False
       for i in range(len(xbins)):
         dbin=dbinned[i]
         if dbin['X'].size!=0:
           if flag==False:
             ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
-              ,yerr=dbin['ERR'].values*2**(i+1)\
+              ,yerr=dbin['ERR'].values\
               ,fmt=color+sym\
-              ,mec=color\
-              #,mfc='none'\
-              ,markersize=markersize\
-              ,label=tex(D[k]['label']))
+              ,mec=color
+              ,label=tex(k.replace(' ','~')))
             flag=True
           else:
             ax.errorbar(dbin['Q2'],dbin['F2']*2**(i+1)\
-              ,yerr=dbin['ERR'].values*2**(i+1)\
+              ,yerr=dbin['ERR'].values\
               ,fmt=color+sym\
-              #,mfc='none'\
-              ,markersize=markersize\
               ,mec=color)
 
     for i in range(len(xbins)):
-      Q2=1
+      Q2=-100
       for k in D.keys():
         dbin=D[k]['dbinned'][i]
         if dbin['X'].size==0:continue
@@ -279,81 +290,72 @@ class StructFunc(object):
           Q2=dbin['Q2'].values[imax]
           F2=dbin['F2'].values[imax]
 
-      #if any([i==k for k in [5,8,10,13,17,21,23,26,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,49]])!=True:
-      if i<21:
-        if i!=20 and i!=0:
-	  if i>15:
-	    text='$x=%0.3f$'%(np.mean([xbins[i][0],xbins[i][1]]))
-	  else:
-	    text='$x=%0.2f$'%(np.mean([xbins[i][0],xbins[i][1]]))
-        elif i==0:
-	  text='$x=%0.2f'%(np.mean([xbins[i][0],xbins[i][1]]))+'\ (i=%d)$'%i
-        elif i==20:
-	  text='$x=%0.3f'%(np.mean([xbins[i][0],xbins[i][1]]))+'\ (i=%d)$'%i
-          
-        ax.text(Q2*1.2,F2*2**(i+1),text,size=20)
+      if any([i==k for k in [10,34,37,39,41,44,49,47,43,35,32,30,28,26,45]])!=True:
+        if xbins[i][1]<0.0001:
+          text='$x\in[%0.6f,%0.6f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.001:
+          text='$x\in[%0.5f,%0.5f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.01:
+          text='$x\in[%0.4f,%0.4f]$'%(xbins[i][0],xbins[i][1])
+        elif xbins[i][1]<0.12:
+          text='$x\in[%0.3f,%0.3f]$'%(xbins[i][0],xbins[i][1])
+        else:
+          text='$x\in[%0.2f,%0.2f]$'%(xbins[i][0],xbins[i][1])
+        ax.text(Q2*1.2,F2*2**(i+1),text)
         #ax.text(Q2*1.2,F2*2**(i+1),text+str(i))
 
-    ax.legend(frameon=0,fontsize=30,numpoints=1,bbox_to_anchor=(0.96,0.98))
+    ax.legend(frameon=0,fontsize=20)
 
-    ax.set_xlim(1.4e0,5e2)
-    ax.set_ylim(2e-3,2e6)
+    ax.set_xlim(8e-5,3e5)
     ax.semilogy()
     ax.semilogx()
-    ax.set_xticks([2e0,5e0,1e1,2e1,5e1,1e2,2e2,5e2])
-    xticklabels=[2e0,5e0,1e1,2e1,5e1,1e2,2e2,5e2]
-    ax.set_xticklabels(['$%0.0f$'%x for x in xticklabels])
-    #ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
-    #ax.set_ylabel('$F_2^p(x,Q^2)$'+r'$\, \times\, 2^{\, i}$',size=30)
-    ax.set_ylabel('$F_2^p$'+r'$\, \times\, 2^{\, i}$',size=30)
-    ax.set_xlabel('$Q^2$'+tex('\ (GeV^2)'),size=30)
-    ax.tick_params(axis='both',labelsize=25)
+    ax.set_ylabel(tex('F_2')+'$(x,Q^2)$',size=30)
+    ax.set_xlabel('$Q^2$'+tex('(GeV^2)'),size=30)
+    py.tick_params(axis='both',labelsize=20)
 
-    #xsq=0.45
-    #ysq=0.07
-    #ax.add_patch(patches.Rectangle((xsq,ysq),0.1,0.15\
-    #  ,fill=False,transform=ax.transAxes))
-    #ax.plot([0.36,xsq],[0.07,ysq],'k:'
-    #  ,transform=ax.transAxes)
-    #ax.plot([0.36,xsq],[0.47,ysq+0.15],'k:'
-    #  ,transform=ax.transAxes)
+    xsq=0.45
+    ysq=0.07
+    ax.add_patch(patches.Rectangle((xsq,ysq),0.1,0.15\
+      ,fill=False,transform=ax.transAxes))
+    ax.plot([0.36,xsq],[0.07,ysq],'k:'
+      ,transform=ax.transAxes)
+    ax.plot([0.36,xsq],[0.47,ysq+0.15],'k:'
+      ,transform=ax.transAxes)
 
 
-    #rect1 = [0.06,0.07,0.3,0.3]
-    #ax1 = self.add_subplot_axes(ax,rect1)
-    #rect2 = [0.06,0.47,0.3,0.3]
-    #ax2 = self.add_subplot_axes(ax,rect2)
+    rect1 = [0.06,0.07,0.3,0.3]
+    ax1 = self.add_subplot_axes(ax,rect1)
+    rect2 = [0.06,0.47,0.3,0.3]
+    ax2 = self.add_subplot_axes(ax,rect2)
 
-    #for k in D.keys():
-      #if 'JLab' not in k: continue
-      #d=D[k]['DF']
-      #color=D[k]['color']
-      #sym=D[k]['symbol']
+    for k in D.keys():
+      if 'JLab' not in k: continue
+      d=D[k]['DF']
+      color=D[k]['color']
+      sym=D[k]['symbol']
 
-      #ax1.errorbar(d['Q2'],d['F2']\
-      #  ,yerr=d['ERR'].values\
-      #  ,fmt=color+sym\
-      #  ,mec=color)
+      ax1.errorbar(d['Q2'],d['F2']\
+        ,yerr=d['ERR'].values\
+        ,fmt=color+sym\
+        ,mec=color)
 
-      #ax2.errorbar(d['X'],d['F2']\
-      #  ,yerr=d['ERR'].values\
-      #  ,fmt=color+sym\
-      #  ,mec=color)
+      ax2.errorbar(d['X'],d['F2']\
+        ,yerr=d['ERR'].values\
+        ,fmt=color+sym\
+        ,mec=color)
 
-    #ax1.locator_params(nbins=5) 
-    #ax2.locator_params(nbins=5) 
+    ax1.locator_params(nbins=5) 
+    ax2.locator_params(nbins=5) 
 
-    #ax1.tick_params(axis='both',labelsize=12)
-    #ax2.tick_params(axis='both',labelsize=12)
+    ax1.tick_params(axis='both',labelsize=12)
+    ax2.tick_params(axis='both',labelsize=12)
 
-    #ax1.set_xlabel(r'$Q^2$'+tex('\ (GeV^2)'),size=20)
-    #ax2.set_xlabel(r'$x$',size=20)
-    #ax1.set_ylim(1e-3,0.25)
-    #ax2.set_ylim(1e-3,0.25)
-    #ax1.semilogy()
-    #ax2.semilogy()
+    ax1.set_xlabel(r'$Q^2$'+tex('(GeV^2)'),size=20)
+    ax2.set_xlabel(r'$x$',size=20)
+    ax1.semilogy()
+    ax2.semilogy()
     #py.tight_layout()
-    py.savefig('gallery/F2p.pdf')
+    py.savefig('gallery/F2.pdf')
 
 if __name__=='__main__':
 
