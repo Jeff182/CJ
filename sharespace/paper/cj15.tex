@@ -1,5 +1,5 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% August 25, 2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% August 27, 2015
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,6 +170,7 @@ $\bullet$
 New parametrization for $\bar d - \bar u$ ... avoids negative PDFs?
 ...
 
+
 In our analysis we parametrize the $\bar d/\bar u$ ratio as
 %
 \begin{eqnarray}
@@ -188,6 +189,11 @@ The $\bar d/\bar u \to 1$ limit is what would be expected from
 perturbative QCD, while the $\bar d/\bar u \to 0$ limit may arise
 if the trend in $x \gtrsim 0.3$ points from the E866 experiment
 \cite{E866} were to continue to larger $x$.
+
+{\color{red} ...[ARE PARAMETERS IN TABLE~I FOR $\bar d / \bar u$
+OR $\bar d - \bar u$???]...}
+
+
 
 
 $\bullet$
@@ -237,29 +243,29 @@ For target mass corrections, use of OPE (G-P);
 
 
 $\bullet$
-For other subleading $1/Q^2$ corrections, such as higher twist and
-other residual power corrections (
+... give formula for TMC in $F_2$ ???
 
 
 $\bullet$
-... anything different to CJ12??
+For other subleading $1/Q^2$ corrections, such as higher twist and
+other residual power corrections ...
 
 
 %
 \begin{align}
 F_2(x,Q^2)
-= F_2^{\rm LT}(x,Q^2)
-  \left( 1 + \frac{C(x)}{Q^2} \right),
+= F_2^{(\rm LT+TMC)}(x,Q^2)
+  \left( 1 + \frac{C_{\rm HT}(x)}{Q^2} \right),
 \label{eq:F2ht}
 \end{align}
 %
-where $F_2^{\rm LT}$ denotes the leading twist structure function
+where $F_2^{\rm (LT+TMC)}$ denotes the leading twist structure function
 including TMCs.  For simplicity we generically refer to the fitted
 $1/Q^2$ term as a ``higher twist'' correction, and parametrize the
 higher twist coefficient function by
 %
 \begin{align}
-C(x) = h_0 x^{h_1} (1+h_2 x),
+C_{\rm HT}(x) = h_0 x^{h_1} (1+h_2 x),
 \label{eq:C_ht}
 \end{align}
 %
@@ -312,8 +318,8 @@ in the deuteron for a given nucleon momentum fraction in the deuteron
 $z = (M_d/M)(p \cdot q / p_d \cdot q)$ and nucleon virtuality $p^2$,
 where $p$ and $p_d$ are the four-momenta of the nucleon and deuteron,
 respectively, and $M_d$ is the deuteron mass.
-The function $\widetilde{q}^N$ is the off-shell nucleon structure
-function, and a sum over the nucleons $N = p, n$ is implied.
+The function $\widetilde{q}^N$ is the PDF in the the off-shell
+nucleon, and a sum over the nucleons $N = p, n$ is implied.
 ...
 The function $\widetilde{q}^N$ includes $1/Q^2$ corrections,
 such as TMCs and higher twist effects.
@@ -326,6 +332,7 @@ on-shell limit, one finds \cite{KP06}
 \widetilde{q}^N (x,p^2,Q^2)
 &=& q^N(x,Q^2)
     \left( 1 + \frac{p^2-M^2}{M^2} \delta f^N(x,Q^2) \right),
+\label{eq:qoff}
 \end{eqnarray}     
 %
 where the coefficient of the off-shell term is
@@ -511,7 +518,11 @@ we have allowed in the current fit for the nucleon off-shell
 correction.
 
 
+... do not include HERMES $F_2^p$ data ... because ...
+
+
 {\color{red} ...[FURTHER DESCRIPTIONS OF DATA]...
+
 ...[JUSTIFICATION FOR INCLUDING AND OMITTING SPECIFIC DATA SETS]...}
 
 
@@ -544,6 +555,7 @@ in Fig.~\ref{fig:F2d}, where measurements from BCDMS \cite{BCDMS},
 SLAC \cite{SLAC} and JLab \cite{Malace} are compared with the CJ15
 results (data from NMC are presented as a ratio to the proton
 structure function, $F_2^d/F_2^p$).
+
 {\color{red} ...[SHOW OTHER, e.g. HERA, DATA SEPARATELY??]...}
 
 
@@ -585,6 +597,7 @@ approach in setting these to zero.
 This is in contrast with the light quark sea, for which a
 nonperturbative component at the input scale is essential to
 account for the nonzero flavor asymmetry $\bar d-\bar u$.
+
 {\color{red} ...[NOTE VERY ASYMMETRIC ERRORS AT SMALL $x$]...}    
 
 
@@ -626,10 +639,10 @@ lie somewhere between the $T=1$ and $T=10$ CJ15 errors, while the
 HERAPDF15 uncertainties are comparable to the $T=1$ CJ15 results,
 as was the case for the various quark distributions.
 %
-Uncertainties in other modern PDF analyses, such as CT14, ABM, ... ...
-are generally between the representative sets illustrated in
-Fig.~\ref{fig:ratio}.
-%
+Uncertainties in other modern PDF analyses, such as CT14 \cite{CT14},
+JR14 \cite{JR14} or ABM11 \cite{ABM11} are generally between the
+representative sets illustrated in Fig.~\ref{fig:ratio}.
+
 {\color{red} ...[ANY OTHER COMMENTS ABOUT THE GENERAL FEATURES/ERRORS?]...}
 
 
@@ -735,12 +748,12 @@ valence and sea quark sectors, in the present analysis we generalize
 the single-pole approximation to the spectral function to allow
 different off-shell behaviors of the valence, sea quark and gluon
 distributions.  The three corresponding spectator state masses
-(``$qq$'' for valence quarks, ``$qq\bar q$'' for sea quarks,
+(``$qq$'' for valence quarks, ``$qq\bar q q$'' for sea quarks,
 and ``$qqq$'' for gluons) are then fitted to the isoscalar
 valence, sea quark and gluon PDFs in the free nucleon.
 The rescaling parameter $\partial \log\Lambda^2 / \partial \log p^2$
-at $p^2=M^2$ is then included as a parameter in the fit, with
-errors propagated along with those of the other fit parameters
+evaluated at $p^2=M^2$ is then included as a parameter in the fit,
+with errors propagated along with those of the other fit parameters
 in Tables~\ref{tab:LTparams} and \ref{tab:other_params}.
 
 
@@ -770,129 +783,215 @@ In addition, for the $u$-quark distribution the WJC-1 result
 lies slightly outside the uncertainty band at $x \sim 0.05$.
 
 
-% ###
-{\color{red} ...[WM EDITING]...}
+We should note, however, that the off-shell correction term
+$\delta f^N$, or even the off-shell PDF $\widetilde{q}^N$ in
+Eq.~(\ref{eq:qoff}), alone is unphyiscal.  Only the convolution
+of $\widetilde{q}^N$ with the smearing function $f_{N/d}$ in
+Eq.~(\ref{eq:genconv}) corresponds to the physical deuteron
+parton distribution (or structure function), and the two
+corrections (deuteron wave function and nucleon off-shell)
+must always be considered together.
+Since the off-shell correction is fitted, changes in deuteron
+wave function can in practice be compensated by a corresponding
+change in the off-shell parameters, to the extent allowed by the
+specific choice of wave function and off-shell parametrization.
+This is clearly illustrated in Fig.~\ref{fig:F2dN}, where the
+deuteron EMC ratio $F_2^d/F_2^N$ is shown for the four different
+wave functions considered, and the 3-parameter off-shell
+parametrization in Eq.~(\ref{eq:delffit}).
+Remarkably the structure function ratio is almost idential for
+the AV18, CD-Bonn and WJC-2 models, while the WJC-1 result
+differs slightly from these, reflecting the observations in
+Figs.~\ref{fig:ratio_wfn}--\ref{fig:ratio_off} above.
 
 
-We should note at this point that ...
-... off-shell corrections alone are unphyiscal, in the sense that
-only the combination of deuteron wave function (in the smearing
-function) and off-shell correction affects the observable $F_2^d$
-structure function ...
-... this is clearly illustrated in Fig.~\ref{fig:F2dN}, where
-... maybe F2d/F2N plots discussed here??? ... give almost
-identical ratios???
+In addition to the important role played by nuclear corrections
+in $F_2^d$ at large values of $x$, the effects of finite-$Q^2$
+corrections are also significant, especially at low $Q^2$.
+In an earlier study \cite{CJ10}, a nontrivial interplay was
+observed between the kinematical TMCs and the dynamical higher
+twist corrections parametrized in Eq.~(\ref{eq:F2ht}).
+The impact of the finite-$Q^2$ corrections on the $F_2^d/F_2^N$
+ratio is illustrated in Fig.~\ref{fig:F2dN_Q2} for the CJ15
+fit, for $Q^2$ between 2~GeV$^2$ and 100~GeV$^2$.
+The rise in the ratio at large $x$ is fastest at the highest
+$Q^2$ value, and becomes less steep with decreasing $Q^2$.
+The general shape remains independent of the scale for
+$Q^2 \gtrsim 5$~GeV$^2$, however, a dramatic change occurs at
+$Q^2 \sim 2$~GeV$^2$, where $F_2^d/F_2^N$ rises slowly until
+$x \approx 0.75$ before abruptly turning down for larger $x$.
+This behavior arises from the interplay between the TMCs to
+the free and smeared nucleon structure functions, and the
+$Q^2$ dependent corrections to the smearing functions $f_{N/d}$
+at finite values of $x^2/Q^2$.
 
 
-
-... as observed in our earlier study \cite{CJ10}, there is some degree 
-of compensation/interplay ... between the TMCs and higher twist 
-corrections ...
-The parameters for the higher twist correction to $F_2$ in
-Eqs.~(\ref{eq:F2ht}) and (\ref{eq:C_ht})
-are given in Table~\ref{tab:other_params}.
+For the standard TMC prescription adopted in this analysis,
+namely that based on the operator product expansion \cite{GP76},
+the fitted higher twist coefficient function $C_{\rm HT}$
+in Eq.~(\ref{eq:C_ht}) is plotted in Fig.~\ref{fig:Cht},
+with the parameters given in Table~\ref{tab:other_params}
+for the CJ15 fit.
+The coefficient displays the characteristic rise at large values
+of $x$ observed in previous higher twist extractions, and is
+almost completely independent of the deuteron wave function
+model for the entire range of $x$ considered.
 
 
 % .......................................................................
 \subsection{$d/u$ ratio {\color{red} [WM editing]}}
 \label{ssec:du}
 
-The impact of the nuclear corrections and data constraints on
-the $d/u$ ratio are illustrated in Figs.~\ref{fig:du1} and
-\ref{fig:du2}.
+
+The nuclear and finite-$Q^2$ corrections that manifest themselves
+in the $F_2^d/F_2^N$ ratio as observed in Figs.~\ref{fig:F2dN} and
+\ref{fig:F2dN_Q2} directly translate into modifying the behavior
+of the $d/u$ PDF ratio at large $x$.  Our previous analyses
+\cite{CJ10, CJ11, CJ12} have made detailed studies of the
+relationship between the size of the nuclear corrections in
+the deuteron and the shape and $x \to 1$ limit of $d/u$.
+For the CJ12 PDFs \cite{CJ12}, three sets of nuclear corrections
+were considered, corresponding to mild, medium and strong nuclear
+corrections, and referred to as ``CJ12min'', ``CJ12mid'' and
+``CJ12max'', respectively.  Each of these sets was consistent
+with the available data constraints, and provided a convenient
+way to explore the nuclear effects on various observables.
 
 
-In Fig.~\ref{fig:du1}:
-
-$\bullet$
-BONuS data shrink error on $d/u$ slightly in the
-$x \approx 0.5-0.6$ range
-
-
-$\bullet$
-significant reduction in error once $W$ asymmetry data added
-
-
-$\bullet$
-For other deuteron wave function models, the total $\chi^2$ values
-are very similar, with
-$\chi^2/{\rm dof} = 0.979$ for the CD-Bonn wave function,
-0.983 for the WJC-1 wave function, and
-0.980 for the WJC-2 model.
-The AV18, CD-Bonn and WJC-2 model fits are therefore essentially
-indistinguishable, while the WJC-1 model, with its significantly
-harder deuteron wave function, has a slightly worse overall fit.
-
-
-$\bullet$
-With the off-shell covariant spectator (OCS) model
-...[WHAT WE HAD BEEN CALLING ``fmKP'']...,
-the $\chi^2$ values for the various wave functions are marginally higher,
-with $\chi^2/{\rm dof} = 0.982, 0.982, 0.989$ and 0.984 for the
-AV18, CD-Bonn, WJC-1 and WJC-2 models.  Here again the WJC-1 gives
-the worst fit.
-...[MORE DISCUSSION]...
+Since our last analysis, new data on charged lepton \cite{D0_mu,
+D0_e} and $W$ boson asymmetries \cite{D0_W} over a large range
+of rapidities have become available from the D\O\ collaboration,
+which place significant constraints on the $d/u$ ratio at high $x$.
+The new D\O\ electron and muon asymmetry data, together with earlier
+data from CDF \cite{CDF_e}, are displayed in Fig.~\ref{fig:Lasy}
+as a function of the lepton pseudorapidity $\eta_l$ and compared
+with the CJ15 fit.
+%
+The extracted $W$ boson asymmetries, which are more directly
+related to the shape of the PDFs, are shown in Fig.~\ref{fig:Wasy}
+as a function of the $W$ boson rapidity $y_W$.  The statistical
+errors bars on the D\O\ $e$ and $\mu$ data in particular are
+extremely small and place severe constraints on the fit.
+The $\chi^2$/dof for the D\O\ lepton asymmetries are $\approx 2$,
+although the overall fit the data in Fig.~\ref{fig:Lasy} is good.
+The earlier CDF electron data have larger errors and give a
+$\chi^2/{\rm dof} \approx 1$.  The fit to the extracted $W$
+asymmetries gives $\chi^2/{\rm dof} \approx 1$ for both the CDF
+and D\O\ data.
 
 
-$\bullet$
-impact of various data sets on $d/u$ ratio:
-
-- DIS only: large uncertainty
-
-- BONuS shrinks uncertainty appreciably at $x \sim 0.6$
-
-- lepton asymmetry data gives significant reduction in uncertainty at
-$0.2 \lesssim x \lesssim 0.4$, with smaller reduction at larger $x$
-
-- $Z$ rapidity data, on the other hand, has very little effect on
-the uncertainty
-
-- $W$ asymmetry data, in particular the D\O\ data \cite{D0_W},
-gives significant reduction in the $d/u$ uncertainty for
-$x \gtrsim 0.6$
-
+The stronger constraints from the charge asymmetry data leads to
+a significant reduction in the uncertainties on the $d/u$ ratio,
+particularly at large values of $x$.  This is illustrated in
+Fig.~\ref{fig:du_data}, which demonstrates the shrinking of the
+$d/u$ uncertainty bands (which are shown here with a tolerance
+of $T=10$) with the successive addition of various data sets.
+Compared with the fit to DIS only data, in which the $d/u$ ratio
+has very large uncertainties beyond $x \approx 0.4$, the addition
+of the lepton asymmetries leads to a reduction in $d/u$ of more
+than a factor 2 at both small $x$ and large $x$.
+(Addition of $Z$ boson rapidity data \cite{CDFZ, D0Z} has only
+modest impact on $d/u$.)
+Subsequent inclusion of the $W$ asymmetries leads to a further
+halving of the uncertainty at $x \approx 0.6-0.8$, while having
+minimal effect on the errors at $x \lesssim 0.4$.
 
 
-The effects of deuterium data and the nuclear corrections in the
-deuterium data are illustrated in Fig.~\ref{fig:du2}:
+In fact, independent of the charge asymmetry data, a significant
+reduction in the $d/u$ uncertainty at intermediate $x$ values is
+already provided by the new Jefferson Lab data on the neutron to
+deuteron ratio $F_2^n/F_2^d$ from the BONuS collaboration
+\cite{BONuS}.  While the BONuS data have little or no effect
+at $x \lesssim 0.3$, the reduction in the $d/u$ error at
+$x \sim 0.5-0.6$ is almost as large as that from the lepton
+asymmetries.
+Using all the available data from DIS and $W$ boson production,
+the central value of the extrapolated $d/u$ ratio at $x=1$
+is $\approx 0.1$ at the input scale $Q_0^2$.
+The nuclear model dependence of the central values of the
+$x \to 1$ limit of $d/u$ is relatively weak, ranging from 0.08
+for the WJC-1 wave function to 0.12 for the CD-Bonn model.
 
-- with no nuclear corrections the $d/u$ ratio is larger at $x \gtrsim 0.6$
-than with the nuclear corrections. This can be understood from the
-shape of the $F_2^d/F_2^N$ ratio Fig.~\ref{fig:F2dN} at large $x$,
-where the effect of the nuclear corrections is to increase the ratio
-above unity for $x \gtrsim 0.6$.  Since $F_2^d$ and $F_2^p$ are fixed
-inputs, a larger $F_2^d/F_2^N$ is generated by a smaller neutron
-$F_2^n$ and hence a smaller $d/u$ ratio. For example, the effect of
-the nuclear corrections is to shift the $d/u$ ratio at $x = 0.8$
+
+While the new charge asymmetry and BONuS $F_2^n/F_2^d$ data
+provide significant constraints on the $d/u$ ratio, the existing
+inclusive deuteron DIS data still play an important role in global
+analyses, as does the proper treatment of the nuclear corrections.
+If one were to fit $F_2^d$ data without accounting for nuclear
+effects (assuming $F_2^d = F_2^p + F_2^n$), the resulting $d/u$
+ratio would be strongly overestimated beyond $x = 0.6$, where the
+nuclear EMC ratio begins to deviate significantly from unity
+(see Fig.~\ref{fig:F2dN}).  This is illustrated in
+Fig.~\ref{fig:du_nuc}, where the CJ15 $d/u$ ratio is compared
+with the fit without nuclear corrections.
+This behavior can be understood from the shape of the $F_2^d/F_2^N$
+ratio Fig.~\ref{fig:F2dN} at large $x$, where the effect of the
+nuclear corrections is to increase the ratio above unity for
+$x \gtrsim 0.6$.  Since $F_2^d$ and $F_2^p$ are fixed inputs,
+a larger $F_2^d/F_2^N$ is generated by a smaller neutron $F_2^n$
+and hence a smaller $d/u$ ratio.  For example, the effect of the
+nuclear corrections is to shift the $d/u$ ratio at $x = 0.8$
 from the ($T=10$) range $\approx 0.1 - 0.3$ to $\approx 0 - 0.2$
 once the smearing and off-shell effects are included.
-
-- removing the deuterium data altogether increases the overall
-uncertainty band for $x \gtrsim 0.7$. Interestingly, the deuteron
+%
+Removing the deuterium data altogether increases the overall
+uncertainty band for $x \gtrsim 0.7$.  Interestingly, the deuteron
 data also reduce the $d/u$ uncertainties slightly at smaller $x$,
-$x \lesssim 0.1$.
+$0.05 \lesssim x \lesssim 0.15$.
 
 
-The final CJ15 $d/u$ results and uncertainties (for $T=10$) can be
-compared with ratios obtained in other recent global PDF analyses.
-These are shown in Fig.~\ref{fig:du0} for the MMHT14 \cite{MMHT14},
-CT14 \cite{CT14} and JR14 \cite{JR14} PDFs.
-
-- JR14 uses similar experimental data sets and treatment of nuclear
-and finite-$Q^2$ corrections at large $x$;
-
-- JR14 has largest uncertainty in the intermediate-$x$ region,
-which may result from the recent $W$ and lepton asymmetry data
-from CDF and D\O\ not being used;
-
-- at large $x$ the JR14 $d/u$ ratio $\to 0$ from the form of
-their parametrization;
-
-- CT14 range is similar 
-
+Effects on large-$x$ PDFs from nuclear corrections have also been
+investigated by several other groups in recent years \cite{ABKM09, 
+ABM11, MMSTWW13, MMHT14, NNPDF13, JR14}, and it is instructive to
+compare the CJ15 results on the $d/u$ ratio with those analyses.
+The MMHT14 fit \cite{MMHT14} uses a purely phenomenological nuclear
+correction for the combined effects of nuclear smearing and
+off-shell corrections, in contrast to our approach in which the
+(poorly understood) off-shell correction is fitted but the
+(better known) deuteron wave function correction is computed.
+Interestingly, the phenomenological MMHT14 nuclear correction
+has a qualitatively similar shape to that found in our more
+microscopic estimate.  For $x \lesssim 0.7$ the MMHT14 $d/u$
+uncertainty is comparable to that in CJ15 with $T=10$, although
+for $x \gtrsim 0.8$ the uncertainty diverges rapidly due to the
+different error evaluation methodologies used.
 
 
+The JR14 analysis \cite{JR14} uses similar smearing functions to
+those used in our fit, but does not include nucleon off-shell
+corrections.  Furthermore, it uses the $\Delta\chi^2 = 1$ criterion
+for the 1-$\sigma$ confidence level, based on statistical
+considerations alone, but introduces additional systematic
+uncertainties through the dependence of the fit on the input scale.
+The resulting uncertainty on $d/u$ is larger than that in CJ15 in
+the intermediate-$x$ region, which may reflect the absence of
+the recent $W$ and lepton asymmetry data in the JR14 fit.
+The range of $d/u$ values extrapolated to $x = 1$ is similar
+to the CJ15 band within errors (for $T=10$), although the form
+of the JR14 parametrization forces $d/u \to 0$ at $x=1$.
 
+
+The CJ15 uncertainty band in Fig.~\ref{fig:du_pdfs} is also similar
+to that found in the CT14 global analysis \cite{CT14}, which does not
+apply any nuclear corrections to deuterium data, on the basis of the
+somewhat higher $W^2$ cuts utilized.  The CT14 analysis uses a
+parametrization based on Bernstein polynomials multiplying a
+common factor $x^{a_1} (1-x)^{a_2}$, and fixes the exponents $a_2$
+to the same for the $u$- and $d$-quark PDFs, thereby allowing
+finite values of the $d/u$ ratio in the $x \to 1$ limit.
+The results of the two analyses largely overlap over much of the
+$x$ range, with the CT14 distributions being slightly above the
+CJ15 error band at $x \gtrsim 0.6$.  This is reminiscent of the
+higher $d/u$ ratio observed in Fig.~\ref{fig:du_nuc} when the
+nuclear corrections are switched off.
+
+
+{\color{red} ...[ANYTHING ELSE TO BE SAID ABOUT $d/u$ COMPARISONS/
+OTHER ANALYSES?]...}
+
+
+% ###
+{\color{red} ...[WM EDITING]...}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -997,14 +1096,9 @@ Eur. Phys. J. C {\bf 75}, 204 (2015).
 S.~Dulat {\it et al.},
 arXiv:1506.07443 [hep-ph].
 
-% \bibitem{NNPDF10}
-% R.~D.~Ball, L.~Del Debbio, S.~Forte, A.~Guffanti, J.~I.~Latorre,
-% J.~Rojo and M.~Ubiali,
-% Nucl. Phys. B {\bf 838}, 136 (2010).
-%
-% \bibitem{NNPDF13}
-% R.~D.~Ball {\it et al.},
-% Nucl. Phys. B {\bf 867}, 244 (2013).
+\bibitem{NNPDF13}
+R.~D.~Ball {\it et al.},
+Phys. Lett. B {\bf 723}, 330 (2013).
 
 \bibitem{NNPDF3.0}
 R.~D.~Ball {\it et al.},
@@ -1151,9 +1245,9 @@ G.~Moreno {\it et al.},
 Phys. Rev. D {\bf 43}, 2815 (1991).
 {\color{red}...[IS THIS CORRECT REFERENCE??]...}
 
-% \bibitem{ABKM09} 
-% S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
-% Phys. Rev. D {\bf 81}, 014032 (2010).
+\bibitem{ABKM09} 
+S.~Alekhin, J.~Bl\"umlein, S.~Klein and S.-O.~Moch,
+Phys. Rev. D {\bf 81}, 014032 (2010).
 
 \bibitem{ABM11}
 S.~Alekhin, J.~Bl\"umlein and S.-O.~Moch,
@@ -1291,7 +1385,7 @@ JHEP {\bf 0207}, 012 (2003).
 The CTEQ collaboration website,
 \url{http://www.cteq.org}.
 
-\bibitem{MMSTWW}
+\bibitem{MMSTWW13}
 A.~D.~Martin, A.~J.~Th.~M.~Mathijssen, W.~J.~Stirling, R.~S.~Thorne, 
 B.~J.~A.~Watt and G.~Watt,
 Eur. Phys. J. C {\bf 73}, 2318 (2013).
@@ -1300,7 +1394,7 @@ Eur. Phys. J. C {\bf 73}, 2318 (2013).
 A.~Accardi,
 AIP Conf. Proc. {\bf 1369}, 210 (2011).
 
-\bibitem{Cteq61}
+\bibitem{CTEQ6.1}
 D.~Stump {\it et al.},
 JHEP {\bf 0310}, 046 (2003).
 
@@ -1441,42 +1535,30 @@ Phys. Rev. Lett. {\bf 114}, 082002 (2015).
 
 
 \begin{figure}[t]
-\includegraphics[width=8cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_I.pdf}
-\includegraphics[width=8cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_II.pdf}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_I.pdf}
 \caption{Ratio of deuteron to isoscalar nucleon structure functions
-	$F_2^d/F_2^N$ for
-	{\bf (a)} different deuteron wave function models
-		at $Q^2=10$~GeV$^2$, and
-	{\bf (b)} different values of $Q^2$ for the AV18 wave function.}
+	$F_2^d/F_2^N$ for different deuteron wave function models
+	at $Q^2=10$~GeV$^2$.}
 \label{fig:F2dN}
-\end{figure} 
+\end{figure}
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du0.pdf}
-\caption{Comparison of the $d/u$ ratio at $Q^2=10$~GeV$^2$ for different
-	PDF parametrizations:
-	CJ15 (red band),
-	MMHT14 \cite{MMHT14} (yellow band),
-	CT14 \cite{CT14} (green band), and
-	JR14 \cite{JR14} (blue dotted band).}
-\label{fig:du0}
-\end{figure} 
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_II.pdf}
+\caption{Ratio of deuteron to isoscalar nucleon structure functions
+	$F_2^d/F_2^N$ computed from the CJ15 PDFs for different
+	values of $Q^2$.}
+\label{fig:F2dN_Q2}
+\end{figure}
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du1.pdf}
-\caption{Impact of various data sets on the $d/u$ ratio at
-	$Q^2=10$~GeV$^2$. The uncertainty band is largest for the
-	  DIS only data (yellow band),
-	and decreases with the successive addition of
-	  JLab $F_2^n/F_2^d$ \cite{BONuS} data (green band),
-	  lepton asymmetry \cite{CDF_e, D0_mu, D0_e}
-	(and $Z$ rapidity \cite{CDFZ, D0Z}) data (blue band), and
-	  $W$ boson asymmetry data \cite{CDF_W, D0_W} (red band).
-	{\color{red}...[FIGURE NEEDS SMOOTHING]...}}
-\label{fig:du1}
-\end{figure} 
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/ht.pdf}
+\caption{Fitted higher twist function $C_{\rm HT}$ from
+	Eq.~(\ref{eq:C_ht}), in units of GeV$^2$, for different
+	deuteron wave function models.}
+\label{fig:Cht}
+\end{figure}
 
 
 \begin{figure}[t]
@@ -1504,12 +1586,39 @@ Phys. Rev. Lett. {\bf 114}, 082002 (2015).
 
 
 \begin{figure}[t]
-\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du2.pdf}
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du_data.pdf}
+\caption{Impact of various data sets on the $d/u$ ratio at
+	$Q^2=10$~GeV$^2$. The uncertainty band is largest for the
+	  DIS only data (yellow band),
+	and decreases with the successive addition of
+	  JLab $F_2^n/F_2^d$ \cite{BONuS} data (green band),
+	  lepton asymmetry \cite{CDF_e, D0_mu, D0_e}
+	(and $Z$ rapidity \cite{CDFZ, D0Z}) data (blue band), and
+	  $W$ boson asymmetry data \cite{CDF_W, D0_W} (red band).
+	{\color{red}...[FIGURE NEEDS SMOOTHING]...}}
+\label{fig:du_data}
+\end{figure} 
+
+
+\begin{figure}[t]
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du_nuc.pdf}
 \caption{Impact on the CJ15 $d/u$ ratio (red band) of removing the
 	deuterium nuclear corrections (yellow shaded band),
 	and omitting the deuterium data (green band).
 	{\color{red}...[FIGURE NEEDS SMOOTHING]...}}
-\label{fig:du2}
+\label{fig:du_nuc}
+\end{figure} 
+
+
+\begin{figure}[t]
+\includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/du_pdfs.pdf}
+\caption{Comparison of the $d/u$ ratio at $Q^2=10$~GeV$^2$ for different
+	PDF parametrizations:
+	CJ15 (red band),
+	MMHT14 \cite{MMHT14} (yellow band),
+	CT14 \cite{CT14} (green band), and
+	JR14 \cite{JR14} (blue dotted band).}
+\label{fig:du_pdfs}
 \end{figure} 
 
 
@@ -1618,7 +1727,7 @@ $a_4$		& 3.5169 $\pm$ 0.42791
 		& 49.881 $\pm$ 7.1398
 		& 3.0338 $\pm$ 0.31300		\\
 $b$		& ---
-		& $-0.0042424 \pm 0.00070691$
+		& 0.0042424 $\pm$ 0.00070691
 		& ---
 		& ---
 		& ---				\\
