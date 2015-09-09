@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% August 27, 2015
+%% September 9, 2015
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,7 +65,7 @@ large values of $x$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction} {\color{red} [XXX editing]}
+\section{Introduction} {\color{red} [XXX to edit]}
 \label{sec:intro}
 
 ... general intro ...
@@ -120,7 +120,7 @@ the CJ15 analysis.
 
 
 % .......................................................................
-\subsection{PDF parametrizations {\color{red} [XXX editing]}}
+\subsection{PDF parametrizations {\color{red} [XXX to edit]}}
 \label{ssec:parametrizations}
 
 $\bullet$
@@ -215,7 +215,7 @@ In this study we take $\kappa = 0.4$.
 
 
 % .......................................................................
-\subsection{Heavy quarks {\color{red} [JFO?? editing]}}
+\subsection{Heavy quarks {\color{red} [JFO?? to edit]}}
 \label{ssec:HQs}
 
 $\bullet$
@@ -233,7 +233,7 @@ $\Lambda_{\rm QCD}^{(4)} = 226.8$~MeV.
 
 
 % .......................................................................
-\subsection{$1/Q^2$ corrections {\color{red} [XXX editing]}}
+\subsection{$1/Q^2$ corrections {\color{red} [XXX to edit]}}
 \label{ssec:power}
 
 $\bullet$
@@ -274,28 +274,38 @@ assuming it to be isospin independent
 
 
 % .......................................................................
-\subsection{Nuclear corrections {\color{red} [WM editing]}}
+\subsection{Nuclear corrections {\color{red} [WM]}}
 \label{ssec:nuclear}
 
-$\bullet$
-The analysis includes nuclear corrections for deuterium account for
-nucleon Fermi motion and nuclear binding effects, which are implemented
-using nuclear smearing functions, as well as rescattering effects
-mediated by Pomeron and meson exchange mechanisms which give rise to
-shadowing at small $x \lesssim 0.1$ and a small amount of antishadowing
-at $x \sim 0.1$.
-For the shadowing and antishadowing corrections, the model of
-Ref.~\cite{MTshad} is used (see also Refs.~\cite{Badelek92, Kaptari91}),
-although the effects of these is negligible in our analysis.
+As in the previous CJ PDF analyses \cite{CJ10, CJ11, CJ12}, the use
+of deuterium DIS and Drell-Yan data necessitates taking into account
+corrections due to differences between PDFs in the deuteron compared
+to those in the free proton and neutron.  The CJ15 analysis follows
+a similar approach, with a few improvements over the earlier
+implementations, which we discuss in the following.
 
+
+Generally, the nuclear corrections account for nucleon Fermi motion
+and nuclear binding effects, which are implemented using nuclear
+smearing functions, and are most important at intermediate and large
+values of $x$.  In addition, rescattering effects mediated by Pomeron
+and meson exchange mechanisms give rise to shadowing at small values
+of $x$ ($x \lesssim 0.1$) and a small amount of antishadowing at
+$x \sim 0.1$.  For the shadowing and antishadowing corrections, the
+model of Ref.~\cite{MTshad} is used (see also Refs.~\cite{Badelek92,
+Kaptari91}); however, the effects of these is negligible in our
+analysis.
+
+
+% ###
+{\color{red} ...[WM EDITING]...}
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+\subsubsection{Nuclear smearing {\color{red} [WM]}}
+\label{sssec:smear}
 
 The implementation of the nuclear smearing is performed ... ...
 
-
-
-% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-\subsubsection{Nuclear smearing {\color{red} [WM editing]}}
-\label{sssec:smear}
 
 Since nucleons bound in a nucleus are not free, the nuclear structure
 function deviates from a simple sum of free proton and neutron
@@ -412,7 +422,7 @@ Same off-shell functions in DIS and DY.
 
 
 % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-\subsubsection{Nucleon off-shell corrections {\color{red} [WM editing]}}
+\subsubsection{Nucleon off-shell corrections {\color{red} [WM]}}
 \label{sssec:offshell}
 
 
@@ -488,7 +498,7 @@ $x_1$ to be determined from Eq.~(\ref{eq:norm}) analytically.
 
 
 % .......................................................................
-\subsection{PDF Errors {\color{red} [AA/JFO?? editing]}}
+\subsection{PDF Errors {\color{red} [AA/JFO?? to edit]}}
 \label{ssec:errors}
 
 ... as for CJ12 ... Hessian ... tolerance ...
@@ -496,7 +506,7 @@ $x_1$ to be determined from Eq.~(\ref{eq:norm}) analytically.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Data} {\color{red} [XXX editing]}
+\section{Data} {\color{red} [XXX to edit]}
 \label{sec:data}
 
 The CJ15 PDFs are obtained by fitting to a global database of 4035
@@ -527,7 +537,7 @@ correction.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results} {\color{red} [WM editing]}
+\section{Results}
 \label{sec:results}
 
 In this section we present the results of our global QCD analysis.
@@ -567,7 +577,7 @@ structure function, $F_2^d/F_2^p$).
 
 
 % .......................................................................
-\subsection{CJ15 PDFs {\color{red} [WM editing]}}
+\subsection{CJ15 PDFs}
 \label{ssec:CJ15pdfs}
 
 The CJ15 PDFs themselves are displayed in Fig.~\ref{fig:pdf} at a
@@ -647,7 +657,7 @@ representative sets illustrated in Fig.~\ref{fig:ratio}.
 
 
 % .......................................................................
-\subsection{Nuclear corrections at large $x$ {\color{red} [WM editing]}}
+\subsection{Nuclear corrections at large $x$}
 \label{ssec:largex}
 
 As observed in Fig.~\ref{fig:ratio}, the uncertainty on the $d$-quark
@@ -839,7 +849,7 @@ model for the entire range of $x$ considered.
 
 
 % .......................................................................
-\subsection{$d/u$ ratio {\color{red} [WM editing]}}
+\subsection{$d/u$ ratio}
 \label{ssec:du}
 
 
@@ -866,7 +876,12 @@ The new D\O\ electron and muon asymmetry data, together with earlier
 data from CDF \cite{CDF_e}, are displayed in Fig.~\ref{fig:Lasy}
 as a function of the lepton pseudorapidity $\eta_l$ and compared
 with the CJ15 fit.
-%
+Compared with the range of nuclear corrections in CJ12, the
+lepton asymmetry data, and especially the new results from
+D\O\ \cite{D0_mu, D0_e}, strongly favor a smaller nuclear
+correction at large $x$, closer to the CJ12min set.
+
+
 The extracted $W$ boson asymmetries, which are more directly
 related to the shape of the PDFs, are shown in Fig.~\ref{fig:Wasy}
 as a function of the $W$ boson rapidity $y_W$.  The statistical
@@ -905,6 +920,11 @@ deuteron ratio $F_2^n/F_2^d$ from the BONuS collaboration
 at $x \lesssim 0.3$, the reduction in the $d/u$ error at
 $x \sim 0.5-0.6$ is almost as large as that from the lepton
 asymmetries.
+%
+Curiously, the BONuS data have a slight preference for stronger
+nuclear corrections, in contrast to the lepton asymmetry data,
+although the tension is not significant.
+%
 Using all the available data from DIS and $W$ boson production,
 the central value of the extrapolated $d/u$ ratio at $x=1$
 is $\approx 0.1$ at the input scale $Q_0^2$.
@@ -935,7 +955,7 @@ from the ($T=10$) range $\approx 0.1 - 0.3$ to $\approx 0 - 0.2$
 once the smearing and off-shell effects are included.
 %
 Removing the deuterium data altogether increases the overall
-uncertainty band for $x \gtrsim 0.7$.  Interestingly, the deuteron
+uncertainty band for $x \gtrsim 0.7$.  Surprisingly, the deuteron
 data also reduce the $d/u$ uncertainties slightly at smaller $x$,
 $0.05 \lesssim x \lesssim 0.15$.
 
@@ -988,10 +1008,6 @@ nuclear corrections are switched off.
 
 {\color{red} ...[ANYTHING ELSE TO BE SAID ABOUT $d/u$ COMPARISONS/
 OTHER ANALYSES?]...}
-
-
-% ###
-{\color{red} ...[WM EDITING]...}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1538,7 +1554,8 @@ Phys. Rev. Lett. {\bf 114}, 082002 (2015).
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_I.pdf}
 \caption{Ratio of deuteron to isoscalar nucleon structure functions
 	$F_2^d/F_2^N$ for different deuteron wave function models
-	at $Q^2=10$~GeV$^2$.}
+	at $Q^2=10$~GeV$^2$.
+	{\color{red} ...[SMOOTH CURVES]...}}
 \label{fig:F2dN}
 \end{figure}
 
@@ -1547,7 +1564,8 @@ Phys. Rev. Lett. {\bf 114}, 082002 (2015).
 \includegraphics[width=15cm]{/u/group/cteqX/wmelnitc/CJgit/sharespace/codes/gallery/F2d_F2_II.pdf}
 \caption{Ratio of deuteron to isoscalar nucleon structure functions
 	$F_2^d/F_2^N$ computed from the CJ15 PDFs for different
-	values of $Q^2$.}
+	values of $Q^2$.
+	{\color{red} ...[SMOOTH CURVES]...}}
 \label{fig:F2dN_Q2}
 \end{figure}
 
@@ -1630,7 +1648,8 @@ Phys. Rev. Lett. {\bf 114}, 082002 (2015).
 	in Eq.~(\ref{eq:delffit}), with the corresponding number of
 	data points and the respective $\chi^2$ values for each set.
 	For comparison the $\chi^2$ for the LO fit and for an NLO
-	fit with the OCS off-shell model are also given.\\}
+	fit with the OCS off-shell model are also given.
+	{\color{red} ...[remove LO \& OCS entries?]...} \\}
 \centering
 {\scriptsize  
 \begin{tabular}[c]{llrrrr}  \hline
@@ -1693,7 +1712,8 @@ $\chi^2/{\rm dof}$	&		&      & {\bf 0.979} & 1.219 & 0.982 \\  \hline\\
 	been fixed.  For the strange to non-strange sea quark PDF
 	ratio [Eq.~(\ref{eq:kappa})], we take $\kappa=0.4$.
 	(The parameter values are given to 5 significant figures
-	to avoid rounding errors.) \\}
+	to avoid rounding errors.)
+	{\color{red} ...[make neater/reduce sig. figs?]...} \\}
 {\scriptsize
 \begin{tabular}{c|ccccc}\hline
 parameter	& $u_v$
