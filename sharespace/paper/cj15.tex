@@ -277,41 +277,46 @@ assuming it to be isospin independent
 \subsection{Nuclear corrections}
 \label{ssec:nuclear}
 
-As in the previous CJ PDF analyses \cite{CJ10, CJ11, CJ12}, the use
-of deuterium DIS and Drell-Yan data necessitates taking into account
-corrections due to differences between PDFs in the deuteron compared
-to those in the free proton and neutron.  The CJ15 analysis follows
-a similar approach, with a few improvements over the earlier
-implementations, which we discuss in the following.
+As in the previous CJ PDF analyses \cite{CJ10, CJ11, CJ12}, the use of
+deuterium DIS and Drell-Yan data necessitates taking into account the
+differences between PDFs in the deuteron compared to those in the free
+proton and neutron.  The CJ15 analysis follows a similar approach,
+with a few improvements over the earlier implementations, which we
+discuss in the following.  While the earlier analyses applied nuclear
+corrections only to deep-inelastic deuteron structure functions, in
+the present work we formulate the corrections at the parton level,
+and generalize the smearing corrections to any process involving quark,
+antiquark or gluon PDFs in the deuteron.
 
 
-Generally, the nuclear corrections account for nucleon Fermi motion
-and nuclear binding effects, which are implemented using nuclear
-smearing functions, and are most important at intermediate and large
-values of $x$.  In addition, rescattering effects mediated by Pomeron
-and meson exchange mechanisms give rise to shadowing at small values
-of $x$ ($x \lesssim 0.1$) and a small amount of antishadowing at
-$x \sim 0.1$.  For the shadowing and antishadowing corrections, the
-model of Ref.~\cite{MTshad} is used (see also Refs.~\cite{Badelek92,
-Kaptari91}); however, the effects of these is negligible in our
-analysis.
+Generally, the nuclear corrections account for Fermi motion, binding
+and nucleon off-shell effects, which are implemented in the form of
+convolutions using nuclear smearing functions.  These become
+increasingly important intermediate and large values of $x$,
+and will be the focus of our attention in this section.
+In addition, rescattering effects mediated by Pomeron and meson
+exchange mechanisms give rise to shadowing at small values of $x$
+($x \lesssim 0.1$) and a small amount of antishadowing at $x \sim 0.1$
+\cite{MTshad} (see also Refs.~\cite{Badelek92, Kaptari91}).
+However, in practice the shadowing and antishadowing corrections
+are very small, and have negligible effect on the phenomenology
+in our analysis.
 
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+\subsubsection{Nuclear smearing}
+\label{sssec:smear}
+
+% Since nucleons bound in a nucleus are not free, the nuclear structure
+% function deviates from a simple sum of free proton and neutron
+% structure functions, especially at large $x$ where the effects of
+% Fermi motion, nuclear binding, and nucleon off-shellness are most
+% prominent.
 
 % ###
 {\color{red} ...[WM EDITING]...}
 
-% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-\subsubsection{Nuclear smearing {\color{red} [WM]}}
-\label{sssec:smear}
 
-The implementation of the nuclear smearing is performed ... ...
-
-
-Since nucleons bound in a nucleus are not free, the nuclear structure
-function deviates from a simple sum of free proton and neutron
-structure functions, especially at large $x$ where the effects of
-Fermi motion, nuclear binding, and nucleon off-shellness are most
-prominent.
 In the nuclear impulse approximation the structure function of the
 deuteron $d$ can be expressed as a generalized convolution of the
 bound nucleon structure function and a momentum distribution
