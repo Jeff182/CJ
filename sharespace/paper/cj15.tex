@@ -312,7 +312,7 @@ of a projectile (lepton or hadron) from the deuteron $d$, the
 momentum distribution of a parton in the deuteron is given by a
 convolution of the corresponding PDF in the bound nucleon and a
 light-cone momentum distribution $f_{N/d}$ of nucleons in the
-deuteron \cite{MSToff, KPW94}.  
+deuteron (``smearing function'') \cite{MSToff, KPW94}.  
 Taking for illustration the PDF for a quark of flavor $q$ (the
 generalization to antiquarks and gluons is straightforward),
 the distribution in the deuteron can be computed as
@@ -334,12 +334,11 @@ nucleon, and in principle includes the $1/Q^2$ corrections,
 such as TMCs and higher twist effects, discussed above.
 
 
-% ###
-{\color{red} ...[WM EDITING]...}
-
-
-Expanding the off-shell nucleon structure function about the
-on-shell limit, one finds \cite{KP06}
+While the off-shell nucleon PDF $\widetilde{q}^N$ is not by itself
+an observable, its dependence on the virtuality $p^2$ can be studied
+within a given framework.  Since the bound state effects in the
+deuteron are the smallest for all atomic nuclei, one can expand the
+off-shell nucleon distribution about its on-shell limit \cite{KP06},
 %
 \begin{eqnarray}
 \widetilde{q}^N (x,p^2,Q^2)
@@ -348,23 +347,25 @@ on-shell limit, one finds \cite{KP06}
 \label{eq:qoff}
 \end{eqnarray}     
 %
-where the coefficient of the off-shell term is
+where the coefficient of the off-shell term is formally given by
 %
 \begin{eqnarray}
 \delta f^N(x,Q^2)
 &=& \left.
     \frac{\partial \ln \widetilde{q}^N(x,p^2,Q^2)}
 	 {\partial \ln p^2}
-    \right|_{p^2=M^2},
+    \right|_{p^2=M^2}.
 \end{eqnarray}
 %
-and the $\widetilde{q}^N$ includes the parametrized higher twist
-corrections of Eq.~(\ref{eq:F2ht}).
+% and the $\widetilde{q}^N$ includes the parametrized higher twist
+% corrections of Eq.~(\ref{eq:F2ht}).
 %
-The on-shell term leads to the standard on-shell convolution
-representation for the nuclear structure function, while the
-off-shell term can be evaluated as an additive correction,
-$q^d = q^{d\, (\rm on)} + q^{d\, (\rm off)}$, where 
+The on-shell term in Eq.~(\ref{eq:qoff}) leads to the standard
+on-shell convolution representation for the nuclear PDF, while
+the off-shell term can be evaluated as an additive correction.
+Defining the total quark PDF in the deuteron by
+$q^d = q^{d\, (\rm on)} + q^{d\, (\rm off)}$, the on-shell and
+off-shell contributions can be written
 %
 \begin{subequations}
 \begin{eqnarray}
@@ -379,7 +380,8 @@ q^{d\, (\rm off)}(x,Q^2)
 %
 The on-shell and off-shell smearing functions $f^{(\rm on)}$
 and $f^{(\rm off)}$ are taken to be the same for the proton
-and neutron, and are given by \cite{Ehlers14}
+and neutron (isospin symmetry breaking effects are not expected
+to be significant), and are given by \cite{Ehlers14}
 %
 \begin{subequations}
 \begin{eqnarray}
@@ -391,20 +393,25 @@ f^{(\rm off)}(z)
 \end{eqnarray}
 \end{subequations}
 %
-% where the additive term $\delta^{(\rm off)} q^d(x,Q^2)$ represents
-% nucleon off-shell and relativistic corrections that cannot be expressed
-% through a one-dimensional convolution.
-%
-The momentum distributions, or ``smearing functions'', $f^{(\rm on)}$
-and $f^{(\rm off)}$, are computed in the weak binding approximation (WBA)
-in terms of the deuteron wave function, and include the effects of
-nuclear binding and Fermi motion \cite{KP06, KMK09}.
+In practice we compute these within the weak binding approximation
+(WBA) in terms of the deuteron wave function \cite{KP06, KMK09}.
 At $Q^2 \to \infty$ the on-shell smearing function $f^{(\rm on)}$
 has a simple probabilistic interpretation in terms of the light-cone
-momentum fraction $z \approx (M_d/M)(p^+/p_d^+)$ of the deuteron
+momentum fraction
+%
+    $z \approx (M_d/M)(p^+/p_d^+)
+	= (p^0 + p^z)/M
+	= 1 + (\varepsilon ...)$
+%
+of the deuteron
 carried by the struck nucleon, while at finite $Q^2$ it depends
 in addition on the parameter \mbox{$\rho^2 = 1 + 4x^2 M^2/Q^2$},
 which characterizes the deviation from the Bjorken limit.
+
+
+
+% ###
+{\color{red} ...[WM EDITING]...}
 
 
 The nuclear corrections at large $x$ depend partly on the strength
