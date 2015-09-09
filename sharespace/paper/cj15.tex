@@ -307,39 +307,37 @@ in our analysis.
 \subsubsection{Nuclear smearing}
 \label{sssec:smear}
 
-% Since nucleons bound in a nucleus are not free, the nuclear structure
-% function deviates from a simple sum of free proton and neutron
-% structure functions, especially at large $x$ where the effects of
-% Fermi motion, nuclear binding, and nucleon off-shellness are most
-% prominent.
+From the standard nuclear impulse approximation for the scattering
+of a projectile (lepton or hadron) from the deuteron $d$, the
+momentum distribution of a parton in the deuteron is given by a
+convolution of the corresponding PDF in the bound nucleon and a
+light-cone momentum distribution $f_{N/d}$ of nucleons in the
+deuteron \cite{MSToff, KPW94}.  
+Taking for illustration the PDF for a quark of flavor $q$ (the
+generalization to antiquarks and gluons is straightforward),
+the distribution in the deuteron can be computed as
+%
+\begin{eqnarray}
+q^d(x,Q^2)
+&=& \int \frac{dz}{z} dp^2\,
+    f_{N/d}(z,p^2)\, \widetilde{q}^N(x/z,p^2,Q^2),
+\label{eq:genconv}
+\end{eqnarray}
+%
+where $z = (M_d/M)(p \cdot q / p_d \cdot q)$ is the nucleon momentum
+fraction in the deuteron, with $p$ and $p_d$ the four-momenta of the
+nucleon and deuteron, respectively, $p^2$ is the nucleon virtuality,
+and $M_d$ is the deuteron mass.  For the isoscalar deuteron, a sum
+over the nucleons $N = p, n$ is implied.
+The function $\widetilde{q}^N$ is the quark PDF in the the off-shell
+nucleon, and in principle includes the $1/Q^2$ corrections,
+such as TMCs and higher twist effects, discussed above.
+
 
 % ###
 {\color{red} ...[WM EDITING]...}
 
 
-In the nuclear impulse approximation the structure function of the
-deuteron $d$ can be expressed as a generalized convolution of the
-bound nucleon structure function and a momentum distribution
-$f_{N/d}$ of nucleons in the deuteron \cite{MSToff, KPW94},
-%
-\begin{eqnarray}
-q^d(x,Q^2)
-&=& \int \frac{dz}{z} dp^2\, f_{N/d}(z,p^2)\, \widetilde{q}^N(x/z,p^2,Q^2),
-\label{eq:genconv}
-\end{eqnarray}
-%
-where $f_{N/d}(z,p^2)$ gives the (light-cone) distribution of nucleons
-in the deuteron for a given nucleon momentum fraction in the deuteron
-$z = (M_d/M)(p \cdot q / p_d \cdot q)$ and nucleon virtuality $p^2$,
-where $p$ and $p_d$ are the four-momenta of the nucleon and deuteron,
-respectively, and $M_d$ is the deuteron mass.
-The function $\widetilde{q}^N$ is the PDF in the the off-shell
-nucleon, and a sum over the nucleons $N = p, n$ is implied.
-...
-The function $\widetilde{q}^N$ includes $1/Q^2$ corrections,
-such as TMCs and higher twist effects.
-...
-%
 Expanding the off-shell nucleon structure function about the
 on-shell limit, one finds \cite{KP06}
 %
