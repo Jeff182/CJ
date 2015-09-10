@@ -367,13 +367,16 @@ on-shell and off-shell contributions,
 the two components can be written as
 %
 \begin{subequations}
+\label{eq:qd}
 \begin{eqnarray}
 q^{d\, (\rm on)}(x,Q^2)
-&=& \int \frac{dz}{z} f^{(\rm on)}(z)\, q^N(x/z,Q^2),	\\
+&=& \int \frac{dz}{z} f^{(\rm on)}(z)\, q^N(x/z,Q^2),
+\label{eq:qdon}						\\
 %
 q^{d\, (\rm off)}(x,Q^2)
 &=& \int \frac{dz}{z} f^{(\rm off)}(z)\,
 		      \delta f^N(x/z,Q^2)\, q^N(x/z,Q^2).
+\label{eq:qdoff}
 \end{eqnarray}  
 \end{subequations}
 %
@@ -440,28 +443,48 @@ wherever data at $x \gtrsim 0.3$ are used \cite{CJ10, ACHL09, ARM12}.
 % ###
 {\color{red} ...[WM EDITING]...}
 
+While the effects of the nuclear smearing are relatively well
+understood, at least in the sense that they can be directly related
+to the properties of the deuteron wave function, the nucleon off-shell
+correction $q^{d\, (\rm off)}$ in Eq.~(\ref{eq:qdoff}) is much more
+model dependent.
+In the literature a number of model studies have been performed to
+estimate the modification of PDFs in bound nucleons relative to the
+free nucleon PDFs \cite{GL92, MSToff, KPW94, MSTplb, KMPW95, MSS97,
+KP06, Mineo04, Cloet06}, some of which have been motivated by the
+original observation of the nuclear EMC effect.
 
-$\bullet$
-The off-shell nucleon correction $\delta^{(\rm off)} q^d$ is somewhat
-more model dependent, but several quark model based estimates of this
-have been made in the literature \cite{KP06, GL92, MSTplb}.
+
+
+% Medium effects are included by introducing the scalar and vector 
+% mean-fields, obtained from Eqs. (16,17), into the quark propagators.
 
 
 $\bullet$
 ... give brief history of off-shell corrections
 
-- MST (theoretical)
+- in some studies covariant spectator quark models, with scalar
+or axial vector spectator diquarks, have been modeled 
+\cite{MSToff, KPW94, MSTplb, KMPW95}
+...
+MST (theoretical)
+
+
 
 - KP (model/fitted)
 
+
 - CJ11 (mKP)
 
+
 - CJ12 (more consistent mKP)
+
 
 - CJ15 (calculation at parton level - different treatment of 
   valence quarks, antiquarks and gluons - can apply to any
   observable, not just $F_2$ structure function - in CJ11 and CJ12
   had used overall multiplicative constant, only for $F_2$)
+
 
 
 
@@ -1407,6 +1430,18 @@ Phys. Rev. C {\bf 45}, 1374 (1992).
 \bibitem{MSTplb}
 W.~Melnitchouk, A.~W.~Schreiber and A.~W.~Thomas,
 Phys. Lett. B {\bf 335}, 11 (1994).
+
+\bibitem{Mineo04}
+H.~Mineo, W.~Bentz, N.~Ishii, A.~W.~Thomas and K.~Yazaki,
+Nucl. Phys. {\bf A735}, 482 (2004).
+
+\bibitem{Cloet06}
+I.~C.~Cloet, W.~Bentz and A.~W.~Thomas,
+Phys. Lett. B {\bf 642}, 210 (2006).
+
+\bibitem{MSS97}
+W.~Melnitchouk, M.~Sargsian, and M.~Strikman,
+Z. Phys. A {\bf 359}, 99 (1997).
 
 \bibitem{Cteq6}
 J.~Pumplin {\it et al.},
