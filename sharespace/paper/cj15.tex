@@ -435,76 +435,101 @@ wherever data at $x \gtrsim 0.3$ are used \cite{CJ10, ACHL09, ARM12}.
 % Same off-shell functions in DIS and DY.
 
 
-
 % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 \subsubsection{Nucleon off-shell corrections}
 \label{sssec:offshell}
 
-% ###
-{\color{red} ...[WM EDITING]...}
-
 While the effects of the nuclear smearing are relatively well
-understood, at least in the sense that they can be directly related
-to the properties of the deuteron wave function, the nucleon off-shell
+understood, at least in the sense that they can be directly related to
+the properties of the deuteron wave function, the nucleon off-shell
 correction $q^{d\, (\rm off)}$ in Eq.~(\ref{eq:qdoff}) is much more
-model dependent.
-In the literature a number of model studies have been performed to
-estimate the modification of PDFs in bound nucleons relative to the
-free nucleon PDFs \cite{GL92, MSToff, KPW94, MSTplb, KMPW95, MSS97,
-KP06, Mineo04, Cloet06}, some of which have been motivated by the
-original observation of the nuclear EMC effect.
-
-
-
+model dependent.  In the literature a number of model studies have
+been performed to estimate the modification of PDFs in bound nucleons
+relative to the free nucleon PDFs \cite{GL92, MSToff, KPW94, MSTplb,
+KMPW95, MSS97, KP06, Mineo04, Cloet06}, some of which have been
+motivated by the original observation of the nuclear EMC effect.
+%
 % Medium effects are included by introducing the scalar and vector 
 % mean-fields, obtained from Eqs. (16,17), into the quark propagators.
 
 
-$\bullet$
-... give brief history of off-shell corrections
+Some early studies of off-shell corrections to PDFs were based on
+covariant spectator quark models \cite{MSToff, KPW94, MSTplb, KMPW95,
+KP06}, which typically assumed a fixed mass of the spectator ``diquark''
+system, and a simple quark--nucleon correlation function regularized
+by cutoff parameters fitted to reproduce the $x$ dependence of
+on-shell PDFs.
+%
+The possible effects of nucleon off-shell corrections on global PDF
+analysis were first explored in Ref.~\cite{CJ10} using a simple
+parametrization of the corrections computed in the quark spectator
+model of Ref.~\cite{MSTplb} for $x \gtrsim 0.2$.
+%
+In the subsequent CJ11 analysis \cite{CJ11} a more elaborate off-shell
+model was considered \cite{KP06}, in which the corrections were related
+to the change in the nucleon's confinement radius in the nuclear
+medium, as well as the average virtuality of the bound nucleons.
+The change in the confinement radius (or nucleon ``swelling'')
+was varied between 1.5\% and 1.8\%, and the virtuality of the bound
+nucleons
+  $\langle p^2-M^2 \rangle / M^2 \equiv \int dz f^{(\rm off)}(z)$
+ranged from $-3.6\%$ to $-6.5\%$ for the four deuteron wave functions
+discussed above.
 
-- in some studies covariant spectator quark models, with scalar
-or axial vector spectator diquarks, have been modeled 
-\cite{MSToff, KPW94, MSTplb, KMPW95}
-...
-MST (theoretical)
+
+Most recently, the CJ12 global analysis \cite{CJ12} further took into
+account the correlations between the nucleon swelling and the deuteron
+wave function, defining a set of nuclear corrections that ranged from
+mild (for the hardest, WJC-1 wave function \cite{WJC} coupled to a
+      small, 0.3\% nucleon swelling) to
+strong (for the softest, CD-Bonn wave function \cite{CDBonn} with
+      a large, 2.1\% swelling parameter).
+This full range was consistent with the previous experimental data,
+with each set giving essentially the same $\chi^2$ values for the
+global fit, $\chi^2/{\rm dof} \approx 1.03$.
 
 
-
-- KP (model/fitted)
-
-
-- CJ11 (mKP)
+% ###
+{\color{red} ...[WM EDITING]...}
 
 
-- CJ12 (more consistent mKP)
+Note that in all the previous studies the off-shell corrections
+were applied only to the deuteron $F_2^d$ structure function
+and in the valence quark approximation.
 
 
 - CJ15 (calculation at parton level - different treatment of 
   valence quarks, antiquarks and gluons - can apply to any
   observable, not just $F_2$ structure function - in CJ11 and CJ12
   had used overall multiplicative constant, only for $F_2$)
-
-
-
-
-$\bullet$
-In Ref.~\cite{CJ11} this was computed using the ``modified Kulagin-Petti''
-model.
-In this model, the corrections were related to the change in the
-nucleon's confinement radius in the nuclear medium, as well as the
-average virtuality of the bound nucleons, and constrained to give no
-net change in the structure function normalization.  In contrast to
-Ref.~\cite{CJ11}, however, here we further take into account the
-correlation between the nucleon ``swelling'' and the deuteron wave
-function.  The combined effects introduce a theoretical uncertainty
-in the extracted PDFs, particularly for the $d$ quark. 
-
-
-$\bullet$
-In CJ15 have freed off-shell parameters, allowing them to be determined
+... In CJ15 have freed off-shell parameters, allowing them to be determined
 by the fit. Using either fmKP model (rescaling parameter $\lambda$),
 or in phenomenological fit.
+... OCS model ...
+
+
+
+As an alternative to modeling the off-shell correction, Kulagin and
+Petti \cite{KP06} proposed a purely phenomenological parametrization
+for the off-shell function $\delta f^N$ of the form
+%
+\begin{eqnarray}
+\delta f^N
+&=& C_N (x-x_0) (x-x_1) (1+x_0-x),
+\label{eq:delffit}
+\end{eqnarray}
+%
+... 
+off-shell effects are constrained by the normalization
+of nuclear valence quark distribution ...
+anticipate should have at least one zero. ..
+
+... but fit the parameters to the deuterium data.
+
+The requirement that the off-shell correction does not modify the
+... with its parameters 
+... constrained to give no net change in the structure function 
+normalization.
 
 
 $\bullet$
@@ -890,7 +915,6 @@ model for the entire range of $x$ considered.
 \subsection{$d/u$ ratio}
 \label{ssec:du}
 
-
 The nuclear and finite-$Q^2$ corrections that manifest themselves
 in the $F_2^d/F_2^N$ ratio as observed in Figs.~\ref{fig:F2dN} and
 \ref{fig:F2dN_Q2} directly translate into modifying the behavior
@@ -1117,7 +1141,7 @@ J.~G.~Morfin and J.~F.~Owens,
 Phys. Rev. D {\bf 81}, 034016 (2010).
 
 \bibitem{ACHL09} 
-J.~Arrington, F.~Coester, R.~J.~Holt and T.~-S.~H.~Lee,
+J.~Arrington, F.~Coester, R.~J.~Holt and T.-S.~H.~Lee,
 J. Phys. G {\bf 36}, 025005 (2009).
 
 \bibitem{ARM12}
