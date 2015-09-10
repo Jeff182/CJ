@@ -455,10 +455,12 @@ motivated by the original observation of the nuclear EMC effect.
 
 Some early studies of off-shell corrections to PDFs were based on
 covariant spectator quark models \cite{MSToff, KPW94, MSTplb, KMPW95,
-KP06}, which typically assumed a fixed mass of the spectator ``diquark''
-system, and a simple quark--nucleon correlation function regularized
-by cutoff parameters fitted to reproduce the $x$ dependence of
-on-shell PDFs.
+KP06}, in which the PDFs were represented through a quark spectral
+function characterized by an ultraviolet momentum cutoff scale
+$\Lambda$ and an invariant mass of the ``diquark'' system (proton with
+a quark removed) that is spectator to the deep-inelastic collision.
+The spectator mass and cutoff parameter were fixed by comparing with
+the on-shell data.
 %
 The possible effects of nucleon off-shell corrections on global PDF
 analysis were first explored in Ref.~\cite{CJ10} using a simple
@@ -469,6 +471,7 @@ In the subsequent CJ11 analysis \cite{CJ11} a more elaborate off-shell
 model was considered \cite{KP06}, in which the corrections were related
 to the change in the nucleon's confinement radius in the nuclear
 medium, as well as the average virtuality of the bound nucleons.
+%
 The change in the confinement radius (or nucleon ``swelling'')
 was varied between 1.5\% and 1.8\%, and the virtuality of the bound
 nucleons
@@ -484,28 +487,32 @@ mild (for the hardest, WJC-1 wave function \cite{WJC} coupled to a
       small, 0.3\% nucleon swelling) to
 strong (for the softest, CD-Bonn wave function \cite{CDBonn} with
       a large, 2.1\% swelling parameter).
-This full range was consistent with the previous experimental data,
+This entire range was consistent with the previous experimental data,
 with each set giving essentially the same $\chi^2$ values for the
 global fit, $\chi^2/{\rm dof} \approx 1.03$.
 
 
+As noted, in all the previous studies the off-shell corrections were
+applied only to the deuteron $F_2^d$ structure function and in the
+valence quark approximation.  To apply the model to observables that
+are sensitive to both the valence and sea quark sectors, Ehlers
+{\it et al.} \cite{Ehlers14} generalized the single-pole approximation
+to the spectral function to allow different off-shell behaviors of the
+valence, sea quark and gluon distributions.
+The three corresponding spectator state masses (``$qq$'' for valence
+quarks, ``$qq\bar q q$'' for sea quarks, and ``$qqq$'' for gluons)
+were then fitted to the isoscalar valence, sea quark and gluon PDFs
+in the free nucleon, allowing off-shell corrections to be applied to
+other observables, such as the $F_L^d$ structure function or $pd$
+Drell-Yan cross sections.
+The only free parameter in this model, which we refer to as the
+``off-shell covariant spectator'' (OCS) model, is the rescaling
+parameter $\lambda = \partial \log\Lambda^2 / \partial \log p^2$,
+evaluated at $p^2=M^2$.
+
+
 % ###
 {\color{red} ...[WM EDITING]...}
-
-
-Note that in all the previous studies the off-shell corrections were
-applied only to the deuteron $F_2^d$ structure function and in the
-valence quark approximation.  In a recent extension of this model,
-Ehlers {\it et al.} \cite{Ehlers14} generalized the off-shell
-modifications to apply also to antiquarks and gluons, with an
-appropriate choice of spectator quark masses, allowing the
-corrections to be applied to any observable.
-
-
-... In CJ15 have freed off-shell parameters, allowing them to be determined
-by the fit. Using either fmKP model (rescaling parameter $\lambda$),
-or in phenomenological fit.
-... OCS model ...
 
 
 
@@ -515,7 +522,7 @@ for the off-shell function $\delta f^N$ of the form
 %
 \begin{eqnarray}
 \delta f^N
-&=& C_N (x-x_0) (x-x_1) (1+x_0-x),
+&=& C (x-x_0) (x-x_1) (1+x_0-x),
 \label{eq:delffit}
 \end{eqnarray}
 %
@@ -523,8 +530,6 @@ for the off-shell function $\delta f^N$ of the form
 off-shell effects are constrained by the normalization
 of nuclear valence quark distribution ...
 anticipate should have at least one zero. ..
-
-... but fit the parameters to the deuterium data.
 
 The requirement that the off-shell correction does not modify the
 ... with its parameters 
@@ -540,13 +545,9 @@ at $x \approx 0.1-0.2$.
 To allow for one or more zero crossings in the function $\delta f^N$,
 we use the same parametrization as in Ref.~\cite{KP06},
 %
-\begin{eqnarray}
-\delta f^N
-&=& C_N (x-x_0) (x-x_1) (1+x_0-x),
-\label{eq:delffit}
-\end{eqnarray}
+...
 %
-but fit the parameters to the deuterium data.
+... but fit the parameters to the deuterium data.
 The requirement that the off-shell correction does not modify the
 number of valence quarks in the nucleon provides the constraint
 %
@@ -556,7 +557,7 @@ number of valence quarks in the nucleon provides the constraint
 \end{eqnarray}
 %
 In practice we fit the zero crossing parameter $x_0$ and the
-normalization $C_N$, which then allows the second zero crossing
+normalization $C$, which then allows the second zero crossing
 $x_1$ to be determined from Eq.~(\ref{eq:norm}) analytically.
 
 
@@ -802,10 +803,14 @@ $x \gtrsim 0.5$, with the parameter $x_1 \approx 0.15$, while the
 other zero crossing parameter is negative, $x_0 \approx -0.25$.
 
 
+% ### [REVISE] ...
 To test the sensitivity of the fit to the off-shell model, we also
-consider a somewhat different prescription for the off-shell
+consider the OCS model discussed in Sec.~\ref{sssec:offshell} ...
+...
+a somewhat different prescription for the off-shell
 correction $\delta f^N$, along the lines of that adopted in our
 previous analyses \cite{CJ11, CJ12} (see also Ref.~\cite{KP06}).
+...
 Namely, we express the PDF through a spectral representation, in
 terms of a quark spectral function characterized by an ultraviolet
 momentum cutoff scale $\Lambda$ and an invariant mass of the
@@ -830,8 +835,7 @@ with errors propagated along with those of the other fit parameters
 in Tables~\ref{tab:LTparams} and \ref{tab:other_params}.
 
 
-The results of the fit within this model, which we refer to as
-the off-shell covariant spectator (OCS) model, are displayed in
+The results of the fit within the OCS model are displayed in
 Fig.~\ref{fig:ratio_off} for various PDFs as ratios to the
 central CJ15 PDFs (computed using the off-shell parametrization
 (\ref{eq:delffit}) and the AV18 deuteron wave function).
@@ -1855,7 +1859,7 @@ $c$		& ---
 {\scriptsize
 \begin{tabular}{c|c}\hline
 parameter	& value				\\ \hline
-$C_0$ 		& 0.098222 $\pm$ 0.028518	\\
+$C$ 		& 0.098222 $\pm$ 0.028518	\\
 $x_0$ 		& 0.34487  $\pm$ 0.91982	\\
 $x_1$		& 0.048				\\ \hline
 %
