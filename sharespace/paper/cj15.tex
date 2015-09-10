@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% September 9, 2015
+%% September 10, 2015
 %%
 %% JLAB-THY-15-xxxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -279,28 +279,27 @@ assuming it to be isospin independent
 
 As in the previous CJ PDF analyses \cite{CJ10, CJ11, CJ12}, the use of
 deuterium DIS and Drell-Yan data necessitates taking into account the
-differences between PDFs in the deuteron compared to those in the free
-proton and neutron.  The CJ15 analysis follows a similar approach,
-with a few improvements over the earlier implementations, which we
-discuss in the following.  While the earlier analyses applied nuclear
-corrections only to deep-inelastic deuteron structure functions, in
-the present work we formulate the corrections at the parton level,
-and generalize the smearing corrections to any process involving quark,
-antiquark or gluon PDFs in the deuteron.
+differences between PDFs in the deuteron and those in the free proton
+and neutron.  The CJ15 analysis follows a similar approach, with several
+improvements over the earlier implementations, as we discuss in the
+following.  While the earlier analyses applied nuclear corrections only
+to deep-inelastic deuteron structure functions, here we formulate the
+corrections at the parton level and generalize the treatment to any
+process involving quark, antiquark or gluon PDFs in the deuteron.
 
 
-Generally, the nuclear corrections account for Fermi motion, binding
-and nucleon off-shell effects, which are implemented in the form of
-convolutions using nuclear smearing functions.  These become
-increasingly important intermediate and large values of $x$,
-and will be the focus of our attention in this section.
-In addition, rescattering effects mediated by Pomeron and meson
-exchange mechanisms give rise to shadowing at small values of $x$
-($x \lesssim 0.1$) and a small amount of antishadowing at $x \sim 0.1$
-\cite{MTshad} (see also Refs.~\cite{Badelek92, Kaptari91}).
-However, in practice the shadowing and antishadowing corrections
-are very small, and have negligible effect on the phenomenology
-in our analysis.
+Generally, the nuclear corrections in high energy reactions account
+for Fermi motion, binding and nucleon off-shell effects, which are
+implemented in the form of convolutions using nuclear smearing
+functions.  These become increasingly important at intermediate and
+large values of $x$, and will be the focus of our attention in this
+section.  In addition, rescattering effects mediated by Pomeron and
+pion exchange mechanisms give rise to shadowing at small values of
+$x$ ($x \lesssim 0.1$) \cite{Badelek92, MTshad} and a small amount
+of antishadowing at $x \sim 0.1$ \cite{Kaptari91, MTshad}.
+In practice, however, the shadowing and antishadowing corrections
+are very small, and have negligible effect on the phenomenology in
+our analysis.
 
 
 % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -308,14 +307,15 @@ in our analysis.
 \label{sssec:smear}
 
 From the standard nuclear impulse approximation for the scattering
-of a projectile (lepton or hadron) from the deuteron $d$, the
-momentum distribution of a parton in the deuteron is given by a
-convolution of the corresponding PDF in the bound nucleon and a
+of a projectile (lepton or hadron) from a deuteron $d$, the
+momentum distribution of a parton inside the deuteron is given by
+a convolution of the corresponding PDF in the bound nucleon and a
 light-cone momentum distribution $f_{N/d}$ of nucleons in the
-deuteron (``smearing function'') \cite{MSToff, KPW94}.  
+deuteron (or ``smearing function'').
 Taking for illustration the PDF for a quark of flavor $q$ (the
 generalization to antiquarks and gluons is straightforward),
-the distribution in the deuteron can be computed as
+its momentum distribution function in the deuteron can be
+computed as \cite{MSToff, KPW94}
 %
 \begin{eqnarray}
 q^d(x,Q^2)
@@ -326,19 +326,20 @@ q^d(x,Q^2)
 %
 where $z = (M_d/M)(p \cdot q / p_d \cdot q)$ is the nucleon momentum
 fraction in the deuteron, with $p$ and $p_d$ the four-momenta of the
-nucleon and deuteron, respectively, $p^2$ is the nucleon virtuality,
-and $M_d$ is the deuteron mass.  For the isoscalar deuteron, a sum
-over the nucleons $N = p, n$ is implied.
-The function $\widetilde{q}^N$ is the quark PDF in the the off-shell
-nucleon, and in principle includes the $1/Q^2$ corrections,
-such as TMCs and higher twist effects, discussed above.
+nucleon and deuteron, respectively, and $M_d$ is the deuteron mass.
+The nucleon virtuality $p^2$ defines the degree to which the bound
+nucleon is off its mass shell, $p^2 \neq M^2$, and the function
+$\widetilde{q}^N$ represents the quark PDF in the off-shell nucleon.
+For the isoscalar deuteron, a sum over the nucleons $N = p, n$ is
+implied.
 
 
-While the off-shell nucleon PDF $\widetilde{q}^N$ is not by itself
-an observable, its dependence on the virtuality $p^2$ can be studied
-within a given framework.  Since the bound state effects in the
-deuteron are the smallest for all atomic nuclei, one can expand the
-off-shell nucleon distribution about its on-shell limit \cite{KP06},
+While the off-shell nucleon PDF $\widetilde{q}^N$ is not by itself an
+observable, its dependence on the virtuality $p^2$ can be studied within
+a given theoretical framework.  Since the bound state effects in the
+deuteron are the smallest of all the atomic nuclei, one may expand the
+off-shell nucleon distribution to lowest order about its on-shell limit
+\cite{KPW94, KMPW95},
 %
 \begin{eqnarray}
 \widetilde{q}^N (x,p^2,Q^2)
@@ -347,7 +348,7 @@ off-shell nucleon distribution about its on-shell limit \cite{KP06},
 \label{eq:qoff}
 \end{eqnarray}     
 %
-where the coefficient of the off-shell term is formally given by
+where the coefficient of the off-shell term is given by
 %
 \begin{eqnarray}
 \delta f^N(x,Q^2)
@@ -357,15 +358,13 @@ where the coefficient of the off-shell term is formally given by
     \right|_{p^2=M^2}.
 \end{eqnarray}
 %
-% and the $\widetilde{q}^N$ includes the parametrized higher twist
-% corrections of Eq.~(\ref{eq:F2ht}).
-%
 The on-shell term in Eq.~(\ref{eq:qoff}) leads to the standard
 on-shell convolution representation for the nuclear PDF, while
 the off-shell term can be evaluated as an additive correction.
-Defining the total quark PDF in the deuteron by
-$q^d = q^{d\, (\rm on)} + q^{d\, (\rm off)}$, the on-shell and
-off-shell contributions can be written
+Defining the total quark PDF in the deuteron as the sum of the
+on-shell and off-shell contributions,
+  $q^d = q^{d\, (\rm on)} + q^{d\, (\rm off)}$,
+the two components can be written as
 %
 \begin{subequations}
 \begin{eqnarray}
@@ -381,7 +380,7 @@ q^{d\, (\rm off)}(x,Q^2)
 The on-shell and off-shell smearing functions $f^{(\rm on)}$
 and $f^{(\rm off)}$ are taken to be the same for the proton
 and neutron (isospin symmetry breaking effects are not expected
-to be significant), and are given by \cite{Ehlers14}
+to be significant) and are given by \cite{Ehlers14}
 %
 \begin{subequations}
 \begin{eqnarray}
@@ -393,21 +392,17 @@ f^{(\rm off)}(z)
 \end{eqnarray}
 \end{subequations}
 %
-In practice we compute these within the weak binding approximation
-(WBA) in terms of the deuteron wave function \cite{KP06, KMK09}.
-At $Q^2 \to \infty$ the on-shell smearing function $f^{(\rm on)}$
-has a simple probabilistic interpretation in terms of the light-cone
-momentum fraction
-%
-    $z \approx (M_d/M)(p^+/p_d^+)
-	= (p^0 + p^z)/M
-	= 1 + (\varepsilon ...)$
-%
-of the deuteron
-carried by the struck nucleon, while at finite $Q^2$ it depends
-in addition on the parameter \mbox{$\rho^2 = 1 + 4x^2 M^2/Q^2$},
-which characterizes the deviation from the Bjorken limit.
-
+A systematic method for computing the smearing functions is within
+the weak binding approximation (WBA), in terms of the deuteron wave
+function \cite{KP06, KMK09}.  For large $Q^2 \to \infty$ the on-shell
+smearing function $f^{(\rm on)}$ has a simple probabilistic
+interpretation in terms of the light-cone momentum fraction
+    $z \to 1 + (\varepsilon + \rho\, p_z)/M)$
+of the deuteron carried by the struck nucleon, where
+$\varepsilon = p_0 - M$ is the separation energy.
+At finite $Q^2$, however, the smearing functions depends also
+on the parameter \mbox{$\rho^2 = 1 + 4x^2 M^2/Q^2$}, which
+characterizes the deviation from the Bjorken limit.
 
 
 % ###
@@ -1365,6 +1360,10 @@ Phys. Rev. D {\bf 49}, 1183 (1994).
 \bibitem{KPW94}
 S.~A.~Kulagin, G.~Piller and W.~Weise,
 Phys. Rev. C {\bf 50}, 1154 (1994).
+
+\bibitem{KMPW95}
+S.~A.~Kulagin, W.~Melnitchouk, G.~Piller and W.~Weise,
+Phys. Rev. C {\bf 52}, 932 (1995).
 
 \bibitem{KP06}
 S.~A.~Kulagin and R.~Petti,
