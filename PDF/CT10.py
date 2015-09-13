@@ -143,7 +143,7 @@ class CT10(object):
       xlist = self.fileArray[0]
       qlist = self.fileArray[1]
       grid = self.fileArray[2][self.ipart] # find grid for parton
-      self.D[iFlav]= RectBivariateSpline(qlist, xlist, grid, kx=1,ky=1)
+      self.D[iFlav]= RectBivariateSpline(qlist, xlist, grid, kx=3,ky=3)
 
   def get_pdf(self,iParton,x,Q):
     return self.D[iParton](Q,x)[0][0]
