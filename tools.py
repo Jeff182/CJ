@@ -417,24 +417,15 @@ def fill_between(x, y1, y2=0, ax=None, **kwargs):
   return p
 
 
-
-
-
-
-
-
-
-def compute(func,X,info,output=True):
-  pbar = ProgressBar(X.size,info)
-  out=[]
-  for i in range(X.size):
-    pbar.animate(i+1)
-    out.append(func(X[i]))
-  if output: return np.array(out)
-
-
-
-
+def com(func,X,info): 
+  bar=ProgressBar(X.size,info)
+  cnt=0
+  OUT=[]
+  for x in X: 
+    OUT.append(func(x)) 
+    bar.animate(cnt+1)
+    cnt+=1
+  return np.array(OUT)
 
 
 
